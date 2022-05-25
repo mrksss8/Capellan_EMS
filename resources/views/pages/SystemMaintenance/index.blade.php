@@ -94,10 +94,10 @@
                                     @foreach ($strands as $strand)
                                         <tr>
                                             <th>{{ $strand->id }}</th>
-                                            <th>{{ $strand->strand}} - ({{ $strand->track->track}} )</th>
+                                            <th>{{ $strand->strand }} - ({{ $strand->track->track }} )</th>
                                         </tr>
                                     @endforeach
-    
+
                                 </tbody>
                             </table>
                         </div>
@@ -149,7 +149,9 @@
                                     @foreach ($specializations as $specialization)
                                         <tr>
                                             <th>{{ $specialization->id }}</th>
-                                            <th> {{ $specialization->specialization }} / {{ $specialization->strand->strand}} - ({{ $strand->track->track}} )</th>
+                                            <th> {{ $specialization->specialization }} /
+                                                {{ $specialization->strand->strand }} - ({{ $strand->track->track }} )
+                                            </th>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -166,6 +168,58 @@
         </div>
         {{-- End Specialization Table --}}
 
+        {{-- Bgein SchoolYear Table --}}
+        <div class="col-12 mt-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-9 ">
+                    <div class="card card-custom">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <span class="card-icon">
+                                    <i class="flaticon2-chat-1 text-primary"></i>
+                                </span>
+                                <h3 class="card-label">
+                                    School Year
+                                    <small>sub title</small>
+                                </h3>
+                            </div>
+                            <div class="card-toolbar">
+                                <!-- Button trigger modal-->
+                                <button type="button" class="btn btn-primary font-weight-bold btn-sm" data-toggle="modal"
+                                    data-target="#school_year"><i class="flaticon2-cube"></i>
+                                    Add School Year
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">School Year</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($schoolYears as $schoolYear)
+                                        <tr>
+                                            <th>{{ $schoolYear->id }}</th>
+                                            <th> {{ $schoolYear->school_year }}</th>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            {{-- <a href="#" class="btn btn-light-primary font-weight-bold">Manage</a>
+                            <a href="#" class="btn btn-outline-secondary font-weight-bold">Learn more</a> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {{-- End SchoolYearTable --}}
     </div>
 
     <!-- Track Modal-->
@@ -256,15 +310,46 @@
                                 <select class="form-control" id="strand" name="strand">
 
                                     @foreach ($strands as $strand)
-                                    <option value={{ $strand->id }}> {{ $strand->strand}} - ({{ $strand->track->track}} ) </option> 
-
-                                @endforeach
+                                        <option value={{ $strand->id }}> {{ $strand->strand }} -
+                                            ({{ $strand->track->track }})
+                                        </option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Specialization Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" placeholder="Enter Specialization" name="specialization" />
+                            <input type="text" class="form-control" placeholder="Enter Specialization"
+                                name="specialization" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light-primary font-weight-bold"
+                            data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary font-weight-bold">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- SchoolYear Modal-->
+    <div class="modal fade" id="school_year" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdrop" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Register Specialization</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i aria-hidden="true" class="ki ki-close"></i>
+                    </button>
+                </div>
+                <form action="{{ route('school_year.store') }}" method="POST">
+                    <div class="modal-body">
+                        @csrf
+                        <div class="form-group">
+                            <label>School Year (e.g. 2000-2001) <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="Enter School Year" name="school_year" />
                         </div>
                     </div>
                     <div class="modal-footer">
