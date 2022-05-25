@@ -49,5 +49,10 @@ Route::group([ 'prefix' => 'specialization', 'middleware' => 'auth'], function()
     Route::post('/store',[App\Http\Controllers\SpecializationController::class, 'store'])->name('specialization.store');
 });
 
+//Specialization
+Route::group([ 'prefix' => 'school-year', 'middleware' => 'auth'], function() {
+    Route::post('/store',[App\Http\Controllers\SchoolYearController::class, 'store'])->name('school_year.store');
+});
+
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('user-logout');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
