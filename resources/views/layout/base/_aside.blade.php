@@ -65,7 +65,7 @@
                 </li>
 
                 <li class="menu-item" aria-haspopup="true">
-                    <a href="#" class="menu-link">
+                    <a href="{{ route('enrollment.index') }}" class="menu-link">
                         <span class="menu-icon fas fa-user-plus">
                            
                         </span>

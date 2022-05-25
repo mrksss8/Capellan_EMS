@@ -54,5 +54,24 @@ Route::group([ 'prefix' => 'school-year', 'middleware' => 'auth'], function() {
     Route::post('/store',[App\Http\Controllers\SchoolYearController::class, 'store'])->name('school_year.store');
 });
 
+//Enrollment
+Route::group([ 'prefix' => 'enrollment', 'middleware' => 'auth'], function() {
+    Route::get('/index',[App\Http\Controllers\EnrollmentController::class, 'index'])->name('enrollment.index');
+    Route::get('/get_strand', [App\Http\Controllers\EnrollmentController::class,'get_strand'])->name('get_strand');
+    Route::get('/get_specialization', [App\Http\Controllers\EnrollmentController::class,'get_specialization'])->name('get_specialization');
+});
+
+//Student
+Route::group([ 'prefix' => 'student', 'middleware' => 'auth'], function() {
+    Route::post('/store',[App\Http\Controllers\StudentController::class, 'store'])->name('student.store');
+
+});
+
+
+// //Enrollment
+//  Route::get('/enrollment', function () {
+//      return view('pages.Enrollment.index');
+//  })->name('enrollment.index')->middleware('auth');
+
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('user-logout');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
