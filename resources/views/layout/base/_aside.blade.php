@@ -188,39 +188,12 @@
                 </li>
 
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                    <a href="javascript:;" class="menu-link menu-toggle">
-                        <span class="menu-icon fas fa-cog">
-                            
-                           
+                    <a href="{{ route('sys_main.index') }}" class="menu-link menu-toggle">
+                        <span class="menu-icon fas fa-cog">        
                         </span>
                         <span class="menu-text">System Maintenance</span>
-                        <i class="menu-arrow"></i>
-                    </a>
-                    <div class="menu-submenu">
-        
-                        <ul class="menu-subnav">
 
-                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="#" class="menu-link menu-toggle">
-                                    <i class="menu-bullet menu-bullet-line">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">Accounting</span>
-                                </a>
-                                
-                            </li>
-                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="#" class="menu-link menu-toggle">
-                                    <i class="menu-bullet menu-bullet-line">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">Registrar</span>
-                                </a>
-                                
-                            </li>
-                    
-                        </ul>
-                    </div>
+                    </a>
                 </li>
 
             
