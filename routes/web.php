@@ -73,6 +73,13 @@ Route::group([ 'prefix' => 'student-records', 'middleware' => 'auth'], function(
     Route::get('/enrolled_student',[App\Http\Controllers\EnrolledStudentController::class, 'index'])->name('enrolled_student.index');
 });
 
+//Active Sy Sem
+Route::group([ 'prefix' => 'act_sy_sem', 'middleware' => 'auth'], function() {
+    Route::put('update/{id}',[App\Http\Controllers\ActSYSemController::class, 'update'])->name('act_sy_sem.update');
+    
+});
+
+
 
 // //Enrollment
 //  Route::get('/enrollment', function () {
