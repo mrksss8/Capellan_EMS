@@ -8,16 +8,18 @@ use App\Models\Student_Specialization_GradeLevel_SchoolYear;
 use App\Models\Student;
 use App\Models\SchoolYear;
 use App\Models\GradeLevel;
+use App\Models\Sem;
 class EnrollExistingStudentController extends Controller
 {
 
 
     public function create(){
+        $sems = Sem::all();
         $tracks = DB::table('tracks')->get();
         $schoolyears = SchoolYear::all();
         $gradelevels = GradeLevel::all();
         $students = Student_Specialization_GradeLevel_SchoolYear::with('student','grade_level', 'specialization.strand.track')->get();
-        return view('pages.Enrollment.EnrollExistingStudent.index',compact('students','tracks','schoolyears','gradelevels'));
+        return view('pages.Enrollment.EnrollExistingStudent.index',compact('students','tracks','schoolyears','gradelevels','sems'));
     }
 
     function get_strand(Request $request){
@@ -42,6 +44,7 @@ class EnrollExistingStudentController extends Controller
                     'specialization_id' => $request->specialization,
                     'gradelevel_id' => $request->grade_level,
                     'school_year_id' => $request->school_year,
+                    'sem_id' => $request->sem,
                 ]
             ];   
             Student_Specialization_GradeLevel_SchoolYear::insert($records);

@@ -78,6 +78,19 @@
                         @endforeach
                     </select>
                 </div>
+                <div class="col-md-4">
+                    <label for="section">
+                        {{-- <span class="text-danger">*</span> --}}
+                        Semester
+                    </label>
+                    <select class="custom-select custom-select-sm" name="sem">
+                        <option selected disabled>Choose Sem</option>
+                        @foreach ($sems as $sem)
+                            <option value="{{ $sem->id }}">Semester {{ $sem->sem }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
 
         </div>
@@ -117,7 +130,9 @@
                 </table>
                 <!--end: Datatable-->
             </div>
-            <button type="submit" class="btn btn-primary">Submit Form</button>
+            <div class="card-footer text-center">
+                <button type="submit" class="btn btn-primary">Submit Form</button>
+            </div>
         </form>
     </div>
         @endsection
