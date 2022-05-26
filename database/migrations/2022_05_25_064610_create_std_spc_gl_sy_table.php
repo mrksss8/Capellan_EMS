@@ -31,6 +31,10 @@ class CreateStdSpcGlSyTable extends Migration
             $table->unsignedBigInteger('school_year_id');
             $table->foreign('school_year_id')->references('id')->on('school_years');
 
+            //semforeign key
+            $table->unsignedBigInteger('sem_id');
+            $table->foreign('sem_id')->references('id')->on('sems');
+
             $table->timestamps();
         });
     }

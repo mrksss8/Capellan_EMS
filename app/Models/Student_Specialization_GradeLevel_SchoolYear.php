@@ -27,4 +27,9 @@ class Student_Specialization_GradeLevel_SchoolYear extends Model
     public function schoolyear(){
         return $this->belongsTo(SchoolYear::class, 'school_year_id');
     }
+
+    public function sem(){
+        return $this->belongsTo(Sem::class);
+    }
+
 }
