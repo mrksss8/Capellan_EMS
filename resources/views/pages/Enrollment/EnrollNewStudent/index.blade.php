@@ -25,7 +25,7 @@
                     <!--begin::Container-->
                     <div class="container">
 
-                        <form action="{{ route('student.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('enroll_new_student.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-3">

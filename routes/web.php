@@ -54,21 +54,18 @@ Route::group([ 'prefix' => 'school-year', 'middleware' => 'auth'], function() {
     Route::post('/store',[App\Http\Controllers\SchoolYearController::class, 'store'])->name('school_year.store');
 });
 
-//Enrollment
-Route::group([ 'prefix' => 'enrollment', 'middleware' => 'auth'], function() {
-    Route::get('/index',[App\Http\Controllers\EnrollmentController::class, 'index'])->name('enrollment.index');
-    Route::get('/get_strand', [App\Http\Controllers\EnrollmentController::class,'get_strand'])->name('get_strand');
-    Route::get('/get_specialization', [App\Http\Controllers\EnrollmentController::class,'get_specialization'])->name('get_specialization');
-});
 
 //Student
 Route::group([ 'prefix' => 'student', 'middleware' => 'auth'], function() {
-    Route::post('/store',[App\Http\Controllers\StudentController::class, 'store'])->name('student.store');
-
+    Route::get('/index',[App\Http\Controllers\EnrollNewStudentController::class, 'index'])->name('enroll_new_student.index');
+    Route::post('/store',[App\Http\Controllers\EnrollNewStudentController::class, 'store'])->name('enroll_new_student.store');
+    Route::get('/get_strand', [App\Http\Controllers\EnrollNewStudentController::class,'get_strand'])->name('get_strand');
+    Route::get('/get_specialization', [App\Http\Controllers\EnrollNewStudentController::class,'get_specialization'])->name('get_specialization');
 });
-//Student Record Grade 11
-Route::group([ 'prefix' => 'student-record/g11', 'middleware' => 'auth'], function() {
-    Route::get('/index',[App\Http\Controllers\EnrolledStudentController::class, 'index'])->name('std_g11.index');
+
+//Student Record - Enrolled student
+Route::group([ 'prefix' => 'student-records', 'middleware' => 'auth'], function() {
+    Route::get('/enrolled_student',[App\Http\Controllers\EnrolledStudentController::class, 'index'])->name('enrolled_student.index');
 
 });
 

@@ -64,13 +64,45 @@
                     </a>
                 </li>
 
-                <li class="menu-item" aria-haspopup="true">
-                    <a href="{{ route('enrollment.index') }}" class="menu-link">
-                        <span class="menu-icon fas fa-user-plus">
+                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="javascript:;" class="menu-link menu-toggle">
+                        <span class="menu-icon fas fa-address-book">
                            
                         </span>
                         <span class="menu-text">Enrollment</span>
+                        <i class="menu-arrow"></i>
                     </a>
+                    <div class="menu-submenu">
+        
+                        <ul class="menu-subnav">
+
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="{{ route('enroll_new_student.index') }}" class="menu-link menu-toggle">
+                                    <i class="menu-bullet menu-bullet-line">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">New Students</span>
+                                    <span class="menu-label">
+                                        {{-- <span class="label label-rounded label-primary"><?= $count_user ?></span> --}}
+                                    </span>
+                                    
+                                </a>
+                                
+                            </li>
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="#" class="menu-link menu-toggle">
+                                    <i class="menu-bullet menu-bullet-line">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">Existing Student</span>
+                                    
+                                </a>
+                                
+                            </li>
+                            
+                    
+                        </ul>
+                    </div>
                 </li>
 
 
@@ -90,7 +122,7 @@
                         <ul class="menu-subnav">
 
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="{{ route('std_g11.index') }}" class="menu-link menu-toggle">
+                                <a href="{{ route('enrolled_student.index') }}" class="menu-link menu-toggle">
                                     <i class="menu-bullet menu-bullet-line">
                                         <span></span>
                                     </i>
