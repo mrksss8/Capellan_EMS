@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Student;
+use App\Models\Sem;
 use App\Models\SchoolYear;
 use App\Models\GradeLevel;
 use App\Models\Student_Specialization_GradeLevel_SchoolYear;
@@ -16,7 +17,8 @@ class EnrollNewStudentController extends Controller
         $tracks = DB::table('tracks')->get();
         $schoolyears = SchoolYear::all();
         $gradelevels = GradeLevel::all();
-        return view('pages.Enrollment.EnrollNewStudent.index',compact('tracks','schoolyears','gradelevels'));
+        $sems = Sem::all();
+        return view('pages.Enrollment.EnrollNewStudent.index',compact('tracks','schoolyears','gradelevels','sems'));
     }
 
     function get_strand(Request $request){
@@ -80,6 +82,7 @@ class EnrollNewStudentController extends Controller
              'specialization_id' => $request->specialization,
              'gradelevel_id' => $request->grade_level,
              'school_year_id' => $request->school_year,
+             'sem_id' => $request->sem,
          ]);
 
 

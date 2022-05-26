@@ -42,19 +42,7 @@
                                             placeholder="Student No.">
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <label for="grade">
-                                        {{-- <span class="text-danger">*</span> --}}
-                                        Grade
-                                    </label>
-                                    <select class="custom-select custom-select-sm" name="grade_level">
-                                        <option selected disabled>Choose Grade level</option>
-                                        @foreach ($gradelevels as $gradelevel)
-                                            <option value="{{ $gradelevel->id }}">{{ $gradelevel->grade_level }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
+
                                 <div class="col-md-3">
                                     <label for="section">
                                         {{-- <span class="text-danger">*</span> --}}
@@ -69,10 +57,40 @@
                                     </select>
                                 </div>
 
+                                <div class="col-md-3">
+                                    <label for="section">
+                                        {{-- <span class="text-danger">*</span> --}}
+                                        Semester
+                                    </label>
+                                    <select class="custom-select custom-select-sm" name="sem">
+                                        <option selected disabled>Choose Sem</option>
+                                        @foreach ($sems as $sem)
+                                            <option value="{{ $sem->id }}">Semester {{ $sem->sem }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+
+
                             </div>
 
                             <div class="row">
-                                <div class="col-md-4">
+
+                                <div class="col-md-3">
+                                    <label for="grade">
+                                        {{-- <span class="text-danger">*</span> --}}
+                                        Grade
+                                    </label>
+                                    <select class="custom-select custom-select-sm" name="grade_level">
+                                        <option selected disabled>Choose Grade level</option>
+                                        @foreach ($gradelevels as $gradelevel)
+                                            <option value="{{ $gradelevel->id }}">{{ $gradelevel->grade_level }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
                                     <label for="track">Track:</label>
                                     {{-- <select class="custom-select custom-select-sm" name="track">
 
@@ -90,7 +108,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     {{-- <label for="strand">
                                         Strand
                                     </label> --}}
@@ -108,7 +126,7 @@
                                     </div>
 
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     {{-- <label for="specialization">
                                         Specialization
                                     </label> --}}
