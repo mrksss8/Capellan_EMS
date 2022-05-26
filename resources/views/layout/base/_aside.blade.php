@@ -94,20 +94,7 @@
                                     <i class="menu-bullet menu-bullet-line">
                                         <span></span>
                                     </i>
-                                    <span class="menu-text">Grade 11</span>
-                                    <span class="menu-label">
-                                        {{-- <span class="label label-rounded label-primary"><?= $count_user ?></span> --}}
-                                    </span>
-                                    
-                                </a>
-                                
-                            </li>
-                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="#" class="menu-link menu-toggle">
-                                    <i class="menu-bullet menu-bullet-line">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">Grade 12</span>
+                                    <span class="menu-text">Enrolled Students</span>
                                     <span class="menu-label">
                                         {{-- <span class="label label-rounded label-primary"><?= $count_user ?></span> --}}
                                     </span>
