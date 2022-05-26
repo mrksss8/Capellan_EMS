@@ -3,13 +3,36 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Student;
+use App\Models\Sem;
+use App\Models\SchoolYear;
+use App\Models\GradeLevel;
 use App\Models\Student_Specialization_GradeLevel_SchoolYear;
 
-class StudentController extends Controller
+class EnrollNewStudentController extends Controller
 {
+
+    function create(){
+        $tracks = DB::table('tracks')->get();
+        $schoolyears = SchoolYear::all();
+        $gradelevels = GradeLevel::all();
+        $sems = Sem::all();
+        return view('pages.Enrollment.EnrollNewStudent.index',compact('tracks','schoolyears','gradelevels','sems'));
+    }
+
+    function get_strand(Request $request){
+        $tracks = DB::table('strands')->where('track_id',$request->track_id)->get();
+        return response()->json($tracks);
+    }   
+    function get_specialization(Request $request){
+        $cities = DB::table('specializations')->where('strand_id',$request->strand_id)->get();
+        return response()->json($cities);
+    }
+
     public function store(Request $request)
     {
+
         $student = Student::create([
             'lrn' => $request->lrn,
             'std_num' => $request->std_num,
@@ -59,10 +82,11 @@ class StudentController extends Controller
              'specialization_id' => $request->specialization,
              'gradelevel_id' => $request->grade_level,
              'school_year_id' => $request->school_year,
+             'sem_id' => $request->sem,
          ]);
 
 
-        return redirect()->route('enrollment.index');
+        return redirect()->route('enroll_new_student.create');
 
         
     }

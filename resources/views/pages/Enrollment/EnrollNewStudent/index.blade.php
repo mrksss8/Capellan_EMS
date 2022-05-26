@@ -25,7 +25,8 @@
                     <!--begin::Container-->
                     <div class="container">
 
-                        <form action="{{ route('student.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('enroll_new_student.store') }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-3">
@@ -41,18 +42,7 @@
                                             placeholder="Student No.">
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <label for="grade">
-                                        {{-- <span class="text-danger">*</span> --}}
-                                        Grade
-                                    </label>
-                                    <select class="custom-select custom-select-sm" name="grade_level">
-                                        <option selected disabled>Choose Grade level</option>
-                                       @foreach ($gradelevels as $gradelevel)
-                                       <option value="{{ $gradelevel->id }}">{{ $gradelevel->grade_level }}</option>
-                                       @endforeach
-                                    </select>
-                                </div>
+
                                 <div class="col-md-3">
                                     <label for="section">
                                         {{-- <span class="text-danger">*</span> --}}
@@ -61,15 +51,46 @@
                                     <select class="custom-select custom-select-sm" name="school_year">
                                         <option selected disabled>Choose School Year</option>
                                         @foreach ($schoolyears as $schoolyear)
-                                            <option value="{{ $schoolyear->id }}">{{ $schoolyear->school_year }}</option>
+                                            <option value="{{ $schoolyear->id }}">{{ $schoolyear->school_year }}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>
 
+                                <div class="col-md-3">
+                                    <label for="section">
+                                        {{-- <span class="text-danger">*</span> --}}
+                                        Semester
+                                    </label>
+                                    <select class="custom-select custom-select-sm" name="sem">
+                                        <option selected disabled>Choose Sem</option>
+                                        @foreach ($sems as $sem)
+                                            <option value="{{ $sem->id }}">Semester {{ $sem->sem }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+
+
                             </div>
 
                             <div class="row">
-                                <div class="col-md-4">
+
+                                <div class="col-md-3">
+                                    <label for="grade">
+                                        {{-- <span class="text-danger">*</span> --}}
+                                        Grade
+                                    </label>
+                                    <select class="custom-select custom-select-sm" name="grade_level">
+                                        <option selected disabled>Choose Grade level</option>
+                                        @foreach ($gradelevels as $gradelevel)
+                                            <option value="{{ $gradelevel->id }}">{{ $gradelevel->grade_level }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
                                     <label for="track">Track:</label>
                                     {{-- <select class="custom-select custom-select-sm" name="track">
 
@@ -87,7 +108,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     {{-- <label for="strand">
                                         Strand
                                     </label> --}}
@@ -105,7 +126,7 @@
                                     </div>
 
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     {{-- <label for="specialization">
                                         Specialization
                                     </label> --}}
@@ -530,7 +551,8 @@
                         },
                         success: function(res) {
                             $("#strand").empty();
-                            $("#strand").append('<option selected disabled>Select Strand</option>');
+                            $("#strand").append(
+                                '<option selected disabled>Select Strand</option>');
                             $.each(res, function(key, value) {
                                 $("#strand").append('<option value="' + value.id +
                                     '">' + value.strand + '</option>');
@@ -553,9 +575,11 @@
                             if (res) {
                                 $("#specialization").empty();
                                 $("#specialization").append(
-                                    '<option selected disabled>Select Specialization</option>');
+                                    '<option selected disabled>Select Specialization</option>'
+                                );
                                 $.each(res, function(key, value) {
-                                    $("#specialization").append('<option value="' + value.id + '">' + value.specialization +
+                                    $("#specialization").append('<option value="' +
+                                        value.id + '">' + value.specialization +
                                         '</option>');
                                 });
                             }
