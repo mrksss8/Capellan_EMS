@@ -225,5 +225,11 @@
                 </div>
             </div>
         @endif
+        <div class="topbar-item">
+            @guest
+            @else
+                <a class="btn btn-sm btn-danger ml-2" href="{{ route('user-logout') }}"> Logout </a>
+            @endguest
+        </div>
     @endif
 </div>
