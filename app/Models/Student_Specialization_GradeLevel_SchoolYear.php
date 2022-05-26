@@ -11,4 +11,16 @@ class Student_Specialization_GradeLevel_SchoolYear extends Model
     
     protected $table = "std_spc_gl_sy";
     protected $guarded = [''];
+
+    public function student(){
+        return $this->belongsTo(Student::class);
+    }
+
+    public function grade_level(){
+        return $this->belongsTo(GradeLevel::class, 'gradelevel_id');
+    }
+
+    public function specialization(){
+        return $this->belongsTo(Specialization::class);
+    }
 }
