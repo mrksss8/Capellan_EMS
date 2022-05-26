@@ -137,7 +137,7 @@
                         <tr>
                             <td>{{ $student->student->id }}</td>
                             <td>{{ $student->student->last_name }}, {{ $student->student->first_name }}{{ $student->student->middle_name }}</td>
-                            <td></td>
+                            <td>{{ $student->grade_level->grade_level}}</td>
                             <td>{{ $student->specialization->strand->track->track }}</td>
                             <td>{{ $student->specialization->strand->strand }}</td>
                             <td>{{ $student->specialization->specialization }}</td>
