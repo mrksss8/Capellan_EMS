@@ -12,8 +12,7 @@ use App\Models\Student_Specialization_GradeLevel_SchoolYear;
 class EnrollNewStudentController extends Controller
 {
 
-    function index(){
-
+    function create(){
         $tracks = DB::table('tracks')->get();
         $schoolyears = SchoolYear::all();
         $gradelevels = GradeLevel::all();
@@ -84,7 +83,7 @@ class EnrollNewStudentController extends Controller
          ]);
 
 
-        return redirect()->route('enroll_new_student.index');
+        return redirect()->route('enroll_new_student.create');
 
         
     }
