@@ -66,6 +66,11 @@ Route::group([ 'prefix' => 'student', 'middleware' => 'auth'], function() {
     Route::post('/store',[App\Http\Controllers\StudentController::class, 'store'])->name('student.store');
 
 });
+//Student Record Grade 11
+Route::group([ 'prefix' => 'student-record/g11', 'middleware' => 'auth'], function() {
+    Route::get('/index',[App\Http\Controllers\G11Controller::class, 'index'])->name('std_g11.index');
+
+});
 
 
 // //Enrollment
