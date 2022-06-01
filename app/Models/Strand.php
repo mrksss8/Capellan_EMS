@@ -14,7 +14,7 @@ class Strand extends Model
         return $this->belongsTo(Track::class);
     }
 
-    public function specialization(){
-        return $this->HasOne(Strand::class);
-    }
+    // public function specialization(){
+    //     return $this->HasOne(Strand::class);
+    // }
 }

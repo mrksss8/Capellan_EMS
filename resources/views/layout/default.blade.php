@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
         {{-- Favicon --}}
-        <link rel="shortcut icon" href="{{ asset('media/logos/favicon.ico') }}" />
+        <link rel="shortcut icon" href="{{ asset('media/logos/capellan_logo.png') }}" />
 
         {{-- Fonts --}}
         {{ Metronic::getGoogleFontsInclude() }}

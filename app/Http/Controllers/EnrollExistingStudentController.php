@@ -18,7 +18,7 @@ class EnrollExistingStudentController extends Controller
         $tracks = DB::table('tracks')->get();
         $schoolyears = SchoolYear::all();
         $gradelevels = GradeLevel::all();
-        $students = Student_Specialization_GradeLevel_SchoolYear::with('student','grade_level', 'specialization.strand.track')->get();
+        $students = Student_Specialization_GradeLevel_SchoolYear::with('student','grade_level', 'specialization.strand.track')->groupby('student_id')->distinct()->get();
         return view('pages.Enrollment.EnrollExistingStudent.index',compact('students','tracks','schoolyears','gradelevels','sems'));
     }
 

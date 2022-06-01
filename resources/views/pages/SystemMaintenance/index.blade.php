@@ -13,7 +13,7 @@
                         </span>
                         <h3 class="card-label">
                             Tracks
-                            <small>sub title</small>
+                            {{-- <small>sub title</small> --}}
                         </h3>
                     </div>
                     <div class="card-toolbar">
@@ -62,7 +62,7 @@
                         </span>
                         <h3 class="card-label">
                             Strands
-                            <small>sub title</small>
+                            {{-- <small>sub title</small> --}}
                         </h3>
                     </div>
                     <div class="card-toolbar">
@@ -112,7 +112,7 @@
                         </span>
                         <h3 class="card-label">
                             Specialization
-                            <small>sub title</small>
+                            {{-- <small>sub title</small> --}}
                         </h3>
                     </div>
                     <div class="card-toolbar">
@@ -162,7 +162,7 @@
                         </span>
                         <h3 class="card-label">
                             School Year
-                            <small>sub title</small>
+                            {{-- <small>sub title</small> --}}
                         </h3>
                     </div>
                     <div class="card-toolbar">
@@ -391,7 +391,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>School Year (e.g. 2000-2001) <span class="text-danger">*</span></label>
+                            <label>Semester (e.g. Semester 1) <span class="text-danger">*</span></label>
                             <select class="custom-select custom-select-sm" name="sem">
                                 <option selected disabled>Choose Sem</option>
                                 @foreach ($sems as $sem)

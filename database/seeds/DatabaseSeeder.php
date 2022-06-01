@@ -34,5 +34,14 @@ class DatabaseSeeder extends Seeder
         DB::table('sems')->insert([
             'sem' => '2',
         ]);
+
+        DB::table('school_years')->insert([
+            'school_year' => '2022-2023',
+        ]);
+
+        DB::table('active__school_year_and_sems')->insert([
+            'active_SY_id' => '1',
+            'active_sem_id' => '1',
+        ]);
     }
 }

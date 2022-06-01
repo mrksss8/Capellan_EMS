@@ -79,6 +79,28 @@ Route::group([ 'prefix' => 'act_sy_sem', 'middleware' => 'auth'], function() {
     
 });
 
+//Accounting - Billing
+Route::group([ 'prefix' => 'billing', 'middleware' => 'auth'], function() {
+    Route::get('/index', [App\Http\Controllers\BillingController::class, 'index'])->name('billing.index');
+    Route::get('/show/{student_id}',[App\Http\Controllers\BillingController::class, 'show'])->name('billing.show');
+    Route::post('/store',[App\Http\Controllers\BillingController::class, 'store'])->name('billing.store');
+});
+
+//Accounting - Payment
+Route::group([ 'prefix' => 'payment', 'middleware' => 'auth'], function() {
+    Route::get('/index', [App\Http\Controllers\PaymentController::class, 'index'])->name('payment.index');
+    Route::get('/show/{id}',[App\Http\Controllers\PaymentController::class, 'show'])->name('payment.show');
+    Route::post('/store',[App\Http\Controllers\PaymentController::class, 'store'])->name('payment.store');
+});
+
+//Accounting - Report
+Route::group([ 'prefix' => 'report', 'middleware' => 'auth'], function() {
+    Route::get('/index', [App\Http\Controllers\Bill_Pay_Report_Controller::class, 'index'])->name('acc_report.index');
+    Route::get('/show/{id}',[App\Http\Controllers\Bill_Pay_Report_Controller::class, 'show'])->name('acc_report.show');
+});
+
+
+
 
 
 // //Enrollment

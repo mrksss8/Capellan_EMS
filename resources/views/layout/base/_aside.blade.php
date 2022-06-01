@@ -16,7 +16,7 @@
     <div class="brand flex-column-auto {{ Metronic::printClasses('brand', false) }}" id="kt_brand">
         <div class="brand-logo">
             <a href="{{ url('/') }}">
-                <img alt="{{ config('app.name') }}" src="{{ asset('media/logos/capellan_logo.png') }}" width="150px"/>
+                <img alt="{{ config('app.name') }}" src="{{ asset('media/logos/capellan_logo.png') }}" width="50px" height="50px"/>
             </a>
         </div>
 
@@ -66,7 +66,7 @@
 
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
-                        <span class="menu-icon fas fa-address-book">
+                        <span class="menu-icon fas fa-users">
                            
                         </span>
                         <span class="menu-text">Enrollment</span>
@@ -158,13 +158,62 @@
                         </ul>
                     </div>
                 </li>
-                <li class="menu-item" aria-haspopup="true">
+                {{-- <li class="menu-item" aria-haspopup="true">
                     <a href="#" class="menu-link">
                         <span class="menu-icon fas fa-coins">
                            
                         </span>
                         <span class="menu-text">Accounting</span>
                     </a>
+                </li> --}}
+
+                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="javascript:;" class="menu-link menu-toggle">
+                        <span class="menu-icon fas fa-money-bill" >
+                           
+                        </span>
+                        <span class="menu-text">Accounting</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="menu-submenu">
+        
+                        <ul class="menu-subnav">
+
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="{{ route('billing.index') }}" class="menu-link menu-toggle">
+                                    <i class="menu-bullet menu-bullet-line">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">Billing</span>
+                                </a>
+                                
+                            </li>
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="{{ route('payment.index') }}" class="menu-link menu-toggle">
+                                    <i class="menu-bullet menu-bullet-line">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">Payment</span>
+                                    
+                                </a>
+                                
+                            </li>
+                            
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="{{ route('acc_report.index') }}" class="menu-link menu-toggle">
+                                    <i class="menu-bullet menu-bullet-line">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">Report</span>
+                                    
+                                </a>
+                                
+                            </li>
+
+                            
+                    
+                        </ul>
+                    </div>
                 </li>
 
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
