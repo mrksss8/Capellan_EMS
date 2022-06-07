@@ -10,7 +10,6 @@
         thead input {
             width: 100%;
         }
-
     </style>
 @endsection
 
@@ -80,25 +79,47 @@
                                             <th>Particulars</th>
                                             <th>Debit</th>
                                             <th>Credit</th>
+                                            <th>Balance</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
                                         @foreach ($bills_pays as $bill_pay)
+                                            @if ($loop->first)
+                                                @php
+                                                    $bal = $bill_pay->billing_amt;
+                                                @endphp
+                                            @else
+                                                @php
+                                                    if ($bill_pay->billing_amt != null) {
+                                                        // echo 'null billing';
+                                                        $bal = $bal + $bill_pay->billing_amt;
+                                                    }
+                                                    if ($bill_pay->payment_amt != null) {
+                                                        // echo 'null payment';
+                                                        $bal = $bal - $bill_pay->payment_amt;
+                                                    }
+                                                @endphp
+                                            @endif
+
                                             <tr>
-                                                <td>{{ $bill_pay->billing_date ? $bill_pay->billing_date : $bill_pay->transaction_date }}</td>
+                                                <td>{{ $bill_pay->billing_date ? $bill_pay->billing_date : $bill_pay->transaction_date }}
+                                                </td>
                                                 <td>{{ $bill_pay->billing_particulars ? $bill_pay->billing_particulars : $bill_pay->payment_particulars }}
                                                 </td>
                                                 <td>{{ $bill_pay->payment_amt ? $bill_pay->payment_amt : '' }}</td>
                                                 <td>{{ $bill_pay->billing_amt ? $bill_pay->billing_amt : '' }}</td>
+                                                <td>{{ $bal }}</td>
                                             </tr>
                                         @endforeach
-                                        <tr><td></td></tr>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
                                         <tr>
                                             <td colspan="2"></td>
                                             <td><strong>Balance</strong></td>
-                                            <td><strong>{{$balance}}</strong></td>
-                                         </tr>
+                                            <td><strong>{{ $balance }}</strong></td>
+                                        </tr>
                                     </tbody>
 
                                 </table>
