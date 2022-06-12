@@ -108,6 +108,11 @@ Route::group([ 'prefix' => 'memo', 'middleware' => 'auth'], function() {
     Route::post('/store',[App\Http\Controllers\MemoController::class, 'store'])->name('memo.store');
 });
 
+//Printables
+Route::group([ 'prefix' => 'printables', 'middleware' => 'auth'], function() {
+    Route::get('/indexSIS/{student_id}', [App\Http\Controllers\PrintableController::class, 'index_sis'])->name('sis.index');
+});
+
 
 
 
