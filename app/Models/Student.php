@@ -12,5 +12,9 @@ class Student extends Model
 
     public function memos(){
         return $this->hasMany(Memo::class);
+
+    public function enrollment(){
+        return $this->belongsTo(Student_Specialization_GradeLevel_SchoolYear::class,'enrollment_id','id');
+
     }
 }

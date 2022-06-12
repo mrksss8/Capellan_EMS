@@ -123,24 +123,26 @@
             <table class="table table-separate table-head-custom table-checkable" id="example">
                 <thead>
                     <tr>
-                        <th>Student ID</th>
+                        <th>Action</th>
                         <th>Full Name</th>
                         <th>Grade</th>
                         <th>Track</th>
                         <th>Strand</th>
-                        <th>Spepcialization</th>
+                        <th>Specialization</th>
                     </tr>
                 </thead>
 
                 <tbody>
                      @foreach ($students as $student)
+                        
                         <tr>
-                            <td>{{ $student->student->id }}</td>
-                            <td>{{ $student->student->last_name }}, {{ $student->student->first_name }}{{ $student->student->middle_name }}</td>
-                            <td>{{ $student->grade_level->grade_level}}</td>
-                            <td>{{ $student->specialization->strand->track->track }}</td>
-                            <td>{{ $student->specialization->strand->strand }}</td>
-                            <td>{{ $student->specialization->specialization }}</td>
+                            
+                            <td><a href="{{route('enrolled_student.show', $student->enrollment->student->id)}}">View</a></td>
+                            <td>{{ $student->enrollment->student->last_name }}, {{ $student->enrollment->student->first_name }} {{ $student->enrollment->student->middle_name }}</td>
+                            <td>{{ $student->enrollment->grade_level->grade_level}}</td>
+                            <td>{{ $student->enrollment->specialization->strand->track->track }}</td>
+                            <td>{{ $student->enrollment->specialization->strand->strand }}</td>
+                            <td>{{ $student->enrollment->specialization->specialization }}</td>
                         </tr>
                     @endforeach 
                 </tbody>

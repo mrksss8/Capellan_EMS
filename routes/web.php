@@ -71,6 +71,8 @@ Route::group([ 'prefix' => 'enroll_existing_student', 'middleware' => 'auth'], f
 //Student Record - Enrolled student
 Route::group([ 'prefix' => 'student-records', 'middleware' => 'auth'], function() {
     Route::get('/enrolled_student',[App\Http\Controllers\EnrolledStudentController::class, 'index'])->name('enrolled_student.index');
+    Route::get('/show/{student_id}',[App\Http\Controllers\EnrolledStudentController::class, 'show'])->name('enrolled_student.show');
+    Route::get('/edit/{student_id}',[App\Http\Controllers\EnrolledStudentController::class, 'edit'])->name('enrolled_student.edit');
 });
 
 //Active Sy Sem

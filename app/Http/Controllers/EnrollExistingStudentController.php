@@ -18,7 +18,8 @@ class EnrollExistingStudentController extends Controller
         $tracks = DB::table('tracks')->get();
         $schoolyears = SchoolYear::all();
         $gradelevels = GradeLevel::all();
-        $students = Student_Specialization_GradeLevel_SchoolYear::with('student','grade_level', 'specialization.strand.track')->groupby('student_id')->distinct()->get();
+        
+        $students = Student::with('enrollment.student')->get();
         return view('pages.Enrollment.EnrollExistingStudent.index',compact('students','tracks','schoolyears','gradelevels','sems'));
     }
 
@@ -38,16 +39,26 @@ class EnrollExistingStudentController extends Controller
         {
              $student = Student::findorfail($std_id[$i]);
 
-             $records = [
-                [
-                    'student_id' =>  $student->id,
-                    'specialization_id' => $request->specialization,
-                    'gradelevel_id' => $request->grade_level,
-                    'school_year_id' => $request->school_year,
-                    'sem_id' => $request->sem,
-                ]
-            ];   
-            Student_Specialization_GradeLevel_SchoolYear::insert($records);
+             $enrollment_id = Student_Specialization_GradeLevel_SchoolYear::create([
+                'student_id' =>  $student->id,
+                'specialization_id' => $request->specialization,
+                'gradelevel_id' => $request->grade_level,
+                'school_year_id' => $request->school_year,
+                'sem_id' => $request->sem,
+             ]);
+
+
+            //  $records = [
+            //     [
+            //         
+            //     ]
+            // ];   
+            // $enrollment_id = Student_Specialization_GradeLevel_SchoolYear::insert($records);
+
+ 
+            Student::where('id',$std_id[$i])->update([
+                'enrollment_id' => $enrollment_id->id,
+            ]);
         }
 
         return redirect()->route('enroll_existing_student.create');
