@@ -101,6 +101,13 @@ Route::group([ 'prefix' => 'report', 'middleware' => 'auth'], function() {
     Route::get('/show/{id}',[App\Http\Controllers\Bill_Pay_Report_Controller::class, 'show'])->name('acc_report.show');
 });
 
+//Accounting - Report
+Route::group([ 'prefix' => 'memo', 'middleware' => 'auth'], function() {
+    Route::get('/index', [App\Http\Controllers\MemoController::class, 'index'])->name('memo.index');
+    Route::get('/show/{id}',[App\Http\Controllers\MemoController::class, 'show'])->name('memo.show');
+    Route::post('/store',[App\Http\Controllers\MemoController::class, 'store'])->name('memo.store');
+});
+
 
 
 
