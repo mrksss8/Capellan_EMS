@@ -256,7 +256,7 @@
                                     <i class="flaticon-folder pr-3 pt-2">
                                         <span></span>
                                     </i>
-                                    <span class="menu-text">Student Report (Per Strand)</span>
+                                    <span class="menu-text">Students List Report (Per Strand)</span>
                                 </a>
                                 
                             </li>

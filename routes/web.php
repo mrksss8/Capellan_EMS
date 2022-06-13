@@ -111,6 +111,7 @@ Route::group([ 'prefix' => 'memo', 'middleware' => 'auth'], function() {
 //Printables
 Route::group([ 'prefix' => 'printables', 'middleware' => 'auth'], function() {
     Route::get('/indexSIS/{student_id}', [App\Http\Controllers\PrintableController::class, 'index_sis'])->name('sis.index');
+    Route::get('/indexSOA/{id}',[App\Http\Controllers\PrintableController::class, 'index_soa'])->name('soa.index');
 });
 
 

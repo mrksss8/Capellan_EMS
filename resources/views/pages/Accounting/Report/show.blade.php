@@ -28,11 +28,19 @@
                         <!--begin::Header-->
                         <div class="card-header py-3">
                             <div class="card-title align-items-start flex-column">
-                                <h3 class="card-label font-weight-bolder text-dark">Report Information</h3>
-                                <span class="text-muted font-weight-bold font-size-sm mt-1">Update the Student's
-                                    Billing</span>
+                                <h3 class="card-label font-weight-bolder text-dark mt-3">Report Information</h3>
+                                {{-- <span class="text-muted font-weight-bold font-size-sm mt-1">Update the Student's
+                                    Billing</span> --}}
                             </div>
 
+                            <div class="text-end mt-3">
+                                <a href="{{ route('soa.index', $students->enrollment->student->id) }}" class="btn btn-clean btn-hover-light-primary">
+                                    <i class="flaticon2-print"></i>
+                                    <span class = "text-primary">
+                                        Print Statement of Account
+                                        </span>
+                                </a>
+                            </div>
                         </div>
                         <!--end::Header-->
                         <!--begin::Form-->
