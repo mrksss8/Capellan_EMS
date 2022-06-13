@@ -244,19 +244,46 @@
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="#" class="menu-link menu-toggle">
-                                    <i class="menu-bullet menu-bullet-line">
+                                    <i class="flaticon-folder pr-3 pt-2">
                                         <span></span>
                                     </i>
-                                    <span class="menu-text">Accounting</span>
+                                    <span class="menu-text">Yearly Students Report</span>
                                 </a>
                                 
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="#" class="menu-link menu-toggle">
-                                    <i class="menu-bullet menu-bullet-line">
+                                    <i class="flaticon-folder pr-3 pt-2">
                                         <span></span>
                                     </i>
-                                    <span class="menu-text">Registrar</span>
+                                    <span class="menu-text">Student Report (Per Strand)</span>
+                                </a>
+                                
+                            </li>
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="#" class="menu-link menu-toggle">
+                                    <i class="flaticon-folder pr-3 pt-2">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">Document Submission Report</span>
+                                </a>
+                                
+                            </li>
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="#" class="menu-link menu-toggle">
+                                    <i class="flaticon-folder pr-3 pt-2">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">Contact Information Sheet</span>
+                                </a>
+                                
+                            </li>
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="#" class="menu-link menu-toggle">
+                                    <i class="flaticon-folder pr-3 pt-2">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">School Last Attended Report</span>
                                 </a>
                                 
                             </li>
