@@ -114,7 +114,13 @@ Route::group([ 'prefix' => 'printables', 'middleware' => 'auth'], function() {
     Route::get('/indexSOA/{id}',[App\Http\Controllers\PrintableController::class, 'index_soa'])->name('soa.index');
 });
 
-
+//Reports
+Route::group([ 'prefix' => 'reports', 'middleware' => 'auth'], function() {
+    Route::get('/yearly_report',[App\Http\Controllers\ReportController::class, 'yearly_report_index'])->name('yearly_report.index');
+    Route::get('/student_list',[App\Http\Controllers\ReportController::class, 'student_list_index'])->name('student_list.index');
+    Route::get('/document_submission',[App\Http\Controllers\ReportController::class, 'document_submission_index'])->name('document_submission.index');
+    Route::get('/contact_info_sheet',[App\Http\Controllers\ReportController::class, 'contact_info_sheet_index'])->name('contact_info_sheet.index');
+});
 
 
 

@@ -243,7 +243,7 @@
                                 </span>
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="#" class="menu-link menu-toggle">
+                                <a href="{{ route('yearly_report.index') }}" class="menu-link menu-toggle">
                                     <i class="flaticon-folder pr-3 pt-2">
                                         <span></span>
                                     </i>
@@ -252,7 +252,7 @@
                                 
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="#" class="menu-link menu-toggle">
+                                <a href="{{ route('student_list.index') }}" class="menu-link menu-toggle">
                                     <i class="flaticon-folder pr-3 pt-2">
                                         <span></span>
                                     </i>
@@ -261,7 +261,7 @@
                                 
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="#" class="menu-link menu-toggle">
+                                <a href="{{ route('document_submission.index') }}" class="menu-link menu-toggle">
                                     <i class="flaticon-folder pr-3 pt-2">
                                         <span></span>
                                     </i>
@@ -270,20 +270,11 @@
                                 
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="#" class="menu-link menu-toggle">
+                                <a href="{{ route('contact_info_sheet.index') }}" class="menu-link menu-toggle">
                                     <i class="flaticon-folder pr-3 pt-2">
                                         <span></span>
                                     </i>
                                     <span class="menu-text">Contact Information Sheet</span>
-                                </a>
-                                
-                            </li>
-                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="#" class="menu-link menu-toggle">
-                                    <i class="flaticon-folder pr-3 pt-2">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">School Last Attended Report</span>
                                 </a>
                                 
                             </li>

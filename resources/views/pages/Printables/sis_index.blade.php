@@ -975,7 +975,7 @@
 
                                             <div class="note-content">
                                                 <p><strong>I/We hereby certify that all information written in this
-                                                        enrollment form is true and
+                                                        form is true and
                                                         accurate. If accepted as student of Capellan Institute of
                                                         Technology San Pablo, we/I
                                                         shall abide with the school rules/policies. </strong></p>
