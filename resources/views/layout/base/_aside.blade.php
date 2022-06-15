@@ -243,7 +243,7 @@
                                 </span>
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="{{ route('yearly_report.index') }}" class="menu-link menu-toggle">
+                                <a href="{{ route('yearly_report.index') }}" class="menu-link menu-toggle py-2">
                                     <i class="flaticon-folder pr-3 pt-2">
                                         <span></span>
                                     </i>
@@ -252,16 +252,16 @@
                                 
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="{{ route('student_list.index') }}" class="menu-link menu-toggle">
+                                <a href="{{ route('student_list.index') }}" class="menu-link menu-toggle py-2">
                                     <i class="flaticon-folder pr-3 pt-2">
                                         <span></span>
                                     </i>
-                                    <span class="menu-text">Students List Report (Per Strand)</span>
+                                    <span class="menu-text">Students List Report</span>
                                 </a>
                                 
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="{{ route('document_submission.index') }}" class="menu-link menu-toggle">
+                                <a href="{{ route('document_submission.index') }}" class="menu-link menu-toggle py-2">
                                     <i class="flaticon-folder pr-3 pt-2">
                                         <span></span>
                                     </i>
@@ -270,7 +270,7 @@
                                 
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="{{ route('contact_info_sheet.index') }}" class="menu-link menu-toggle">
+                                <a href="{{ route('contact_info_sheet.index') }}" class="menu-link menu-toggle py-2">
                                     <i class="flaticon-folder pr-3 pt-2">
                                         <span></span>
                                     </i>
