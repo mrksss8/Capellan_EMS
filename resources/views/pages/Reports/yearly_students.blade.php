@@ -83,7 +83,8 @@
                 .appendTo('#example thead');
 
             var table = $('#example').DataTable({
-                dom: 'Bfrtip',
+                dom: "<'row'<'col-sm-12 col-md-12 d-flex justify-content-between'Bl>>" + "tipr",
+                
                 buttons: [
                     'copyHtml5',
                     'excelHtml5',

@@ -3,8 +3,8 @@
 
 {{-- Content --}}
 @section('styles')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.3/css/fixedHeader.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
 
     <style>
         thead input {
@@ -89,7 +89,7 @@
                 .appendTo('#example thead');
 
             var table = $('#example').DataTable({
-                dom: 'Bfrtip',
+                dom: "<'row'<'col-sm-12 col-md-12 d-flex justify-content-between'Bl>>" + "tipr",
                 buttons: [
                     'copyHtml5',
                     'excelHtml5',

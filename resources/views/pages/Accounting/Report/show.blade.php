@@ -34,11 +34,12 @@
                             </div>
 
                             <div class="text-end mt-3">
-                                <a href="{{ route('soa.index', $students->enrollment->student->id) }}" class="btn btn-clean btn-hover-light-primary">
+                                <a href="{{ route('soa.index', $students->enrollment->student->id) }}"
+                                    class="btn btn-clean btn-hover-light-primary">
                                     <i class="flaticon2-print"></i>
-                                    <span class = "text-primary">
+                                    <span class="text-primary">
                                         Print Statement of Account
-                                        </span>
+                                    </span>
                                 </a>
                             </div>
                         </div>
@@ -122,9 +123,13 @@
 
                                             <tr>
 
-                                                <td>
-                                                    date
-                                                </td>
+                                                @if ($bill_pay->billing_date = $bill_pay->billing_date)
+                                                    <td> {{ $bill_pay->billing_date }} </td>
+                                                @elseif ($bill_pay->transaction_date = $bill_pay->transaction_date)
+                                                    <td> {{ $bill_pay->transaction_date }} </td>
+                                                @else
+                                                    <td> {{ $bill_pay->memo_date }}</td>
+                                                @endif
 
                                                 @if ($bill_pay->billing_particulars = $bill_pay->billing_particulars)
                                                     <td> {{ $bill_pay->billing_particulars }} </td>
@@ -143,11 +148,11 @@
                                                     <td></td>
                                                 @else
                                                     @if ($bill_pay->memo_type == 'Debit')
-                                                    <td> {{ $bill_pay->memo_amt }} </td>
+                                                        <td> {{ $bill_pay->memo_amt }} </td>
                                                         <td></td>
                                                     @else
-                                                    <td></td>
-                                                    <td> {{ $bill_pay->memo_amt }} </td>
+                                                        <td></td>
+                                                        <td> {{ $bill_pay->memo_amt }} </td>
                                                     @endif
                                                 @endif
 
@@ -155,7 +160,7 @@
                                             </tr>
                                         @endforeach
                                         <tr>
-                                            <td></td>
+                                            <td colspan="5"></td>
                                         </tr>
                                         <tr>
                                             <td colspan="2"></td>

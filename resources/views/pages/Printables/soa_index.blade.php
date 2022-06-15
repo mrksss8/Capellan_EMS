@@ -116,13 +116,14 @@
         }
 
         .container .content .summary-of-transaction {
-            padding-top: 50px;
+            padding-top: 25px;
         }
 
 
-        .container .content .summary-of-transaction .transaction-table table {
+        table {
             border: 1px solid black;
             padding-top: 30px;
+            border-collapse: collapse
         }
 
         .container .content .transaction-table thead tr {
@@ -136,7 +137,7 @@
         .container .content .transaction-table th,
         .container .content .transaction-table td {
             border: 1px solid black;
-            padding: 3px 5px;
+
         }
 
         .container .content .transaction-table tbody tr {
@@ -151,7 +152,7 @@
 
         footer>h3 {
 
-            font-weight: 700;
+            font-weight: 500;
             font-style: italic;
             padding: 10px;
             padding-top: 0;
@@ -170,7 +171,7 @@
             font-weight: 700;
             margin: 30px 400px 0 400px;
             padding: 10px;
-           
+
             background-color: aliceblue;
 
         }
@@ -187,9 +188,8 @@
         <button>
             <span class="svg-icon svg-icon-primary svg-icon-2x">
                 <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Files/Download.svg--><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
-                    viewBox="0 0 24 24" version="1.1">
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                    height="24px" viewBox="0 0 24 24" version="1.1">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <rect x="0" y="0" width="24" height="24" />
                         <path
@@ -239,8 +239,11 @@
 
                 <div class="content">
                     <div class="student-info">
-                        <p>Name: <span>{{ $students->last_name }}, {{ $students->first_name }} {{ $students->middle_name }} {{ $students->extension }}</span></p>
-                        <p>Grade/Strand: <span>{{ $students->enrollment->grade_level->grade_level }} - {{ $students->enrollment->specialization->strand->strand }} ({{ $students->enrollment->specialization->specialization }})</span></p>
+                        <p>Name: <span>{{ $students->last_name }}, {{ $students->first_name }}
+                                {{ $students->middle_name }} {{ $students->extension }}</span></p>
+                        <p>Grade/Strand: <span>{{ $students->enrollment->grade_level->grade_level }} -
+                                {{ $students->enrollment->specialization->strand->strand }}
+                                ({{ $students->enrollment->specialization->specialization }})</span></p>
                     </div>
 
                     <div class="summary-of-transaction">
@@ -288,9 +291,13 @@
 
                                     <tr>
 
-                                        <td>
-                                            date
-                                        </td>
+                                        @if ($bill_pay->billing_date = $bill_pay->billing_date)
+                                            <td> {{ $bill_pay->billing_date }} </td>
+                                        @elseif ($bill_pay->transaction_date = $bill_pay->transaction_date)
+                                            <td> {{ $bill_pay->transaction_date }} </td>
+                                        @else
+                                            <td> {{ $bill_pay->memo_date }}</td>
+                                        @endif
 
                                         @if ($bill_pay->billing_particulars = $bill_pay->billing_particulars)
                                             <td> {{ $bill_pay->billing_particulars }} </td>
@@ -321,12 +328,14 @@
                                     </tr>
                                 @endforeach
                                 <tr>
-                                    <td></td>
+                                    <td colspan="5" style="padding: 10px 0 10px 0"></td>
                                 </tr>
                                 <tr>
+
                                     <td colspan="2"></td>
                                     <td><strong>Balance</strong></td>
                                     <td><strong>{{ $balance }}</strong></td>
+                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -338,7 +347,7 @@
                     </div>
                 </div> -->
                 <footer>
-                    <h3>Note: This report is system generated.</h3>
+                    <h3>--- This is a system generated report ---</h3>
                 </footer>
             </div>
         </div>

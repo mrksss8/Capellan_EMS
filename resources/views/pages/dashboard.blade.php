@@ -3,33 +3,33 @@
 
 {{-- Content --}}
 @section('styles')
+    <style>
+        #myChart {
+            height: 200;
+            width: 200;
+        }
 
-<style>
-    #myChart{
-        height: 200;
-        width: 200;
-    }
-    .background{
-        background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)),url('{{ asset('media/capellan/capellan-logo-ver2.png')}}');
-        background-size: cover;
-    }
-</style>
+        .background {
+            background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url('{{ asset('media/capellan/capellan-logo-ver2.png') }}');
+            background-size: cover;
+        }
+    </style>
 @endsection
 
 @section('content')
     <div class="background">
 
         <div class="row">
-        
-            <div class="col-6">
+
+            <div class="col-md-6 mt-5">
                 <div class="col-11 bg-light-success px-6 py-8 rounded-xl m-auto d-flex border border-primary">
                     <div class="col-6">
                         <span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
                             <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Layers.svg-->
                             <span class="svg-icon svg-icon-primary svg-icon-2x">
                                 <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Communication/Address-card.svg--><svg
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                                    height="24px" viewBox="0 0 24 24" version="1.1">
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                         <rect x="0" y="0" width="24" height="24" />
                                         <path
@@ -47,9 +47,9 @@
                         <h1 class="text-center text-primary  display-2 font-weight-bold">200</h1>
                     </div>
                 </div>
-                
-        
-        
+
+
+
                 {{-- <div class="col-12 bg-light-success px-6 py-8 rounded-xl mt-3">
                     <span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
                         <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Communication/Urgent-mail.svg-->
@@ -70,9 +70,9 @@
                     <a href="#" class="text-success font-weight-bold font-size-h6 mt-2">Total No. of Registered Teachers</a>
                 </div> --}}
                 <div class="col-11 bg-light-success px-6 py-8 rounded-xl mt-5 mx-auto d-flex border border-primary">
-        
+
                     <div class="col-6">
-        
+
                         <span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
                             <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Communication/Urgent-mail.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
@@ -95,94 +95,95 @@
                         <h1 class="text-center text-primary display-4 font-weight-bold">2020-2021</h1>
                     </div>
                 </div>
-                
+
             </div>
-        
-                <div class="col-6">
-                    <div class="col-12">
-                        <div class="card card-custom">
-                            <div class="card-header flex-wrap py-5">
-                                <div class="card-title">
-                                    <h3 class="card-label fw-bold">
-                                       Enrollment  per Strand/Specialization
-                                    </h3>
-                                </div>
-            
+
+            <div class="col-md-6 mt-5">
+                <div class="col-12">
+                    <div class="card card-custom">
+                        <div class="card-header flex-wrap py-5">
+                            <div class="card-title">
+                                <h3 class="card-label fw-bold">
+                                    Enrollment per Strand/Specialization
+                                </h3>
                             </div>
-                            <div class="card-body">
-                                <canvas id="myChart"></canvas>
-                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <canvas id="myChart"></canvas>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
-        {{-- GRADE 11 Table --}}
-                <div class="col-12 m-auto">
-        
-                    <table class="table table-active rounded table-bordered  mt-5" style="outline-style: solid; outline-width:2px;">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th class="text-center" colspan="4"> Grade 11 </th>
-                            </tr>
-                            <tr>
-                                <th scope="col">Strand/Specialization</th>
-                                <th scope="col">Male</th>
-                                <th scope="col">Female</th>
-                                <th scope="col">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-        {{-- GRADE 12 Table --}}
-                <div class="col-12 m-auto">
-        
-                    <table class="table table-active rounded table-bordered  mt-5" style="outline-style: solid; outline-width:2px;">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th class="text-center" colspan="4"> Grade 12 </th>
-                            </tr>
-                            <tr>
-                                <th scope="col">Strand/Specialization</th>
-                                <th scope="col">Male</th>
-                                <th scope="col">Female</th>
-                                <th scope="col">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+
+        <div class="row p-3">
+            {{-- GRADE 11 Table --}}
+            <div class="col-md-6 m-auto">
+
+                <table class="table table-active rounded table-bordered  mt-5"
+                    style="outline-style: solid; outline-width:2px;">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th class="text-center" colspan="4"> Grade 11 </th>
+                        </tr>
+                        <tr>
+                            <th>Strand/Specialization</th>
+                            <th>Male</th>
+                            <th>Female</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center">
+                            <th scope="row">(IA) - Electronic Products Assembly and Servicing NC II</th>
+                            <td>12</td>
+                            <td>21</td>
+                            <td>99</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {{-- GRADE 12 Table --}}
+            <div class="col-md-6 m-auto">
+
+                <table class="table table-active rounded table-bordered  mt-5"
+                    style="outline-style: solid; outline-width:2px;">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th class="text-center" colspan="4"> Grade 12 </th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Strand/Specialization</th>
+                            <th scope="col">Male</th>
+                            <th scope="col">Female</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-
-
-   
-   
 @endsection
 
 {{-- Scripts Section --}}
@@ -192,8 +193,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         const ctx = document.getElementById('myChart').getContext('2d');
-        ctx.height = 200; 
-        const labels =  ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']
+        ctx.height = 200;
+        const labels = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']
         const myChart = new Chart(ctx, {
             type: 'pie',
             data: {
