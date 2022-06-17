@@ -1,6 +1,18 @@
 {{-- Extends layout --}}
 @extends('layout.default')
 
+@section('styles')
+    <style>
+            #background {
+            background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url('{{ asset('media/capellan/capellan-logo-ver2.png') }}');
+            background-size: contain;
+            background-repeat:   no-repeat;
+            background-position: center center;  
+            
+        }
+    </style>
+@endsection
+
 {{-- Content --}}
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid pt-0" id="kt_content">
@@ -18,7 +30,7 @@
                     </h3>
                 </div>
             </div>
-            <div class="card-body">
+            <div class="card-body"  id="background">
 
                 <!--begin::Entry-->
                 <div class="d-flex flex-column-fluid">

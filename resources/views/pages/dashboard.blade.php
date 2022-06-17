@@ -11,7 +11,10 @@
 
         .background {
             background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url('{{ asset('media/capellan/capellan-logo-ver2.png') }}');
-            background-size: cover;
+            background-size: contain;
+            background-repeat:   no-repeat;
+            background-position: center center;  
+            
         }
     </style>
 @endsection
