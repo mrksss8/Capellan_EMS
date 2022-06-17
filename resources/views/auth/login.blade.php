@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     {{-- Favicon --}}
-    <link rel="shortcut icon" href="{{ asset('media/logos/favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ asset('media/logos/capellan_logo.png') }}" />
 
     {{-- Fonts --}}
     {{ Metronic::getGoogleFontsInclude() }}
@@ -47,13 +47,13 @@
         <div class="login login-2 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white" id="kt_login">
             <!--begin::Aside-->
             <div
-                class="login-aside order-2 order-lg-1 d-flex flex-column-fluid flex-lg-row-auto bgi-size-cover bgi-no-repeat p-7 p-lg-10">
+                class="login-aside order-2 order-lg-1 d-flex flex-column-fluid flex-lg-row-auto bgi-size-cover bgi-no-repeat p-7 p-lg-10 border border-secondary">
                 <!--begin: Aside Container-->
                 <div class="d-flex flex-row-fluid flex-column justify-content-between">
                     <!--begin::Aside body-->
                     <div class="d-flex flex-column-fluid flex-column flex-center mt-5 mt-lg-0">
                         <a href="#" class="mb-15 text-center">
-                            <img src="{{ asset('media/logos/logo-letter-1.png') }}" class="max-h-75px" alt="" />
+                            <img src="{{ asset('media/logos/capellan_logo.png') }}" class="max-h-75px" alt="" />
                         </a>
 
                         <!--begin::Signin-->
@@ -82,7 +82,7 @@
                                         placeholder="Password" name="password" id = "password"/>
                                 </div>
 
-                                <div
+                                {{-- <div
                                     class="form-group d-flex flex-wrap justify-content-between align-items-center mt-3">
                                     <div class="checkbox-inline">
                                         <label class="checkbox checkbox-outline m-0 text-muted">
@@ -93,14 +93,14 @@
                                     </div>
                                     <a href="javascript:;" id="kt_login_forgot"
                                         class="text-muted text-hover-primary">Forgot Password ?</a>
-                                </div>
+                                </div> --}}
 
                                 <div
                                     class="form-group d-flex flex-wrap justify-content-between align-items-center mt-2">
                                     <div class="my-3 mr-2">
-                                        <span class="text-muted mr-2">Don't have an account?</span>
+                                        {{-- <span class="text-muted mr-2">Don't have an account?</span> --}}
                                         <a href="{{ url('/register') }}" id="kt_login_signup" class="font-weight-bold">
-                                            Signup
+                                            Register
                                         </a>
                                     </div>
                                     <button class="btn btn-primary font-weight-bold px-9 py-4 my-3">Sign In</button>
@@ -184,13 +184,13 @@
                     <!--begin: Aside footer for desktop-->
                     <div class="d-flex flex-column-auto justify-content-between mt-15">
                         <div class="text-dark-50 font-weight-bold order-2 order-sm-1 my-2">
-                            &copy; 2020 Metronic
+                            &copy; 2022 CIT San Pablo
                         </div>
-                        <div class="d-flex order-1 order-sm-2 my-2">
+                        {{-- <div class="d-flex order-1 order-sm-2 my-2">
                             <a href="#" class="text-muted text-hover-primary">Privacy</a>
                             <a href="#" class="text-muted text-hover-primary ml-4">Legal</a>
                             <a href="#" class="text-muted text-hover-primary ml-4">Contact</a>
-                        </div>
+                        </div> --}}
                     </div>
                     <!--end: Aside footer for desktop-->
                 </div>
@@ -200,17 +200,17 @@
 
             <!--begin::Content-->
             <div class="order-1 order-lg-2 flex-column-auto flex-lg-row-fluid d-flex flex-column p-7"
-                style="background-image: url({{ asset('media/bg/bg-4.jpg') }});">
+                style="background-image: url({{ asset('media/capellan/capellan-new-building.jpg') }}); background-size: cover; background-repeat: no-repeat;">
                 <!--begin::Content body-->
-                <div class="d-flex flex-column-fluid flex-lg-center">
+                {{-- <div class="d-flex flex-column-fluid flex-lg-center">
                     <div class="d-flex flex-column justify-content-center">
-                        <h3 class="display-3 font-weight-bold my-7 text-white">Welcome to Metronic!</h3>
+                        <h3 class="display-3 font-weight-bold my-7 text-dark">Welcome to Metronic!</h3>
                         <p class="font-weight-bold font-size-lg text-white opacity-80">
                             The ultimate Bootstrap, Angular 8, React & VueJS admin theme<br />framework for next
                             generation web apps.
                         </p>
                     </div>
-                </div>
+                </div> --}}
                 <!--end::Content body-->
             </div>
             <!--end::Content-->

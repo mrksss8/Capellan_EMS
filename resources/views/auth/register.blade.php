@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     {{-- Favicon --}}
-    <link rel="shortcut icon" href="{{ asset('media/logos/favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ asset('media/logos/capellan_logo.png') }}" />
 
     {{-- Fonts --}}
     {{ Metronic::getGoogleFontsInclude() }}
@@ -48,13 +48,13 @@
             id="kt_login">
             <!--begin::Aside-->
             <div
-                class="login-aside order-2 order-lg-1 d-flex flex-column-fluid flex-lg-row-auto bgi-size-cover bgi-no-repeat p-7 p-lg-10">
+                class="login-aside order-2 order-lg-1 d-flex flex-column-fluid flex-lg-row-auto bgi-size-cover bgi-no-repeat p-7 p-lg-10 border border-secondary">
                 <!--begin: Aside Container-->
                 <div class="d-flex flex-row-fluid flex-column justify-content-between">
                     <!--begin::Aside body-->
                     <div class="d-flex flex-column-fluid flex-column flex-center mt-5 mt-lg-0">
                         <a href="#" class="mb-15 text-center">
-                            <img src="{{ asset('media/logos/logo-letter-1.png') }}" class="max-h-75px" alt="" />
+                            <img src="{{ asset('media/logos/capellan_logo.png') }}" class="max-h-75px" alt="" />
                         </a>
 
                         <!--begin::Signin-->
@@ -108,13 +108,34 @@
                         <div class="login-form login-signup">
                             <div class="text-center mb-10 mb-lg-20">
                                 <h3 class="">Sign Up</h3>
-                                <p class="text-muted font-weight-bold">Enter your details to create your account</p>
+                                <p class="text-muted font-weight-bold">Enter details for the new account</p>
                             </div>
 
                             <!--begin::Form-->
                             <form method="POST" action="{{ route('register') }}" class="form"
                                 novalidate="novalidate" id="kt_login_signup_form">
                                 @csrf
+                                <label>Role <span class="text-danger">*</span></label>
+                                <div class="form-group py-3 m-0">
+
+                                    <select class="custom-select custom-select-sm" name="sem">
+                                        <option selected disabled>Choose Role</option>
+                                            <option value="registrar">Registrar
+                                            </option>
+                                            <option value="accounting">Accounting
+                                            </option>
+                                            <option value="teacher">Teacher
+                                            </option>
+                                        
+                                    </select>
+                              
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
                                 <div class="form-group py-3 m-0">
                                     <input id="name"
                                         class="@error('name') is-invalid @enderror form-control h-auto border-0 px-0 placeholder-dark-75"
@@ -126,6 +147,9 @@
                                         </span>
                                     @enderror
                                 </div>
+
+                               
+
                                 <div class="form-group py-3 border-top m-0">
                                     <input id="email"
                                         class="@error('email') is-invalid @enderror form-control h-auto border-0 px-0 placeholder-dark-75"
@@ -152,7 +176,7 @@
                                         placeholder="Confirm password" name="password_confirmation" autocomplete="off" />
 
                                 </div>
-                                <div class="form-group mt-5">
+                                {{-- <div class="form-group mt-5">
                                     <div class="checkbox-inline">
                                         <label class="checkbox checkbox-outline">
                                             <input type="checkbox" name="agree" />
@@ -160,7 +184,7 @@
                                             I Agree the <a href="#" class="ml-1">terms and conditions</a>.
                                         </label>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="form-group d-flex flex-wrap flex-center">
                                     <button id="kt_login_signup_submit"
                                         class="btn btn-primary font-weight-bold px-9 py-4 my-3 mx-2">Submit</button>
@@ -201,13 +225,13 @@
                     <!--begin: Aside footer for desktop-->
                     <div class="d-flex flex-column-auto justify-content-between mt-15">
                         <div class="text-dark-50 font-weight-bold order-2 order-sm-1 my-2">
-                            &copy; 2020 Metronic
+                            &copy; 2022 CIT San Pablo
                         </div>
-                        <div class="d-flex order-1 order-sm-2 my-2">
+                        {{-- <div class="d-flex order-1 order-sm-2 my-2">
                             <a href="#" class="text-muted text-hover-primary">Privacy</a>
                             <a href="#" class="text-muted text-hover-primary ml-4">Legal</a>
                             <a href="#" class="text-muted text-hover-primary ml-4">Contact</a>
-                        </div>
+                        </div> --}}
                     </div>
                     <!--end: Aside footer for desktop-->
                 </div>
@@ -217,9 +241,9 @@
 
             <!--begin::Content-->
             <div class="order-1 order-lg-2 flex-column-auto flex-lg-row-fluid d-flex flex-column p-7"
-                style="background-image: url({{ asset('media/bg/bg-4.jpg') }});">
+                style="background-image: url({{ asset('media/capellan/capellan-new-building.jpg') }}); background-size: cover; background-repeat: no-repeat;">
                 <!--begin::Content body-->
-                <div class="d-flex flex-column-fluid flex-lg-center">
+                {{-- <div class="d-flex flex-column-fluid flex-lg-center">
                     <div class="d-flex flex-column justify-content-center">
                         <h3 class="display-3 font-weight-bold my-7 text-white">Welcome to Metronic!</h3>
                         <p class="font-weight-bold font-size-lg text-white opacity-80">
@@ -227,7 +251,7 @@
                             generation web apps.
                         </p>
                     </div>
-                </div>
+                </div> --}}
                 <!--end::Content body-->
             </div>
             <!--end::Content-->
