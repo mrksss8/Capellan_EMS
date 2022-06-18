@@ -25,9 +25,9 @@
         <div class="row">
 
             <div class="col-md-6 mt-5">
-                <div class="col-11 bg-light-success px-6 py-8 rounded-xl m-auto d-flex border border-primary">
+                <div class="col-11 bg-light-warning px-6 py-8 rounded-xl m-auto d-flex border border-primary">
                     <div class="col-6">
-                        <span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
+                        <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
                             <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Layers.svg-->
                             <span class="svg-icon svg-icon-primary svg-icon-2x">
                                 <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Communication/Address-card.svg--><svg
@@ -44,7 +44,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <a href="#" class="text-success font-weight-bold font-size-h4 mt-2">Enrolled Students</a>
+                        <a href="#" class="text-primary font-weight-bold font-size-h4 mt-2">Enrolled Students</a>
                     </div>
                     <div class="col-6 d-flex justify-content-center align-items-center">
                         <h1 class="text-center text-primary  display-2 font-weight-bold">200</h1>
@@ -72,11 +72,11 @@
                     </span>
                     <a href="#" class="text-success font-weight-bold font-size-h6 mt-2">Total No. of Registered Teachers</a>
                 </div> --}}
-                <div class="col-11 bg-light-success px-6 py-8 rounded-xl mt-5 mx-auto d-flex border border-primary">
+                <div class="col-11 bg-light-warning px-6 py-8 rounded-xl mt-5 mx-auto d-flex border border-primary">
 
                     <div class="col-6">
 
-                        <span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
+                        <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
                             <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Communication/Urgent-mail.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
                                 height="24px" viewBox="0 0 24 24" version="1.1">
@@ -92,7 +92,7 @@
                             </svg>
                             <!--end::Svg Icon-->
                         </span>
-                        <a href="#" class="text-success font-weight-bold font-size-h6 mt-2">Active School Year</a>
+                        <a href="#" class="text-primary font-weight-bold font-size-h6 mt-2">Active School Year</a>
                     </div>
                     <div class="col-6 d-flex justify-content-center align-items-center">
                         <h1 class="text-center text-primary display-4 font-weight-bold">2020-2021</h1>
@@ -171,7 +171,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">1</th>
+                            <th scope="row">(IA) - Electronic Products Assembly and Servicing NC II</th>
                             <td>Mark</td>
                             <td>Otto</td>
                             <td>@mdo</td>
