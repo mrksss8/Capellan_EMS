@@ -123,7 +123,7 @@
                             <div class="py-9">
                                 <div class="d-flex align-items-center justify-content-between mb-2">
                                     <span
-                                        class="font-weight-bold m-auto font-italic text-center">{{ $students->enrollment->student->last_name }},
+                                        class="font-weight-bold m-auto font-weight-bolder text-center">{{ $students->enrollment->student->last_name }},
                                         {{ $students->enrollment->student->first_name }}
                                         {{ $students->enrollment->student->middle_name }}
                                         {{ $students->enrollment->student->extension }}</span>
@@ -132,15 +132,15 @@
                                 </div>
                                 <div class="d-flex align-items-center mb-2 ">
                                     <span
-                                        class="font-weight-bold m-auto font-italic">{{ $students->enrollment->student->std_num }}</span>
+                                        class="font-weight-bold m-auto font-weight-bolder">{{ $students->enrollment->student->std_num }}</span>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mb-2">
                                     <span
-                                        class="font-weight-bold m-auto font-italic">{{ $students->enrollment->grade_level->grade_level }}</span>
+                                        class="font-weight-bold m-auto font-weight-bolder">{{ $students->enrollment->grade_level->grade_level }}</span>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mb-2">
                                     <span
-                                        class="font-weight-bold m-auto font-italic">{{ $students->enrollment->specialization->strand->track->track }}:
+                                        class="font-weight-bold m-auto font-weight-bolder">{{ $students->enrollment->specialization->strand->track->track }}:
                                         {{ $students->enrollment->specialization->strand->strand }}
                                         ({{ $students->enrollment->specialization->specialization }})</span>
                                 </div>
