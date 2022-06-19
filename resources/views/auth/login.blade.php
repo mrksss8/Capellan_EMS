@@ -200,7 +200,7 @@
 
             <!--begin::Content-->
             <div class="order-1 order-lg-2 flex-column-auto flex-lg-row-fluid d-flex flex-column p-7"
-                style="background-image: url({{ asset('media/capellan/capellan-new-building.jpg') }}); background-size: cover; background-repeat: no-repeat;">
+                style="background-image: url({{ asset('media/capellan/capellan-new-building-cropped.jpg') }}); background-size: cover; background-repeat: no-repeat;">
                 <!--begin::Content body-->
                 {{-- <div class="d-flex flex-column-fluid flex-lg-center">
                     <div class="d-flex flex-column justify-content-center">
