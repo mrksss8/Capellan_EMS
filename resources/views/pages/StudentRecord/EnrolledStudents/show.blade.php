@@ -20,15 +20,16 @@
                             <!--begin::Toolbar-->
                             <div class="d-flex justify-content-center">
                                 <div class="dropdown dropdown-inline">
-                                    <a href="{{ route('sis.index', $students->enrollment->student->id) }}" class="btn btn-clean btn-hover-light-primary">
-                                    <span class = "text-primary">
-                                        Print Student Information
+                                    <a href="{{ route('sis.index', $students->enrollment->student->id) }}"
+                                        class="btn btn-clean btn-hover-light-primary">
+                                        <span class="text-primary">
+                                            Print Student Information
                                         </span>
                                         <i class="flaticon2-printer"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
                                         <!--begin::Navigation-->
-                                       {{-- <ul class="navi navi-hover py-5">
+                                        {{-- <ul class="navi navi-hover py-5">
                                             <li class="navi-item">
                                                 <a href="{{ route('sis.index', $students->enrollment->student->id) }}" class="navi-link">
                                                     <span class="navi-icon">
@@ -94,7 +95,7 @@
                                                     </span>
                                                 </a>
                                             </li> 
-                                        </ul>--}}
+                                        </ul> --}}
                                         <!--end::Navigation-->
                                     </div>
                                 </div>
@@ -121,18 +122,27 @@
                             <!--begin::Contact-->
                             <div class="py-9">
                                 <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <span class="font-weight-bold m-auto font-italic">{{ $students->enrollment->student->last_name }}, {{ $students->enrollment->student->first_name }} {{ $students->enrollment->student->middle_name }} {{ $students->enrollment->student->extension }}</span>
-                                    
+                                    <span
+                                        class="font-weight-bold m-auto font-weight-bolder text-center">{{ $students->enrollment->student->last_name }},
+                                        {{ $students->enrollment->student->first_name }}
+                                        {{ $students->enrollment->student->middle_name }}
+                                        {{ $students->enrollment->student->extension }}</span>
+
                                     {{-- <p class="text-muted text-hover-primary">{{$students->enrollment->student->last_name}}, {{$students->enrollment->student->first_name}} {{$students->enrollment->student->middle_name}} {{$students->enrollment->student->extension}}</p> --}}
                                 </div>
                                 <div class="d-flex align-items-center mb-2 ">
-                                    <span class="font-weight-bold m-auto font-italic">{{ $students->enrollment->student->std_num }}</span>
+                                    <span
+                                        class="font-weight-bold m-auto font-weight-bolder">{{ $students->enrollment->student->std_num }}</span>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <span class="font-weight-bold m-auto font-italic">{{ $students->enrollment->grade_level->grade_level }}</span>
+                                    <span
+                                        class="font-weight-bold m-auto font-weight-bolder">{{ $students->enrollment->grade_level->grade_level }}</span>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <span class="font-weight-bold m-auto font-italic">{{ $students->enrollment->specialization->strand->track->track }}: {{ $students->enrollment->specialization->strand->strand }} ({{ $students->enrollment->specialization->specialization }})</span>
+                                    <span
+                                        class="font-weight-bold m-auto font-weight-bolder">{{ $students->enrollment->specialization->strand->track->track }}:
+                                        {{ $students->enrollment->specialization->strand->strand }}
+                                        ({{ $students->enrollment->specialization->specialization }})</span>
                                 </div>
                             </div>
                             <!--end::Contact-->
@@ -226,6 +236,31 @@
                                     </li>
                                     {{-- <li role="presentation" class="navi-link py-4"><a href="#settings"
                                             aria-controls="settings" role="tab" data-toggle="tab">Documents</a></li> --}}
+
+                                    <li role="presentation" class="navi-link py-4">
+
+                                        <span class="svg-icon svg-icon-2x px-4">
+                                            <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Communication/Mail-attachment.svg--><svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                                viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24" />
+                                                    <path
+                                                        d="M14.8571499,13 C14.9499122,12.7223297 15,12.4263059 15,12.1190476 L15,6.88095238 C15,5.28984632 13.6568542,4 12,4 L11.7272727,4 C10.2210416,4 9,5.17258756 9,6.61904762 L10.0909091,6.61904762 C10.0909091,5.75117158 10.823534,5.04761905 11.7272727,5.04761905 L12,5.04761905 C13.0543618,5.04761905 13.9090909,5.86843034 13.9090909,6.88095238 L13.9090909,12.1190476 C13.9090909,12.4383379 13.8240964,12.7385644 13.6746497,13 L10.3253503,13 C10.1759036,12.7385644 10.0909091,12.4383379 10.0909091,12.1190476 L10.0909091,9.5 C10.0909091,9.06606198 10.4572216,8.71428571 10.9090909,8.71428571 C11.3609602,8.71428571 11.7272727,9.06606198 11.7272727,9.5 L11.7272727,11.3333333 L12.8181818,11.3333333 L12.8181818,9.5 C12.8181818,8.48747796 11.9634527,7.66666667 10.9090909,7.66666667 C9.85472911,7.66666667 9,8.48747796 9,9.5 L9,12.1190476 C9,12.4263059 9.0500878,12.7223297 9.14285008,13 L6,13 C5.44771525,13 5,12.5522847 5,12 L5,3 C5,2.44771525 5.44771525,2 6,2 L18,2 C18.5522847,2 19,2.44771525 19,3 L19,12 C19,12.5522847 18.5522847,13 18,13 L14.8571499,13 Z"
+                                                        fill="#000000" opacity="0.3" />
+                                                    <path
+                                                        d="M9,10.3333333 L9,12.1190476 C9,13.7101537 10.3431458,15 12,15 C13.6568542,15 15,13.7101537 15,12.1190476 L15,10.3333333 L20.2072547,6.57253826 C20.4311176,6.4108595 20.7436609,6.46126971 20.9053396,6.68513259 C20.9668779,6.77033951 21,6.87277228 21,6.97787787 L21,17 C21,18.1045695 20.1045695,19 19,19 L5,19 C3.8954305,19 3,18.1045695 3,17 L3,6.97787787 C3,6.70173549 3.22385763,6.47787787 3.5,6.47787787 C3.60510559,6.47787787 3.70753836,6.51099993 3.79274528,6.57253826 L9,10.3333333 Z M10.0909091,11.1212121 L12,12.5 L13.9090909,11.1212121 L13.9090909,12.1190476 C13.9090909,13.1315697 13.0543618,13.952381 12,13.952381 C10.9456382,13.952381 10.0909091,13.1315697 10.0909091,12.1190476 L10.0909091,11.1212121 Z"
+                                                        fill="#000000" />
+                                                </g>
+                                            </svg>
+                                            <!--end::Svg Icon-->
+                                        </span>
+
+
+                                        <a href="#documents" aria-controls="documents" role="tab" data-toggle="tab"><span
+                                                class="navi-text">Documents Submission</span></a>
+                                    </li>
                                 </ul>
 
 
@@ -256,9 +291,11 @@
                                     information.</span> --}}
                             </div>
                             <div class="card-toolbar">
-                                <a class="btn btn-success mr-2" href="{{route('enrolled_student.edit', $students->enrollment->student->id)}}"> <span class="menu-icon flaticon-edit-1">
-                                </span>
-                                Edit Info</a>
+                                <a class="btn btn-success mr-2"
+                                    href="{{ route('enrolled_student.edit', $students->enrollment->student->id) }}"> <span
+                                        class="menu-icon flaticon-edit-1">
+                                    </span>
+                                    Edit Info</a>
                                 {{-- <button type="reset" class="btn btn-secondary">Cancel</button> --}}
                             </div>
                         </div>
@@ -267,7 +304,7 @@
                         <form class="form">
                             <!--begin::Body-->
                             <div class="card-body">
-                               
+
 
 
 
@@ -292,7 +329,8 @@
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Last Name</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->last_name }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->last_name }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -301,7 +339,8 @@
                                                         <label class="col-xl-3 col-lg-12 col-form-label">First Name</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->first_name }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->first_name }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -309,15 +348,18 @@
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Middle Name</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->middle_name }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->middle_name }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Extension Name</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">Extension
+                                                            Name</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->extension }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->extension }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -325,7 +367,8 @@
                                                         <label class="col-xl-3 col-lg-12 col-form-label">LRN</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->lrn }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->lrn }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -333,7 +376,8 @@
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Birthday</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->b_date }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->b_date }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -341,7 +385,8 @@
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Age</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->age }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->age }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -349,15 +394,18 @@
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Sex</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->sex }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->sex }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Civil Status</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">Civil
+                                                            Status</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->civil_status }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->civil_status }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -365,30 +413,35 @@
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Nationality</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->nationality }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->nationality }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Contact Number</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">Contact
+                                                            Number</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->contact_num }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->contact_num }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
-														<label class="col-xl-3"></label>
-														<div class="col-lg-9 col-xl-6">
-															<h5 class="font-weight-bold mt-10 mb-6">Address</h5>
-														</div>
-													</div>
+                                                        <label class="col-xl-3"></label>
+                                                        <div class="col-lg-9 col-xl-6">
+                                                            <h5 class="font-weight-bold mt-10 mb-6">Address</h5>
+                                                        </div>
+                                                    </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">House Number/Street</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">House
+                                                            Number/Street</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->house_num }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->house_num }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -396,7 +449,8 @@
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Purok</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->purok }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->purok }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -404,15 +458,18 @@
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Barangay</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->brgy }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->brgy }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Municipality</label>
+                                                        <label
+                                                            class="col-xl-3 col-lg-12 col-form-label">Municipality</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->municipality }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->municipality }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -420,7 +477,8 @@
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Province</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->province }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->province }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -433,165 +491,230 @@
                                                     <div class="row">
                                                         <label class="col-xl-3"></label>
                                                         <div class="col-lg-9 col-xl-6">
-                                                            <h5 class="font-weight-bold mb-6">Parents/Guardian Information</h5>
+                                                            <h5 class="font-weight-bold mb-6">Parents/Guardian Information
+                                                            </h5>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Father's Name</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">Father's
+                                                            Name</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->f_name }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->f_name }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Father's Occupation</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">Father's
+                                                            Occupation</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->f_occu }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->f_occu }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Mother's Name</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">Mother's
+                                                            Name</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->m_name }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->m_name }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Mother's Occupation</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">Mother's
+                                                            Occupation</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->m_occu }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->m_occu }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Guardian's Name</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">Guardian's
+                                                            Name</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->g_name }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->g_name }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Relationship</label>
+                                                        <label
+                                                            class="col-xl-3 col-lg-12 col-form-label">Relationship</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->relationship }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->relationship }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Guardian's Contact Number</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">Guardian's Contact
+                                                            Number</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->g_contact_num }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->g_contact_num }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Guardian's Address</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">Guardian's
+                                                            Address</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->g_add }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->g_add }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
 
                                                 </div>
 
-
+                                                <!-- School Information -->
                                                 <div role="tabpanel" class="tab-pane" id="school">
                                                     <div class="row">
                                                         <label class="col-xl-3"></label>
                                                         <div class="col-lg-9 col-xl-6">
-                                                            <h5 class="font-weight-bold mb-6">Previous School Information</h5>
+                                                            <h5 class="font-weight-bold mb-6">Previous School Information
+                                                            </h5>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">School Last Attended</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">School Last
+                                                            Attended</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->prev_school }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->prev_school }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">No. of Years in JHS</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">No. of Years in
+                                                            JHS</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->jhs_yrs }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->jhs_yrs }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Year Graduated</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">Year
+                                                            Graduated</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->year_grad }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->year_grad }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">General Average</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">General
+                                                            Average</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
-                                                                type="text" value="{{ $students->enrollment->student->gen_ave }}"
+                                                                type="text"
+                                                                value="{{ $students->enrollment->student->gen_ave }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
 
-                                                  
-                                                        <br>
-                                                        <div class="table-responsive mt-5">
-                                      <!--begin: Datatable-->
-                                      <table class="table table-separate table-head-custom mt-4" id="example">
-                                        <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th></th>
-                                                <th>Year Graduated</th>
-                                            </tr>
-                                        </thead>
-                        
-                                        <tbody>
-                                                <tr>
-                                                    <td class="font-weight-bolder">Primary Grade</td>
-                                                    <td>{{ $students->enrollment->student->prim_grade }}</td>
-                                                   <td>{{ $students->enrollment->student->prim_grade_yr }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="font-weight-bolder">Intermediate Grade</td>
-                                                    <td>{{ $students->enrollment->student->intermediate }}</td>
-                                                   <td>{{ $students->enrollment->student->intermediate_yr }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="font-weight-bolder">Junior High School</td>
-                                                    <td>{{ $students->enrollment->student->junior_hs }}</td>
-                                                   <td>{{ $students->enrollment->student->junior_hs_yr }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="font-weight-bolder">Senior High School</td>
-                                                    <td>{{ $students->enrollment->student->sr_hs }}</td>
-                                                   <td>{{ $students->enrollment->student->sr_hs_yr }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="font-weight-bolder">College</td>
-                                                    <td>{{ $students->enrollment->student->college }}</td>
-                                                   <td>{{ $students->enrollment->student->college_yr }}</td>
-                                                </tr>
-                                        </tbody>
-                        
-                                    </table>
-                                    <!--end: Datatable-->
+
+                                                    <br>
+                                                    <div class="table-responsive mt-5">
+                                                        <!--begin: Datatable-->
+                                                        <table class="table table-separate table-head-custom mt-4"
+                                                            id="example">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th>Year Graduated</th>
+                                                                </tr>
+                                                            </thead>
+
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="font-weight-bolder">Primary Grade</td>
+                                                                    <td>{{ $students->enrollment->student->prim_grade }}
+                                                                    </td>
+                                                                    <td>{{ $students->enrollment->student->prim_grade_yr }}
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="font-weight-bolder">Intermediate Grade</td>
+                                                                    <td>{{ $students->enrollment->student->intermediate }}
+                                                                    </td>
+                                                                    <td>{{ $students->enrollment->student->intermediate_yr }}
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="font-weight-bolder">Junior High School</td>
+                                                                    <td>{{ $students->enrollment->student->junior_hs }}
+                                                                    </td>
+                                                                    <td>{{ $students->enrollment->student->junior_hs_yr }}
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="font-weight-bolder">Senior High School</td>
+                                                                    <td>{{ $students->enrollment->student->sr_hs }}</td>
+                                                                    <td>{{ $students->enrollment->student->sr_hs_yr }}
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="font-weight-bolder">College</td>
+                                                                    <td>{{ $students->enrollment->student->college }}
+                                                                    </td>
+                                                                    <td>{{ $students->enrollment->student->college_yr }}
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+
+                                                        </table>
+                                                        <!--end: Datatable-->
                                                     </div>
-              
+
 
                                                 </div>
-                                                <div role="tabpanel" class="tab-pane" id="settings">Settings</div>
+
+                                                <!-- Documents Information -->
+                                                <div role="tabpanel" class="tab-pane" id="documents">
+                                                    <div class="row">
+                                                        <label class="col-xl-3"></label>
+                                                        <div class="col-lg-9 col-xl-6">
+                                                            <h5 class="font-weight-bold mb-6">Documents Submission</h5>
+                                                        </div>
+                                                    </div>
+
+                                                    <ul class="list-group pl-5">
+                                                        <li class="list-group-item mx-5"><p class="font-weight-bolder mb-0">Form 137: <span class="text-primary">Submitted</span></p></li>
+                                                        <li class="list-group-item mx-5"><p class="font-weight-bolder mb-0">NSO/PSA: <span class="text-danger">Not Submitted</span></p></li>
+                                                        <li class="list-group-item mx-5"><p class="font-weight-bolder mb-0">JHS Certificate: <span class="text-danger">Not Submitted</span></p></li>
+                                                        <li class="list-group-item mx-5"><p class="font-weight-bolder mb-0">Certificate of Good Moral: <span class="text-danger">Not Submitted</span></p></li>
+                                                        <li class="list-group-item mx-5"><p class="font-weight-bolder mb-0">Card: <span class="text-danger">Not Submitted</span></p></li>
+                                                    </ul>
+
+
+
+                                                    <div class="d-flex justify-content-end mt-5">
+                                                            <button type="button" class="btn btn-success mr-2" data-toggle="modal"
+                                                            data-target="#submitDocument">
+                                                            <span
+                                                                    class="menu-icon 
+                                                                    flaticon-folder">
+                                                            </span>
+                                                                Submit Document</button>
+                                                    </div>
+                                                </div>
                                             </div>
 
                                         </div>
@@ -605,7 +728,99 @@
                     </div>
                 </div>
 
+                 <!-- Documents Modal-->
+    <div class="modal fade" id="submitDocument" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Requirements/Documents</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <form action="#" method="POST">
+                <div class="modal-body">
+                    @csrf
+                    <div class="form-group">
+                        <div class="checkbox-list">
+                            <div class="row my-4">
+                                <div class="col-6">
+                                    <label class="checkbox checkbox-primary">
+                                        <input type="checkbox" name="Checkboxes11">
+                                        <span></span>Form 137</label>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="file" name="form137file">
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="row my-4">
+                                <div class="col-6">
+                                    <label class="checkbox checkbox-primary">
+                                        <input type="checkbox" name="Checkboxes11">
+                                        <span></span>NSO/PSA</label>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="file" name="nsopsafile">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row my-4">
+                                <div class="col-6">
+                                    <label class="checkbox checkbox-primary">
+                                        <input type="checkbox" name="Checkboxes11">
+                                        <span></span>JHS Certificate</label>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="file" name="jhscertfile">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row my-4">
+                                <div class="col-6">
+                                    <label class="checkbox checkbox-primary">
+                                        <input type="checkbox" name="Checkboxes11">
+                                        <span></span>Certificate of Good Moral</label>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="file" name="goodmoralfile">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row my-4">
+                                <div class="col-6">
+                                    <label class="checkbox checkbox-primary">
+                                        <input type="checkbox" name="Checkboxes11">
+                                        <span></span>Card</label>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="file" name="cardfile">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-primary font-weight-bold"
+                        data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary font-weight-bold">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
             </div>
             <!--end::Content-->
