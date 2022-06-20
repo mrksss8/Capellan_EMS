@@ -1,6 +1,18 @@
 {{-- Extends layout --}}
 @extends('layout.default')
 
+@section('styles')
+    <style>
+            #background {
+            background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url('{{ asset('media/capellan/capellan-logo-ver2.png') }}');
+            background-size: contain;
+            background-repeat:   no-repeat;
+            background-position: center center;  
+            
+        }
+    </style>
+@endsection
+
 {{-- Content --}}
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid pt-0" id="kt_content">
@@ -10,15 +22,15 @@
             <div class="card-header">
                 <div class="card-title">
                     <span class="card-icon">
-                        <i class="flaticon2-chat-1 text-primary"></i>
+                        <i class="flaticon-profile-1 text-primary"></i>
                     </span>
                     <h3 class="card-label">
-                        Tracks
-                        <small>sub title</small>
+                        Enroll New Student
+                        {{-- <small>sub title</small> --}}
                     </h3>
                 </div>
             </div>
-            <div class="card-body">
+            <div class="card-body"  id="background">
 
                 <!--begin::Entry-->
                 <div class="d-flex flex-column-fluid">
@@ -31,8 +43,8 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="lrn">LRN</label>
-                                        <input type="number" class="form-control" id="lrn" name="lrn" placeholder="LRN">
+                                        <label for="lrn"> <span class="text-danger">*</span> LRN</label>
+                                        <input type="number" class="form-control" id="lrn" name="lrn" placeholder="LRN" required>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -44,11 +56,11 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label for="section">
+                                    <label for="section"> <span class="text-danger">*</span>
                                         {{-- <span class="text-danger">*</span> --}}
                                         School Year
                                     </label>
-                                    <select class="custom-select custom-select-sm" name="school_year">
+                                    <select class="custom-select custom-select-sm" name="school_year" required>
                                         <option selected disabled>Choose School Year</option>
                                         @foreach ($schoolyears as $schoolyear)
                                             <option value="{{ $schoolyear->id }}">{{ $schoolyear->school_year }}
@@ -58,11 +70,11 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label for="section">
+                                    <label for="section"> <span class="text-danger">*</span>
                                         {{-- <span class="text-danger">*</span> --}}
                                         Semester
                                     </label>
-                                    <select class="custom-select custom-select-sm" name="sem">
+                                    <select class="custom-select custom-select-sm" name="sem" required>
                                         <option selected disabled>Choose Sem</option>
                                         @foreach ($sems as $sem)
                                             <option value="{{ $sem->id }}">Semester {{ $sem->sem }}
@@ -78,11 +90,11 @@
                             <div class="row">
 
                                 <div class="col-md-3">
-                                    <label for="grade">
+                                    <label for="grade"> <span class="text-danger">*</span>
                                         {{-- <span class="text-danger">*</span> --}}
                                         Grade
                                     </label>
-                                    <select class="custom-select custom-select-sm" name="grade_level">
+                                    <select class="custom-select custom-select-sm" name="grade_level" required>
                                         <option selected disabled>Choose Grade level</option>
                                         @foreach ($gradelevels as $gradelevel)
                                             <option value="{{ $gradelevel->id }}">{{ $gradelevel->grade_level }}
@@ -91,7 +103,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3">
-                                    <label for="track">Track:</label>
+                                    <label for="track"><span class="text-danger">*</span> Track:</label>
                                     {{-- <select class="custom-select custom-select-sm" name="track">
 
                                         <option selected disabled>Choose Track</option>
@@ -101,7 +113,7 @@
 
                                     </select> --}}
 
-                                    <select name="track" id="track" class="form-control">
+                                    <select name="track" id="track" class="form-control" required>
                                         <option selected disabled>Select Track</option>
                                         @foreach ($tracks as $track)
                                             <option value="{{ $track->id }}">{{ $track->track }}</option>
@@ -121,8 +133,8 @@
 
                                     </select> --}}
                                     <div class="form-group">
-                                        <label for="strand">Strand:</label>
-                                        <select name="strand" id="strand" class="form-control"></select>
+                                        <label for="strand"> <span class="text-danger">*</span> Strand:</label>
+                                        <select name="strand" id="strand" class="form-control" required></select>
                                     </div>
 
                                 </div>
@@ -140,8 +152,8 @@
 
                                     </select> --}}
                                     <div class="form-group">
-                                        <label for="specialization">Specialization:</label>
-                                        <select name="specialization" id="specialization" class="form-control"></select>
+                                        <label for="specialization"><span class="text-danger">*</span> Specialization:</label>
+                                        <select name="specialization" id="specialization" class="form-control" required></select>
                                     </div>
                                 </div>
                             </div>
@@ -157,17 +169,17 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="last_name">Last Name</label>
+                                        <label for="last_name"><span class="text-danger">*</span> Last Name</label>
                                         <input type="text" class="form-control" id="last_name" name="last_name"
-                                            placeholder="Last Name">
+                                            placeholder="Last Name" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="first_name">First Name</label>
+                                        <label for="first_name"> <span class="text-danger">*</span> First Name</label>
                                         <input type="text" class="form-control" id="first_name" name="first_name"
-                                            placeholder="First Name">
+                                            placeholder="First Name" required>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -189,23 +201,23 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="civil_status">Civil Status</label>
+                                        <label for="civil_status"><span class="text-danger">*</span> Civil Status</label>
                                         <input type="text" class="form-control" id="civil_status" name="civil_status"
-                                            placeholder="Civil Status">
+                                            placeholder="Civil Status" required>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="age">Age</label>
-                                        <input type="number" class="form-control" id="age" name="age" placeholder="Age">
+                                        <label for="age"><span class="text-danger">*</span> Age</label>
+                                        <input type="number" class="form-control" id="age" name="age" placeholder="Age" required>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="sex">
                                         {{-- <span class="text-danger">*</span> --}}
-                                        Sex
+                                        <span class="text-danger">*</span> Sex
                                     </label>
-                                    <select class="custom-select custom-select-sm" name="sex">
+                                    <select class="custom-select custom-select-sm" name="sex" required>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
                                     </select>
@@ -215,16 +227,16 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="nationality">Nationality</label>
+                                        <label for="nationality"><span class="text-danger">*</span> Nationality</label>
                                         <input type="text" class="form-control" id="nationality" name="nationality"
-                                            placeholder="Nationality">
+                                            placeholder="Nationality" required>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="b_date">Birthdate</label>
+                                        <label for="b_date"><span class="text-danger">*</span> Birthdate</label>
                                         <input type="date" class="form-control" id="b_date" name="b_date"
-                                            placeholder="Birthdate">
+                                            placeholder="Birthdate" required>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -256,9 +268,9 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="brgy">Barangay</label>
+                                        <label for="brgy"><span class="text-danger">*</span> Barangay</label>
                                         <input type="text" class="form-control" id="brgy" name="brgy"
-                                            placeholder="Barangay">
+                                            placeholder="Barangay" required>
                                     </div>
                                 </div>
                             </div>
@@ -266,16 +278,16 @@
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="municipality">Municipality</label>
+                                        <label for="municipality"><span class="text-danger">*</span> Municipality</label>
                                         <input type="text" class="form-control" id="municipality" name="municipality"
-                                            placeholder="Municipality">
+                                            placeholder="Municipality" required>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="province">Province</label>
+                                        <label for="province"><span class="text-danger">*</span> Province</label>
                                         <input type="text" class="form-control" id="province" name="province"
-                                            placeholder="Province">
+                                            placeholder="Province" required>
                                     </div>
                                 </div>
                             </div>
@@ -326,9 +338,9 @@
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="g_name">Guardian's Name</label>
+                                        <label for="g_name"><span class="text-danger">*</span> Guardian's Name</label>
                                         <input type="text" class="form-control" id="g_name" name="g_name"
-                                            placeholder="Guardian's Name">
+                                            placeholder="Guardian's Name" required>
                                         <small id="labelg_name" class="form-text text-info font-italic">(Last Name, First
                                             Name,
                                             Middle Name)</small>
@@ -336,16 +348,16 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="relationship">Relationship</label>
+                                        <label for="relationship"><span class="text-danger">*</span> Relationship</label>
                                         <input type="text" class="form-control" id="relationship" name="relationship"
-                                            placeholder="Relationship">
+                                            placeholder="Relationship" required>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="g_contact_num">Contact No. of Guardian</label>
+                                        <label for="g_contact_num"><span class="text-danger">*</span> Contact No. of Guardian</label>
                                         <input type="number" class="form-control" id="g_contact_num" name="g_contact_num"
-                                            placeholder="Contact No. of Guardian">
+                                            placeholder="Contact No. of Guardian" required>
                                     </div>
                                 </div>
                             </div>
@@ -353,9 +365,9 @@
                             <div class="row justify-content-center">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="g_add">Address of Guardian</label>
+                                        <label for="g_add"><span class="text-danger">*</span> Address of Guardian</label>
                                         <input type="text" class="form-control" id="g_add" name="g_add"
-                                            placeholder="Address of Guardian">
+                                            placeholder="Address of Guardian" required>
                                         <small id="labelg_address" class="form-text text-info font-italic">(House
                                             No./Street)
                                             (Purok) (Barangay) (Municipality) (Province)</small>
@@ -380,23 +392,23 @@
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="jhs_yrs">No. of Years in JHS</label>
+                                        <label for="jhs_yrs"><span class="text-danger">*</span> No. of Years in JHS</label>
                                         <input type="text" class="form-control" id="jhs_yrs" name="jhs_yrs"
-                                            placeholder="No. of Years in JHS">
+                                            placeholder="No. of Years in JHS" required>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="year_grad">Year Graduated</label>
+                                        <label for="year_grad"><span class="text-danger">*</span> Year Graduated</label>
                                         <input type="text" class="form-control" id="year_grad" name="year_grad"
-                                            placeholder="Year Graduated">
+                                            placeholder="Year Graduated" required>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="gen_ave">General Average</label>
+                                        <label for="gen_ave"><span class="text-danger">*</span> General Average</label>
                                         <input type="text" class="form-control" id="gen_ave" name="gen_ave"
-                                            placeholder="General Average">
+                                            placeholder="General Average" required>
                                     </div>
                                 </div>
                             </div>

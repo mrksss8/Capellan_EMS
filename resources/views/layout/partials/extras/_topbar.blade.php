@@ -178,7 +178,7 @@
     @endif
 
     {{-- Languages --}}
-    @if (config('layout.extras.languages.display'))
+    {{-- @if (config('layout.extras.languages.display'))
         <div class="dropdown">
             <div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px">
                 <div class="btn btn-icon btn-clean btn-dropdown btn-lg mr-1">
@@ -191,7 +191,7 @@
                 @include('layout.partials.extras.dropdown._languages')
             </div>
         </div>
-    @endif
+    @endif --}}
 
     {{-- User --}}
     @if (config('layout.extras.user.display'))
