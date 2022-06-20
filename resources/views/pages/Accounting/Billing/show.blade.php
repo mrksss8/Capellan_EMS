@@ -343,16 +343,17 @@
                                     <span class="form-text text-muted">Allowed file types: png, jpg, jpeg.</span>
                                 </div>
                             </div> --}}
-                            <div class="form-group row">
-                                <label class="col-xl-3 col-lg-3 col-form-label">Student ID</label>
-                                <div class="col-lg-9 col-xl-6">
-                                    <input class="form-control form-control-lg form-control-solid" type="text" value="{{$students->id}}" disabled>
-                                </div>
-                            </div>
+                            
                             <div class="form-group row">
                                 <label class="col-xl-3 col-lg-3 col-form-label">Name of Student</label>
                                 <div class="col-lg-9 col-xl-6">
                                     <input class="form-control form-control-lg form-control-solid" type="text" value="{{$students->last_name}}, {{$students->first_name}} {{$students->middle_name}} {{$students->extension}}" disabled>
+                                </div>
+                            </div> 
+                            <div class="form-group row">
+                                <label class="col-xl-3 col-lg-3 col-form-label">Grade/Strand/Specialization</label>
+                                <div class="col-lg-9 col-xl-6">
+                                    <input class="form-control form-control-lg form-control-solid" type="text" value="{{$students->enrollment->grade_level->grade_level}} - {{$students->enrollment->specialization->strand->strand}}/{{$students->enrollment->specialization->specialization}}" disabled>
                                 </div>
                             </div> 
 
@@ -388,7 +389,7 @@
     </thead>
 
     <tbody>
-         @foreach ($billings as $billing)
+         @foreach ($students->billings as $billing)
             <tr>
                 <td>{{$billing->billing_particulars}}</td>
                 <td>{{$billing->billing_amt}}</td>
