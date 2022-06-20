@@ -16,7 +16,8 @@ class MemoController extends Controller
     }
     public function show($id){
 
-        $students = Student::with('memos')->findorfail($id);
+        $students = Student::with('memos','enrollment')->findorfail($id);
+
         return view('pages.Accounting.Memo.show',compact('students'));
 
     }
