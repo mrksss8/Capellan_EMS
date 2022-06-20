@@ -122,6 +122,11 @@ Route::group([ 'prefix' => 'reports', 'middleware' => 'auth'], function() {
     Route::get('/contact_info_sheet',[App\Http\Controllers\ReportController::class, 'contact_info_sheet_index'])->name('contact_info_sheet.index');
 });
 
+//Alumni
+Route::group([ 'prefix' => 'alumni', 'middleware' => 'auth'], function() {
+    Route::get('/index',[App\Http\Controllers\AlumniController::class, 'index'])->name('alumni.index');
+});
+
 
 // Enrollment Form
  Route::get('/enrollmentForm', function () {
