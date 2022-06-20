@@ -127,6 +127,10 @@ Route::group([ 'prefix' => 'alumni', 'middleware' => 'auth'], function() {
     Route::get('/index',[App\Http\Controllers\AlumniController::class, 'index'])->name('alumni.index');
 });
 
+//Dropouts
+Route::group([ 'prefix' => 'dropout', 'middleware' => 'auth'], function() {
+    Route::get('/index',[App\Http\Controllers\DropoutController::class, 'index'])->name('dropout.index');
+});
 
 // Enrollment Form
  Route::get('/enrollmentForm', function () {
