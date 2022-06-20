@@ -34,7 +34,8 @@
         </div>
 
         <div class="background">
-
+            <form action="{{ route('enroll_existing_student.store') }}" method="POST">
+                @csrf
             <div class="card-body">
                 <!--begin: Datatable-->
     
@@ -78,9 +79,8 @@
             <div class="row d-flex justify-content-center mb-4">
                 <div class="col-11">
                     <div class="card card-custom border border-secondary">
-                        <form action="{{ route('enroll_existing_student.store') }}" method="POST">
-                            @csrf
-                            <div class="card-header font-italic font-weight-bold">
+                       
+                            <div class="card-header font-italic font-weight-bold text-primary">
                                 Please choose the track, strand, specialization, grade, school year, and semester in which the selected students will be enrolled.
                             </div>
                             <div class="card-body">
