@@ -77,13 +77,17 @@ class EnrollNewStudentController extends Controller
         ]);
 
 
-         Student_Specialization_GradeLevel_SchoolYear::create([
+         $enrollment_id = Student_Specialization_GradeLevel_SchoolYear::create([
              'student_id' => $student->id,
              'specialization_id' => $request->specialization,
              'gradelevel_id' => $request->grade_level,
              'school_year_id' => $request->school_year,
              'sem_id' => $request->sem,
          ]);
+
+         Student::where('id',$student->id)->update([
+            'enrollment_id' => $enrollment_id->id,
+        ]);
 
 
         return redirect()->route('enroll_new_student.create');
