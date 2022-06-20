@@ -123,7 +123,11 @@ Route::group([ 'prefix' => 'reports', 'middleware' => 'auth'], function() {
 });
 
 
-
+// Enrollment Form
+ Route::get('/enrollmentForm', function () {
+     return view('pages.eform');
+ })->name('eform.index');
+ 
 // //Enrollment
 //  Route::get('/enrollment', function () {
 //      return view('pages.Enrollment.index');
