@@ -30,7 +30,7 @@
                         {{-- {{ Menu::renderHorMenu(config('menu_header.items')) }} --}}
                          <li class="menu-item  menu-item-open menu-item-here menu-item-submenu menu-item-rel menu-item-open menu-item-here menu-item-active"
                                         data-menu-toggle="click" aria-haspopup="true"><a href="javascript:;"
-                                            class="menu-link menu-toggle"><span class="menu-text px-5">Capellan Institute Of Tecnology (San Pablo City)</span><i
+                                            class="menu-link menu-toggle"><span class="menu-text px-5">Capellan Institute Of Technology (San Pablo City)</span><i
                                                 class="menu-arrow"></i></a>
                                         <div class="menu-submenu menu-submenu-classic menu-submenu-left">
                                             <ul class="menu-subnav">

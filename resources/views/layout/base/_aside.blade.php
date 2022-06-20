@@ -243,20 +243,38 @@
                                 </span>
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="#" class="menu-link menu-toggle">
-                                    <i class="menu-bullet menu-bullet-line">
+                                <a href="{{ route('yearly_report.index') }}" class="menu-link menu-toggle py-2">
+                                    <i class="flaticon-folder pr-3 pt-2">
                                         <span></span>
                                     </i>
-                                    <span class="menu-text">Accounting</span>
+                                    <span class="menu-text">Yearly Students Report</span>
                                 </a>
                                 
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="#" class="menu-link menu-toggle">
-                                    <i class="menu-bullet menu-bullet-line">
+                                <a href="{{ route('student_list.index') }}" class="menu-link menu-toggle py-2">
+                                    <i class="flaticon-folder pr-3 pt-2">
                                         <span></span>
                                     </i>
-                                    <span class="menu-text">Registrar</span>
+                                    <span class="menu-text">Students List Report</span>
+                                </a>
+                                
+                            </li>
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="{{ route('document_submission.index') }}" class="menu-link menu-toggle py-2">
+                                    <i class="flaticon-folder pr-3 pt-2">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">Document Submission Report</span>
+                                </a>
+                                
+                            </li>
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="{{ route('contact_info_sheet.index') }}" class="menu-link menu-toggle py-2">
+                                    <i class="flaticon-folder pr-3 pt-2">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">Contact Information Sheet</span>
                                 </a>
                                 
                             </li>

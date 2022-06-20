@@ -28,11 +28,20 @@
                         <!--begin::Header-->
                         <div class="card-header py-3">
                             <div class="card-title align-items-start flex-column">
-                                <h3 class="card-label font-weight-bolder text-dark">Report Information</h3>
-                                <span class="text-muted font-weight-bold font-size-sm mt-1">Update the Student's
-                                    Billing</span>
+                                <h3 class="card-label font-weight-bolder text-dark mt-3">Report Information</h3>
+                                {{-- <span class="text-muted font-weight-bold font-size-sm mt-1">Update the Student's
+                                    Billing</span> --}}
                             </div>
 
+                            <div class="text-end mt-3">
+                                <a href="{{ route('soa.index', $students->enrollment->student->id) }}"
+                                    class="btn btn-clean btn-hover-light-primary">
+                                    <i class="flaticon2-print"></i>
+                                    <span class="text-primary">
+                                        Print Statement of Account
+                                    </span>
+                                </a>
+                            </div>
                         </div>
                         <!--end::Header-->
                         <!--begin::Form-->
@@ -114,9 +123,13 @@
 
                                             <tr>
 
-                                                <td>
-                                                    date
-                                                </td>
+                                                @if ($bill_pay->billing_date = $bill_pay->billing_date)
+                                                    <td> {{ $bill_pay->billing_date }} </td>
+                                                @elseif ($bill_pay->transaction_date = $bill_pay->transaction_date)
+                                                    <td> {{ $bill_pay->transaction_date }} </td>
+                                                @else
+                                                    <td> {{ $bill_pay->memo_date }}</td>
+                                                @endif
 
                                                 @if ($bill_pay->billing_particulars = $bill_pay->billing_particulars)
                                                     <td> {{ $bill_pay->billing_particulars }} </td>
@@ -135,11 +148,11 @@
                                                     <td></td>
                                                 @else
                                                     @if ($bill_pay->memo_type == 'Debit')
-                                                    <td> {{ $bill_pay->memo_amt }} </td>
+                                                        <td> {{ $bill_pay->memo_amt }} </td>
                                                         <td></td>
                                                     @else
-                                                    <td></td>
-                                                    <td> {{ $bill_pay->memo_amt }} </td>
+                                                        <td></td>
+                                                        <td> {{ $bill_pay->memo_amt }} </td>
                                                     @endif
                                                 @endif
 
@@ -147,7 +160,7 @@
                                             </tr>
                                         @endforeach
                                         <tr>
-                                            <td></td>
+                                            <td colspan="5"></td>
                                         </tr>
                                         <tr>
                                             <td colspan="2"></td>

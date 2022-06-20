@@ -18,24 +18,26 @@
                         <!--begin::Body-->
                         <div class="card-body pt-4">
                             <!--begin::Toolbar-->
-                            {{-- <div class="d-flex justify-content-end">
+                            <div class="d-flex justify-content-center">
                                 <div class="dropdown dropdown-inline">
-                                    <a href="#" class="btn btn-clean btn-hover-light-primary btn-sm btn-icon"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="ki ki-bold-more-hor"></i>
+                                    <a href="{{ route('sis.index', $students->enrollment->student->id) }}" class="btn btn-clean btn-hover-light-primary">
+                                    <span class = "text-primary">
+                                        Print Student Information
+                                        </span>
+                                        <i class="flaticon2-printer"></i>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+                                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
                                         <!--begin::Navigation-->
-                                        <ul class="navi navi-hover py-5">
+                                       {{-- <ul class="navi navi-hover py-5">
                                             <li class="navi-item">
-                                                <a href="#" class="navi-link">
+                                                <a href="{{ route('sis.index', $students->enrollment->student->id) }}" class="navi-link">
                                                     <span class="navi-icon">
-                                                        <i class="flaticon2-drop"></i>
+                                                        <i class="flaticon-attachment"></i>
                                                     </span>
-                                                    <span class="navi-text">New Group</span>
+                                                    <span class="navi-text text-center">Student Information Sheet</span>
                                                 </a>
                                             </li>
-                                            <li class="navi-item">
+                                             <li class="navi-item">
                                                 <a href="#" class="navi-link">
                                                     <span class="navi-icon">
                                                         <i class="flaticon2-list-3"></i>
@@ -91,12 +93,12 @@
                                                             class="label label-light-danger label-rounded font-weight-bold">5</span>
                                                     </span>
                                                 </a>
-                                            </li>
-                                        </ul>
+                                            </li> 
+                                        </ul>--}}
                                         <!--end::Navigation-->
                                     </div>
                                 </div>
-                            </div> --}}
+                            </div>
                             <!--end::Toolbar-->
                             <!--begin::User-->
                             <div class="d-flex align-items-center">
