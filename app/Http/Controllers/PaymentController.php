@@ -18,10 +18,10 @@ class PaymentController extends Controller
 
 
     public function show($id){   
-        $payments = Payment::where('std_id', $id)->get();
-        $students=Student::findOrFail($id);
+
+        $students = Student::with('payments','enrollment')->findOrFail($id);
         
-        return view('pages.Accounting.Payment.show' ,compact('students', 'payments') );
+        return view('pages.Accounting.Payment.show' ,compact('students') );
     }
 
     public function store(Request $request){

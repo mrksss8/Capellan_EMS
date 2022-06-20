@@ -47,13 +47,6 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-xl-3 col-lg-3 col-form-label">Student ID</label>
-                                    <div class="col-lg-9 col-xl-6">
-                                        <input class="form-control form-control-lg form-control-solid" type="text"
-                                            value="{{ $students->id }}" disabled>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
                                     <label class="col-xl-3 col-lg-3 col-form-label">Name of Student</label>
                                     <div class="col-lg-9 col-xl-6">
                                         <input class="form-control form-control-lg form-control-solid" type="text"
@@ -88,6 +81,7 @@
                                             @if ($loop->first)
                                                 @php
                                                     $bal = $bill_pay->billing_amt;
+                                                    $bal = $bal - $bill_pay->payment_amt;
                                                 @endphp
                                             @else
                                                 @php
@@ -99,16 +93,49 @@
                                                         // echo 'null payment';
                                                         $bal = $bal - $bill_pay->payment_amt;
                                                     }
+                                                    
+                                                    if ($bill_pay->memo_amt != null) {
+                                                        // echo 'null payment';
+                                                        if ($bill_pay->memo_type == 'Debit') {
+                                                            $bal = $bal - $bill_pay->memo_amt;
+                                                        } else {
+                                                            $bal = $bal + $bill_pay->memo_amt;
+                                                        }
+                                                    }
                                                 @endphp
                                             @endif
 
                                             <tr>
-                                                <td>{{ $bill_pay->billing_date ? $bill_pay->billing_date : $bill_pay->transaction_date }}
+
+                                                <td>
+                                                    date
                                                 </td>
-                                                <td>{{ $bill_pay->billing_particulars ? $bill_pay->billing_particulars : $bill_pay->payment_particulars }}
-                                                </td>
-                                                <td>{{ $bill_pay->payment_amt ? $bill_pay->payment_amt : '' }}</td>
-                                                <td>{{ $bill_pay->billing_amt ? $bill_pay->billing_amt : '' }}</td>
+
+                                                @if ($bill_pay->billing_particulars = $bill_pay->billing_particulars)
+                                                    <td> {{ $bill_pay->billing_particulars }} </td>
+                                                @elseif ($bill_pay->payment_particulars = $bill_pay->payment_particulars)
+                                                    <td> {{ $bill_pay->payment_particulars }} </td>
+                                                @else
+                                                    <td> {{ $bill_pay->memo_particulars }}</td>
+                                                @endif
+
+
+                                                @if ($bill_pay->billing_amt = $bill_pay->billing_amt)
+                                                    <td></td>
+                                                    <td> {{ $bill_pay->billing_amt }} </td>
+                                                @elseif ($bill_pay->payment_amt = $bill_pay->payment_amt)
+                                                    <td> {{ $bill_pay->payment_amt }} </td>
+                                                    <td></td>
+                                                @else
+                                                    @if ($bill_pay->memo_type == 'Debit')
+                                                    <td> {{ $bill_pay->memo_amt }} </td>
+                                                        <td></td>
+                                                    @else
+                                                    <td></td>
+                                                    <td> {{ $bill_pay->memo_amt }} </td>
+                                                    @endif
+                                                @endif
+
                                                 <td>{{ $bal }}</td>
                                             </tr>
                                         @endforeach

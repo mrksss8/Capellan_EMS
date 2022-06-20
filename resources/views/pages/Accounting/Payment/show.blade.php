@@ -344,15 +344,15 @@
                                 </div>
                             </div> --}}
                             <div class="form-group row">
-                                <label class="col-xl-3 col-lg-3 col-form-label">Student ID</label>
-                                <div class="col-lg-9 col-xl-6">
-                                    <input class="form-control form-control-lg form-control-solid" type="text" value="{{$students->id}}" disabled>
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label class="col-xl-3 col-lg-3 col-form-label">Name of Student</label>
                                 <div class="col-lg-9 col-xl-6">
                                     <input class="form-control form-control-lg form-control-solid" type="text" value="{{$students->last_name}}, {{$students->first_name}} {{$students->middle_name}} {{$students->extension}}" disabled>
+                                </div>
+                            </div> 
+                            <div class="form-group row">
+                                <label class="col-xl-3 col-lg-3 col-form-label">Grade/Strand/Specialization</label>
+                                <div class="col-lg-9 col-xl-6">
+                                    <input class="form-control form-control-lg form-control-solid" type="text" value="{{$students->enrollment->grade_level->grade_level}} - {{$students->enrollment->specialization->strand->strand}}/{{$students->enrollment->specialization->specialization}}" disabled>
                                 </div>
                             </div> 
                             {{-- <div class="form-group row">
@@ -389,7 +389,7 @@
     </thead>
 
     <tbody>
-         @foreach ($payments as $payment)
+         @foreach ($students->payments as $payment)
             <tr>
                 <td>{{$payment->payment_particulars}}</td>
                 <td>{{$payment->payment_amt}}</td>

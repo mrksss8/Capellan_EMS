@@ -19,7 +19,7 @@
         <div class="card-header flex-wrap py-5">
             <div class="card-title">
                 <h3 class="card-label">
-                    List of Students
+                    List of Students - Memo
                     <div class="text-muted pt-2 font-size-sm">Below is the list of enrolled student this school year</div>
                 </h3>
             </div>
@@ -124,25 +124,25 @@
                 <thead>
                     <tr>
                         <th>Action</th>
+                        <th>ID</th>
                         <th>Full Name</th>
-                        <th>Grade</th>
+                        {{-- <th>Grade</th>
                         <th>Track</th>
                         <th>Strand</th>
-                        <th>Specialization</th>
+                        <th>Specialization</th> --}}
                     </tr>
                 </thead>
 
                 <tbody>
                      @foreach ($students as $student)
-                        
                         <tr>
-                            
-                            <td><a href="{{route('enrolled_student.show', $student->enrollment->student->id)}}">View</a></td>
-                            <td>{{ $student->enrollment->student->last_name }}, {{ $student->enrollment->student->first_name }} {{ $student->enrollment->student->middle_name }}</td>
-                            <td>{{ $student->enrollment->grade_level->grade_level}}</td>
-                            <td>{{ $student->enrollment->specialization->strand->track->track }}</td>
-                            <td>{{ $student->enrollment->specialization->strand->strand }}</td>
-                            <td>{{ $student->enrollment->specialization->specialization }}</td>
+                            <td><a href="{{route('memo.show', $student->id)}}">View</a></td>
+                            <td>{{ $student->id }}</td>
+                           <td>{{ $student->last_name }}, {{ $student->first_name }} {{ $student->middle_name }}</td>
+                             {{-- <td>{{ $student->grade_level->grade_level}}</td>
+                            <td>{{ $student->specialization->strand->track->track }}</td>
+                            <td>{{ $student->specialization->strand->strand }}</td>
+                            <td>{{ $student->specialization->specialization }}</td> --}}
                         </tr>
                     @endforeach 
                 </tbody>
@@ -163,67 +163,6 @@
     <script src="https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js"></script>
    
 
-    <script>
-        $(document).ready(function () {
-    // Setup - add a text input to each footer cell
-    $('#example thead tr')
-        .clone(true)
-        .addClass('filters')
-        .appendTo('#example thead');
- 
-    var table = $('#example').DataTable({
-        orderCellsTop: true,
-        fixedHeader: true,
-        initComplete: function () {
-            var api = this.api();
- 
-            // For each column
-            api
-                .columns()
-                .eq(0)
-                .each(function (colIdx) {
-                    // Set the header cell to contain the input element
-                    var cell = $('.filters th').eq(
-                        $(api.column(colIdx).header()).index()
-                    );
-                    var title = $(cell).text();
-                    $(cell).html('<input type="text" placeholder="' + title + '" />');
- 
-                    // On every keypress in this input
-                    $(
-                        'input',
-                        $('.filters th').eq($(api.column(colIdx).header()).index())
-                    )
-                        .off('keyup change')
-                        .on('keyup change', function (e) {
-                            e.stopPropagation();
- 
-                            // Get the search value
-                            $(this).attr('title', $(this).val());
-                            var regexr = '({search})'; //$(this).parents('th').find('select').val();
- 
-                            var cursorPosition = this.selectionStart;
-                            // Search the column for that value
-                            api
-                                .column(colIdx)
-                                .search(
-                                    this.value != ''
-                                        ? regexr.replace('{search}', '(((' + this.value + ')))')
-                                        : '',
-                                    this.value != '',
-                                    this.value == ''
-                                )
-                                .draw();
- 
-                            $(this)
-                                .focus()[0]
-                                .setSelectionRange(cursorPosition, cursorPosition);
-                        });
-                });
-        },
-    });
-});
-    </script>
     
     {{-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>

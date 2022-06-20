@@ -8,19 +8,19 @@
 
     <style>
         thead input {
-        width: 100%;
-    }
+            width: 100%;
+        }
     </style>
 @endsection
 
 @section('content')
-<div class="d-flex flex-column-fluid">
-    <!--begin::Container-->
-    <div class="container">
-        <!--begin::Profile Personal Information-->
-        <div class="d-flex flex-row">
-            <!--begin::Aside-->
-            {{-- <div class="flex-row-auto offcanvas-mobile w-250px w-xxl-350px" id="kt_profile_aside">
+    <div class="d-flex flex-column-fluid">
+        <!--begin::Container-->
+        <div class="container">
+            <!--begin::Profile Personal Information-->
+            <div class="d-flex flex-row">
+                <!--begin::Aside-->
+                {{-- <div class="flex-row-auto offcanvas-mobile w-250px w-xxl-350px" id="kt_profile_aside">
                 <!--begin::Profile Card-->
                 <div class="card card-custom card-stretch">
                     <!--begin::Body-->
@@ -296,34 +296,35 @@
                 </div>
                 <!--end::Profile Card-->
             </div> --}}
-            <!--end::Aside-->
-            <!--begin::Content-->
-            <div class="flex-row-fluid ml-lg-8">
-                <!--begin::Card-->
-                <div class="card card-custom card-stretch">
-                    <!--begin::Header-->
-                    <div class="card-header py-3">
-                        <div class="card-title align-items-start flex-column">
-                            <h3 class="card-label font-weight-bolder text-dark">Billing Information</h3>
-                            <span class="text-muted font-weight-bold font-size-sm mt-1">Update the Student's Billing</span>
-                        </div>
-                        <div class="card-toolbar">
-                            <button class="btn btn-success mr-2" data-toggle="modal" data-target="#exampleModal"> <i class="flaticon2-list"></i> Add Billing</button>
-                            {{-- <button type="reset" class="btn btn-secondary">Cancel</button> --}}
-                        </div>
-                    </div>
-                    <!--end::Header-->
-                    <!--begin::Form-->
-                    <form class="form">
-                        <!--begin::Body-->
-                        <div class="card-body">
-                            <div class="row">
-                                <label class="col-xl-3"></label>
-                                <div class="col-lg-9 col-xl-6">
-                                    <h5 class="font-weight-bold mb-6 text-center">Student Info</h5>
-                                </div>
+                <!--end::Aside-->
+                <!--begin::Content-->
+                <div class="flex-row-fluid ml-lg-8">
+                    <!--begin::Card-->
+                    <div class="card card-custom card-stretch">
+                        <!--begin::Header-->
+                        <div class="card-header py-3">
+                            <div class="card-title align-items-start flex-column">
+                                <h3 class="card-label font-weight-bolder text-dark">Memo Information</h3>
+                                <span class="text-muted font-weight-bold font-size-sm mt-1">Add the Student's Memo</span>
                             </div>
-                            {{-- <div class="form-group row">
+                            <div class="card-toolbar">
+                                <button class="btn btn-success mr-2" data-toggle="modal" data-target="#exampleModal"> <i
+                                        class="flaticon2-list"></i> Add Memo</button>
+                                {{-- <button type="reset" class="btn btn-secondary">Cancel</button> --}}
+                            </div>
+                        </div>
+                        <!--end::Header-->
+                        <!--begin::Form-->
+                        <form class="form">
+                            <!--begin::Body-->
+                            <div class="card-body">
+                                <div class="row">
+                                    <label class="col-xl-3"></label>
+                                    <div class="col-lg-9 col-xl-6">
+                                        <h5 class="font-weight-bold mb-6 text-center">Student Info</h5>
+                                    </div>
+                                </div>
+                                {{-- <div class="form-group row">
                                 <label class="col-xl-3 col-lg-3 col-form-label">Avatar</label>
                                 <div class="col-lg-9 col-xl-6">
                                     <div class="image-input image-input-outline" id="kt_profile_avatar" style="background-image: url(/metronic/theme/html/demo1/dist/assets/media/users/blank.png)">
@@ -343,7 +344,6 @@
                                     <span class="form-text text-muted">Allowed file types: png, jpg, jpeg.</span>
                                 </div>
                             </div> --}}
-                            
                             <div class="form-group row">
                                 <label class="col-xl-3 col-lg-3 col-form-label">Name of Student</label>
                                 <div class="col-lg-9 col-xl-6">
@@ -357,7 +357,7 @@
                                 </div>
                             </div> 
 
-                            {{-- <div class="form-group row">
+                                {{-- <div class="form-group row">
                                 <label class="col-xl-3 col-lg-3 col-form-label">Last Name</label>
                                 <div class="col-lg-9 col-xl-6">
                                     <input class="form-control form-control-lg form-control-solid" type="text" value="Bold">
@@ -370,104 +370,112 @@
                                     <span class="form-text text-muted">If you want your invoices addressed to a company. Leave blank to use your full name.</span>
                                 </div>
                             </div> --}}
-                            <br><hr>
-                            <div class="row">
-                                <label class="col-xl-3"></label>
-                                <div class="col-lg-9 col-xl-6">
-                                    <h5 class="font-weight-bold mt-10 mb-6 text-center">Billings Info</h5>
+                                <br>
+                                <hr>
+                                <div class="row">
+                                    <label class="col-xl-3"></label>
+                                    <div class="col-lg-9 col-xl-6">
+                                        <h5 class="font-weight-bold mt-10 mb-6 text-center">Memo Info</h5>
+                                    </div>
                                 </div>
-                            </div> 
-                            
- <!--begin: Datatable-->
- <table class="table table-separate table-head-custom table-checkable" id="example">
-    <thead>
-        <tr>
-            <th>Particulars</th>
-            <th>Amount</th>
-            <th>Date</th>
-        </tr>
-    </thead>
 
-    <tbody>
-         @foreach ($students->billings as $billing)
-            <tr>
-                <td>{{$billing->billing_particulars}}</td>
-                <td>{{$billing->billing_amt}}</td>
-                <td>{{$billing->billing_date}}</td>
-            </tr>
-        @endforeach 
-    </tbody>
+                                <!--begin: Datatable-->
+                                <table class="table table-separate table-head-custom table-checkable" id="example">
+                                    <thead>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Particulars</th>
+                                            <th>Amount</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
 
-</table>
-<!--end: Datatable-->
+                                    <tbody>
+                                        @foreach ($students->memos as $memo)
+                                            <tr>
+                                                <td>{{ $memo->memo_type }}</td>
+                                                <td>{{ $memo->memo_particulars }}</td>
+                                                <td>{{ $memo->memo_amt }}</td>
+                                                <td>{{ $memo->memo_date }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+
+                                </table>
+                                <!--end: Datatable-->
 
 
 
-                            
+
+                            </div>
+                            <!--end::Body-->
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                </div>
+                <!--end::Content-->
+            </div>
+            <!--end::Profile Personal Information-->
+        </div>
+        <!--end::Container-->
+    </div>
+
+
+
+
+    <!-- Modal-->
+    <div class="modal fade" id="exampleModal" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdrop" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Add Billing</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i aria-hidden="true" class="ki ki-close"></i>
+                    </button>
+                </div>
+                <form action="{{ route('memo.store') }}" method="POST">
+                    <div class="modal-body">
+                        @csrf
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="std_id" value="{{ $students->id }}" hidden />
                         </div>
-                        <!--end::Body-->
-                    </form>
-                    <!--end::Form-->
-                </div>
+                        <div class="form-group">
+                            <label>Memo Type <span class="text-danger">*</span></label>
+                            <select class="custom-select custom-select-sm" name="memo_type">
+                                <option selected disabled>Choose Memo Type</option>
+                                <option value="Debit"> Debit</option>
+                                <option value="Credit"> Credit</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Particulars <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="Input Particulars"
+                                name="memo_particulars" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Amount<span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" placeholder="Input Amount" name="memo_amt"
+                                required />
+                        </div>
+                        <div class="form-group">
+                            <label>Date <span class="text-danger">*</span></label>
+                            <input type="date" class="form-control" placeholder="Input Date" name="memo_date" required />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light-primary font-weight-bold"
+                            data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary font-weight-bold">Save</button>
+                    </div>
+                </form>
             </div>
-            <!--end::Content-->
         </div>
-        <!--end::Profile Personal Information-->
     </div>
-    <!--end::Container-->
-</div>
-
-
-
-
-<!-- Modal-->
-<div class="modal fade" id="exampleModal" data-backdrop="static" tabindex="-1" role="dialog"
-aria-labelledby="staticBackdrop" aria-hidden="true">
-<div class="modal-dialog modal-md" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Add Billing</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <i aria-hidden="true" class="ki ki-close"></i>
-            </button>
-        </div>
-        <form action="{{ route('billing.store') }}" method="POST">
-            <div class="modal-body">
-                @csrf
-                <div class="form-group">
-                    <input type="text" class="form-control" name="std_id" value="{{$students->id}}" hidden/>
-                </div>
-                <div class="form-group">
-                    <label>Particulars <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" placeholder="Input Particulars" name="billing_particulars" required/>
-                </div>
-                <div class="form-group">
-                    <label>Amount<span class="text-danger">*</span></label>
-                    <input type="number" class="form-control" placeholder="Input Amount" name="billing_amt" required/>
-                </div>
-                <div class="form-group">
-                    <label>Date <span class="text-danger">*</span></label>
-                    <input type="date" class="form-control" placeholder="Input Date" name="billing_date" required/>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-light-primary font-weight-bold"
-                    data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary font-weight-bold">Save</button>
-            </div>
-        </form>
-    </div>
-</div>
-</div>
 @endsection
 
 {{-- Scripts Section --}}
 @section('scripts')
- 
     <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js"></script>
-   
-
-    
-   
 @endsection

@@ -10,7 +10,6 @@
         thead input {
             width: 100%;
         }
-
     </style>
 @endsection
 
@@ -24,118 +23,135 @@
                     <div class="text-muted pt-2 font-size-sm">Below is the list of enrolled student this school year</div>
                 </h3>
             </div>
-            
-        </div> 
-        <form action="{{ route('enroll_existing_student.store') }}" method="POST">
-            @csrf
+
+        </div>
+
         <div class="card-body">
-            <div class="row">
-                <div class="col-md-4">
-                    <label for="track">Track:</label>
-                    <select name="track" id="track" class="form-control">
-                        <option selected disabled>Select Track</option>
-                        @foreach ($tracks as $track)
-                            <option value="{{ $track->id }}">{{ $track->track }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="strand">Strand:</label>
-                        <select name="strand" id="strand" class="form-control"></select>
-                    </div>
+            <!--begin: Datatable-->
 
-                </div>
-                <div class="col-md-4">
-                    
-                    <div class="form-group">
-                        <label for="specialization">Specialization:</label>
-                        <select name="specialization" id="specialization" class="form-control"></select>
-                    </div>
-                </div>
+            <table class="table table-separate table-head-custom table-checkable" id="example">
+                <thead>
+                    <tr>
+                        <th>Check All</th>
+                        <th>Full Name</th>
+                        <th>Grade</th>
+                        <th>Track</th>
+                        <th>Strand</th>
+                        <th>Spepcialization</th>
+                        <th>Sem</th>
+                    </tr>
+                </thead>
 
-                <div class="col-md-4">
-                    <label for="grade">
-                        {{-- <span class="text-danger">*</span> --}}
-                        Grade
-                    </label>
-                    <select class="custom-select custom-select-sm" name="grade_level">
-                        <option selected disabled>Choose Grade level</option>
-                        @foreach ($gradelevels as $gradelevel)
-                            <option value="{{ $gradelevel->id }}">{{ $gradelevel->grade_level }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label for="school year">
-                        {{-- <span class="text-danger">*</span> --}}
-                        School Year
-                    </label>
-                    <select class="custom-select custom-select-sm" name="school_year">
-                        <option selected disabled>Choose School Year</option>
-                        @foreach ($schoolyears as $schoolyear)
-                            <option value="{{ $schoolyear->id }}">{{ $schoolyear->school_year }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label for="section">
-                        {{-- <span class="text-danger">*</span> --}}
-                        Semester
-                    </label>
-                    <select class="custom-select custom-select-sm" name="sem">
-                        <option selected disabled>Choose Sem</option>
-                        @foreach ($sems as $sem)
-                            <option value="{{ $sem->id }}">Semester {{ $sem->sem }}
-                            </option>
-                        @endforeach
-                    </select>
+                <tbody>
+                    @csrf
+                    @foreach ($students as $student)
+                        <tr>
+                            <td class="text-center">
+                                <input class="form-check-input" type="checkbox" name="student_id[]"
+                                    value="{{ $student->enrollment->student->id }}">
+                            </td>
+                            <td>{{ $student->enrollment->student->last_name }},
+                                {{ $student->enrollment->student->first_name }}{{ $student->enrollment->student->middle_name }}
+                            </td>
+                            <td>{{ $student->enrollment->grade_level->grade_level }}</td>
+                            <td>{{ $student->enrollment->specialization->strand->track->track }}</td>
+                            <td>{{ $student->enrollment->specialization->strand->strand }}</td>
+                            <td>{{ $student->enrollment->specialization->specialization }}</td>
+                            <td>{{ $student->enrollment->sem->sem == 1 ? '1st Sem' : '2nd Sem' }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+
+            </table>
+            <!--end: Datatable-->
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-11">
+                <div class="card card-custom">
+                    <form action="{{ route('enroll_existing_student.store') }}" method="POST">
+                        @csrf
+                        <div class="card-header">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla necessitatibus facilis temporibus quam itaque debitis voluptatibus ea fugiat deserunt rerum! Voluptate facilis ut sequi maiores eius temporibus expedita libero architecto!
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="track">Track:</label>
+                                    <select name="track" id="track" class="form-control">
+                                        <option selected disabled>Select Track</option>
+                                        @foreach ($tracks as $track)
+                                            <option value="{{ $track->id }}">{{ $track->track }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="strand">Strand:</label>
+                                        <select name="strand" id="strand" class="form-control"></select>
+                                    </div>
+            
+                                </div>
+                                <div class="col-md-4">
+            
+                                    <div class="form-group">
+                                        <label for="specialization">Specialization:</label>
+                                        <select name="specialization" id="specialization" class="form-control"></select>
+                                    </div>
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label for="grade">
+                                        {{-- <span class="text-danger">*</span> --}}
+                                        Grade
+                                    </label>
+                                    <select class="custom-select custom-select-sm" name="grade_level">
+                                        <option selected disabled>Choose Grade level</option>
+                                        @foreach ($gradelevels as $gradelevel)
+                                            <option value="{{ $gradelevel->id }}">{{ $gradelevel->grade_level }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="school year">
+                                        {{-- <span class="text-danger">*</span> --}}
+                                        School Year
+                                    </label>
+                                    <select class="custom-select custom-select-sm" name="school_year">
+                                        <option selected disabled>Choose School Year</option>
+                                        @foreach ($schoolyears as $schoolyear)
+                                            <option value="{{ $schoolyear->id }}">{{ $schoolyear->school_year }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="section">
+                                        {{-- <span class="text-danger">*</span> --}}
+                                        Semester
+                                    </label>
+                                    <select class="custom-select custom-select-sm" name="sem">
+                                        <option selected disabled>Choose Sem</option>
+                                        @foreach ($sems as $sem)
+                                            <option value="{{ $sem->id }}">Semester {{ $sem->sem }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+            
+                        </div>
+                        <div class="card-footer text-center">
+                            <button type="submit" class="btn btn-primary">Submit Form</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
         </div>
-        <div class="card-body">
-            <!--begin: Datatable-->
-           
-                <table class="table table-separate table-head-custom table-checkable" id="example">
-                    <thead>
-                        <tr>
-                            <th>Check All</th>
-                            <th>Full Name</th>
-                            <th>Grade</th>
-                            <th>Track</th>
-                            <th>Strand</th>
-                            <th>Spepcialization</th>
-                        </tr>
-                    </thead>
 
-                    <tbody>
-                        @csrf
-                        @foreach ($students as $student)
-                            <tr>
-                                <td class="text-center">
-                                    <input class="form-check-input" type="checkbox" name="student_id[]"
-                                        value="{{ $student->student->id }}">
-                                </td>
-                                <td>{{ $student->student->last_name }},
-                                    {{ $student->student->first_name }}{{ $student->student->middle_name }}</td>
-                                <td>{{ $student->grade_level->grade_level }}</td>
-                                <td>{{ $student->specialization->strand->track->track }}</td>
-                                <td>{{ $student->specialization->strand->strand }}</td>
-                                <td>{{ $student->specialization->specialization }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-
-                </table>
-                <!--end: Datatable-->
-            </div>
-            <div class="card-footer text-center">
-                <button type="submit" class="btn btn-primary">Submit Form</button>
-            </div>
-        </form>
     </div>
-        @endsection
+
+@endsection
 
 {{-- Scripts Section --}}
 @section('scripts')

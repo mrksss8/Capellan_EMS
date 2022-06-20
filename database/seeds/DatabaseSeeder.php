@@ -20,6 +20,12 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('asdasd123'),
         ]);
 
+        DB::table('users')->insert([
+            'name' => 'kheyzel',
+            'email' => 'kheyzel@gmail.com',
+            'password' => Hash::make('asdasd123'),
+        ]);
+
         DB::table('grade_levels')->insert([
             'grade_level' => 'Grade 11'
         ]);
