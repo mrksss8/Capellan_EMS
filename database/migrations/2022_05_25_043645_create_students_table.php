@@ -55,6 +55,7 @@ class CreateStudentsTable extends Migration
             $table->string('sr_hs_yr');
             $table->string('college');
             $table->string('college_yr');
+            $table->integer('status');
             $table->timestamps();
             $table->integer('enrollment_id');
 

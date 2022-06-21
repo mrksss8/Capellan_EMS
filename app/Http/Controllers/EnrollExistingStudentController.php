@@ -19,7 +19,7 @@ class EnrollExistingStudentController extends Controller
         $schoolyears = SchoolYear::all();
         $gradelevels = GradeLevel::all();
         
-        $students = Student::with('enrollment.student')->get();
+        $students = Student::with('enrollment.student')->orderBy('status', 'ASC')->where('status', '!==', 3)->get();
         return view('pages.Enrollment.EnrollExistingStudent.index',compact('students','tracks','schoolyears','gradelevels','sems'));
     }
 

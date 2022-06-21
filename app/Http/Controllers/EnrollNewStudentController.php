@@ -72,7 +72,8 @@ class EnrollNewStudentController extends Controller
             'sr_hs' => $request->sr_hs,
             'sr_hs_yr' => $request->sr_hs_yr,
             'college' => $request->college,
-            'college_yr' => $request->college_yr
+            'college_yr' => $request->college_yr,
+            'status' => '1',
             
         ]);
 

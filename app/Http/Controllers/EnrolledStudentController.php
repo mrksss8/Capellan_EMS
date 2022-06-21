@@ -17,7 +17,7 @@ class EnrolledStudentController extends Controller
         $active = Active_SchoolYearAndSem::first();
         $students = Student::with('enrollment.student')->whereHas('enrollment', function ($query) use($active) {
             return $query->where('school_year_id', '=', $active->active_SY_id)->where('sem_id','=', $active->active_sem_id);
-        })->get();
+        })->where('status', 1)->get();
         
         return view('pages.StudentRecord.EnrolledStudents.index',compact('students'));
 
