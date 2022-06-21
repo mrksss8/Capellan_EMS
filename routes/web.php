@@ -61,6 +61,7 @@ Route::group([ 'prefix' => 'enroll_new_student', 'middleware' => 'auth'], functi
     Route::post('/store',[App\Http\Controllers\EnrollNewStudentController::class, 'store'])->name('enroll_new_student.store');
     Route::get('/get_strand', [App\Http\Controllers\EnrollNewStudentController::class,'get_strand'])->name('get_strand');
     Route::get('/get_specialization', [App\Http\Controllers\EnrollNewStudentController::class,'get_specialization'])->name('get_specialization');
+   
 });
 //Student
 Route::group([ 'prefix' => 'enroll_existing_student', 'middleware' => 'auth'], function() {
@@ -73,6 +74,7 @@ Route::group([ 'prefix' => 'student-records', 'middleware' => 'auth'], function(
     Route::get('/enrolled_student',[App\Http\Controllers\EnrolledStudentController::class, 'index'])->name('enrolled_student.index');
     Route::get('/show/{student_id}',[App\Http\Controllers\EnrolledStudentController::class, 'show'])->name('enrolled_student.show');
     Route::get('/edit/{student_id}',[App\Http\Controllers\EnrolledStudentController::class, 'edit'])->name('enrolled_student.edit');
+    Route::put('/drop/{id}',[App\Http\Controllers\EnrolledStudentController::class, 'drop'])->name('enrolled_student.drop');
 });
 
 //Active Sy Sem

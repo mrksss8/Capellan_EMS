@@ -262,6 +262,9 @@
                                         <a href="#documents" aria-controls="documents" role="tab"
                                             data-toggle="tab"><span class="navi-text">Documents Submission</span></a>
                                     </li>
+                                    <li role="presentation" class="navi-link py-4 d-flex justify-content-center mt-5">
+                                        <button class = "btn btn-danger"  data-toggle="modal" data-target="#dropStudent">Drop this student</button>
+                                    </li>
                                 </ul>
 
 
@@ -1086,6 +1089,31 @@
                                     @endif
 
                                 </div>
+                                <div class="col text-center pt-5">
+                                    <button type="button" class="btn btn-danger mt-4" data-dismiss="modal">
+                                        Cancel</button>
+                                    <button type="submit" class="btn btn-primary mt-4 mr-2">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drop Studnet Modal-->
+                <div class="modal fade" id="dropStudent" data-backdrop="static" tabindex="-1" role="dialog"
+                    aria-labelledby="staticBackdrop" aria-hidden="true">
+                    <div class="modal-dialog modal-md" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Are you sure to drop this student?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <i aria-hidden="true" class="ki ki-close"></i>
+                                </button>
+                            </div>
+                            <form action="{{ route('enrolled_student.drop', $student->enrollment->student->id) }}"  method="post">
+                                @csrf
+                                @method('PUT')
+                              
                                 <div class="col text-center pt-5">
                                     <button type="button" class="btn btn-danger mt-4" data-dismiss="modal">
                                         Cancel</button>

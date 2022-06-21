@@ -29,14 +29,25 @@ class EnrolledStudentController extends Controller
         return view('pages.StudentRecord.EnrolledStudents.show',compact('student'));
 
     }
-
+    
     public function edit($id){
-
+        
         $schoolyears = SchoolYear::all();
         $students = Student::with('enrollment.student')->where('id',$id)->first();
         $sems = Sem::all();
         $gradelevels = GradeLevel::all();
         return view('pages.StudentRecord.EnrolledStudents.edit',compact('students','schoolyears','sems','gradelevels'));
+        
+    }
+    
+    public function drop($id){
+
+
+      Student::findorfail($id)->update([
+            'status' => 3
+        ]);
+
+        return redirect()->route('enrolled_student.index');
 
     }
 }
