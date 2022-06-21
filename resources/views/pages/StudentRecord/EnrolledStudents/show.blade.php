@@ -702,7 +702,7 @@
 
                                                         <p> <strong class="mr-3">Form 137:
                                                                 @if (!empty($student->document->Form137))
-                                                                    <span class="text-success"> Submitted</span>
+                                                                    <span class="text-success"> </span>
 
                                                                     @if ($student->document->Form137_Document != null)
                                                                         <p class="mr-0 mb-0 font-italic font-weight-light">
@@ -710,7 +710,7 @@
                                                                             <a href="{{ route('document.download', [$student->document->id, $student->document->Form137_Document]) }}">{{ $student->document->Form137_Document }}</a> </p>
                                                                     @endif
                                                                 @else
-                                                                    <span class="text-danger">Not Submitted</span>
+                                                                    <span class="text-danger">Not </span>
                                                                 @endif
                                                             </strong></p>
                                                         <p> <strong class="mr-3">JHS cert:
@@ -851,7 +851,7 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="form-check mt-2">
-                                                    <input class="form-check-input" type="checkbox" value="submitted"
+                                                    <input class="form-check-input" type="checkbox" value="Submitted"
                                                         id="flexCheckDefault" name="form137">
                                                     <label class="form-check-label" for="flexCheckDefault">
                                                         Form 137
@@ -870,7 +870,7 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="form-check mt-2">
-                                                    <input class="form-check-input" type="checkbox" value="submitted"
+                                                    <input class="form-check-input" type="checkbox" value="Submitted"
                                                         id="flexCheckChecked" name="JHS_cert">
                                                     <label class="form-check-label" for="flexCheckChecked">
                                                         JHS Certification
@@ -889,7 +889,7 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="form-check mt-2">
-                                                    <input class="form-check-input" type="checkbox" value="submitted"
+                                                    <input class="form-check-input" type="checkbox" value=""
                                                         id="flexCheckChecked" name="PSA">
                                                     <label class="form-check-label" for="flexCheckChecked">
                                                         PSA (Xerox Copy)
@@ -908,7 +908,7 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="form-check mt-2">
-                                                    <input class="form-check-input" type="checkbox" value="submitted"
+                                                    <input class="form-check-input" type="checkbox" value=""
                                                         id="flexCheckChecked" name="goodmoral">
                                                     <label class="form-check-label" for="flexCheckChecked">
                                                         Good Moral (Original Copy)
@@ -927,7 +927,7 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="form-check mt-2">
-                                                    <input class="form-check-input" type="checkbox" value="submitted"
+                                                    <input class="form-check-input" type="checkbox" value=""
                                                         id="flexCheckChecked" name="Card">
                                                     <label class="form-check-label" for="flexCheckChecked">
                                                         Card
@@ -978,7 +978,7 @@
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form-check mt-2">
-                                                        <input class="form-check-input" type="checkbox" value="submitted"
+                                                        <input class="form-check-input" type="checkbox" value=""
                                                             id="flexCheckDefault" name="form137">
                                                         <label class="form-check-label" for="flexCheckDefault">
                                                             Form 137
@@ -1001,7 +1001,7 @@
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form-check mt-2">
-                                                        <input class="form-check-input" type="checkbox" value="submitted"
+                                                        <input class="form-check-input" type="checkbox" value=""
                                                             id="flexCheckChecked" name="JHS_cert">
                                                         <label class="form-check-label" for="flexCheckChecked">
                                                            JHS Certification
@@ -1024,7 +1024,7 @@
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form-check mt-2">
-                                                        <input class="form-check-input" type="checkbox" value="submitted"
+                                                        <input class="form-check-input" type="checkbox" value=""
                                                             id="flexCheckChecked" name="PSA">
                                                         <label class="form-check-label" for="flexCheckChecked">
                                                             PSA (Xerox Copy)
@@ -1046,7 +1046,7 @@
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form-check mt-2">
-                                                        <input class="form-check-input" type="checkbox" value="submitted"
+                                                        <input class="form-check-input" type="checkbox" value=""
                                                             id="flexCheckChecked" name="goodmoral">
                                                         <label class="form-check-label" for="flexCheckChecked">
                                                             Good Moral (Original Copy)
@@ -1069,7 +1069,7 @@
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form-check mt-2">
-                                                        <input class="form-check-input" type="checkbox" value="submitted"
+                                                        <input class="form-check-input" type="checkbox" value=""
                                                             id="flexCheckChecked" name="Card">
                                                         <label class="form-check-label" for="flexCheckChecked">
                                                             Card
