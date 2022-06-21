@@ -38,20 +38,25 @@
                         {{-- <th>Track</th> --}}
                         <th>Strand</th>
                         <th>Specialization</th>
+                        <th>School Year</th>
+                        <th>Semester</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     @foreach ($students as $student)
                         <tr>
-                            <td>{{ $student->enrollment->student->last_name }},
-                                {{ $student->enrollment->student->first_name }}
-                                {{ $student->enrollment->student->middle_name }}
-                                {{ $student->enrollment->student->extension }}</td>
-                            <td>{{ $student->enrollment->grade_level->grade_level }}</td>
-                            {{-- <td>{{ $student->enrollment->specialization->strand->track->track }}</td> --}}
-                            <td>{{ $student->enrollment->specialization->strand->strand }}</td>
-                            <td>{{ $student->enrollment->specialization->specialization }}</td>
+                            <td>{{ $student->student->last_name }},
+                                {{ $student->student->first_name }}
+                                {{ $student->student->middle_name }}
+                                {{ $student->student->extension }}</td>
+                            <td>{{ $student->grade_level->grade_level }}</td>
+                            {{-- <td>{{ $student->specialization->strand->track->track }}</td> --}}
+                            <td>{{ $student->specialization->strand->strand }}</td>
+                            <td>{{ $student->specialization->specialization }}</td>
+                            <td>{{ $student->schoolyear->school_year }}</td>
+                            <td>{{ $student->sem->sem }}</td>
+
                         </tr>
                     @endforeach
                 </tbody>
