@@ -20,7 +20,7 @@
                             <!--begin::Toolbar-->
                             <div class="d-flex justify-content-center">
                                 <div class="dropdown dropdown-inline">
-                                    <a href="{{ route('sis.index', $students->enrollment->student->id) }}"
+                                    <a href="{{ route('sis.index', $student->enrollment->student->id) }}"
                                         class="btn btn-clean btn-hover-light-primary">
                                         <span class="text-primary">
                                             Print Student Information
@@ -31,7 +31,7 @@
                                         <!--begin::Navigation-->
                                         {{-- <ul class="navi navi-hover py-5">
                                             <li class="navi-item">
-                                                <a href="{{ route('sis.index', $students->enrollment->student->id) }}" class="navi-link">
+                                                <a href="{{ route('sis.index', $student->enrollment->student->id) }}" class="navi-link">
                                                     <span class="navi-icon">
                                                         <i class="flaticon-attachment"></i>
                                                     </span>
@@ -123,26 +123,26 @@
                             <div class="py-9">
                                 <div class="d-flex align-items-center justify-content-between mb-2">
                                     <span
-                                        class="font-weight-bold m-auto font-weight-bolder text-center">{{ $students->enrollment->student->last_name }},
-                                        {{ $students->enrollment->student->first_name }}
-                                        {{ $students->enrollment->student->middle_name }}
-                                        {{ $students->enrollment->student->extension }}</span>
+                                        class="font-weight-bold m-auto font-weight-bolder text-center">{{ $student->enrollment->student->last_name }},
+                                        {{ $student->enrollment->student->first_name }}
+                                        {{ $student->enrollment->student->middle_name }}
+                                        {{ $student->enrollment->student->extension }}</span>
 
-                                    {{-- <p class="text-muted text-hover-primary">{{$students->enrollment->student->last_name}}, {{$students->enrollment->student->first_name}} {{$students->enrollment->student->middle_name}} {{$students->enrollment->student->extension}}</p> --}}
+                                    {{-- <p class="text-muted text-hover-primary">{{$student->enrollment->student->last_name}}, {{$student->enrollment->student->first_name}} {{$student->enrollment->student->middle_name}} {{$student->enrollment->student->extension}}</p> --}}
                                 </div>
                                 <div class="d-flex align-items-center mb-2 ">
                                     <span
-                                        class="font-weight-bold m-auto font-weight-bolder">{{ $students->enrollment->student->std_num }}</span>
+                                        class="font-weight-bold m-auto font-weight-bolder">{{ $student->enrollment->student->std_num }}</span>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mb-2">
                                     <span
-                                        class="font-weight-bold m-auto font-weight-bolder">{{ $students->enrollment->grade_level->grade_level }}</span>
+                                        class="font-weight-bold m-auto font-weight-bolder">{{ $student->enrollment->grade_level->grade_level }}</span>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mb-2">
                                     <span
-                                        class="font-weight-bold m-auto font-weight-bolder">{{ $students->enrollment->specialization->strand->track->track }}:
-                                        {{ $students->enrollment->specialization->strand->strand }}
-                                        ({{ $students->enrollment->specialization->specialization }})</span>
+                                        class="font-weight-bold m-auto font-weight-bolder">{{ $student->enrollment->specialization->strand->track->track }}:
+                                        {{ $student->enrollment->specialization->strand->strand }}
+                                        ({{ $student->enrollment->specialization->specialization }})</span>
                                 </div>
                             </div>
                             <!--end::Contact-->
@@ -226,13 +226,14 @@
                                                         fill="#000000" />
                                                     <rect fill="#000000" opacity="0.3"
                                                         transform="translate(17.825568, 11.945519) rotate(-19.000000) translate(-17.825568, -11.945519) "
-                                                        x="16.3255682" y="2.94551858" width="3" height="18" rx="1" />
+                                                        x="16.3255682" y="2.94551858" width="3" height="18"
+                                                        rx="1" />
                                                 </g>
                                             </svg>
                                             <!--end::Svg Icon-->
                                         </span>
-                                        <a href="#school" aria-controls="messages" role="tab" data-toggle="tab"><span
-                                                class="navi-text">Previous School Info</span></a>
+                                        <a href="#school" aria-controls="messages" role="tab"
+                                            data-toggle="tab"><span class="navi-text">Previous School Info</span></a>
                                     </li>
                                     {{-- <li role="presentation" class="navi-link py-4"><a href="#settings"
                                             aria-controls="settings" role="tab" data-toggle="tab">Documents</a></li> --}}
@@ -258,8 +259,8 @@
                                         </span>
 
 
-                                        <a href="#documents" aria-controls="documents" role="tab" data-toggle="tab"><span
-                                                class="navi-text">Documents Submission</span></a>
+                                        <a href="#documents" aria-controls="documents" role="tab"
+                                            data-toggle="tab"><span class="navi-text">Documents Submission</span></a>
                                     </li>
                                 </ul>
 
@@ -292,8 +293,8 @@
                             </div>
                             <div class="card-toolbar">
                                 <a class="btn btn-success mr-2"
-                                    href="{{ route('enrolled_student.edit', $students->enrollment->student->id) }}"> <span
-                                        class="menu-icon flaticon-edit-1">
+                                    href="{{ route('enrolled_student.edit', $student->enrollment->student->id) }}">
+                                    <span class="menu-icon flaticon-edit-1">
                                     </span>
                                     Edit Info</a>
                                 {{-- <button type="reset" class="btn btn-secondary">Cancel</button> --}}
@@ -330,7 +331,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->last_name }}"
+                                                                value="{{ $student->enrollment->student->last_name }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -340,16 +341,17 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->first_name }}"
+                                                                value="{{ $student->enrollment->student->first_name }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Middle Name</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">Middle
+                                                            Name</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->middle_name }}"
+                                                                value="{{ $student->enrollment->student->middle_name }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -359,7 +361,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->extension }}"
+                                                                value="{{ $student->enrollment->student->extension }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -368,7 +370,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->lrn }}"
+                                                                value="{{ $student->enrollment->student->lrn }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -377,7 +379,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->b_date }}"
+                                                                value="{{ $student->enrollment->student->b_date }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -386,7 +388,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->age }}"
+                                                                value="{{ $student->enrollment->student->age }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -395,7 +397,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->sex }}"
+                                                                value="{{ $student->enrollment->student->sex }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -405,16 +407,17 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->civil_status }}"
+                                                                value="{{ $student->enrollment->student->civil_status }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Nationality</label>
+                                                        <label
+                                                            class="col-xl-3 col-lg-12 col-form-label">Nationality</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->nationality }}"
+                                                                value="{{ $student->enrollment->student->nationality }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -424,7 +427,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->contact_num }}"
+                                                                value="{{ $student->enrollment->student->contact_num }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -441,7 +444,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->house_num }}"
+                                                                value="{{ $student->enrollment->student->house_num }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -450,7 +453,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->purok }}"
+                                                                value="{{ $student->enrollment->student->purok }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -459,7 +462,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->brgy }}"
+                                                                value="{{ $student->enrollment->student->brgy }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -469,7 +472,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->municipality }}"
+                                                                value="{{ $student->enrollment->student->municipality }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -478,7 +481,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->province }}"
+                                                                value="{{ $student->enrollment->student->province }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -501,7 +504,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->f_name }}"
+                                                                value="{{ $student->enrollment->student->f_name }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -511,7 +514,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->f_occu }}"
+                                                                value="{{ $student->enrollment->student->f_occu }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -521,7 +524,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->m_name }}"
+                                                                value="{{ $student->enrollment->student->m_name }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -531,7 +534,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->m_occu }}"
+                                                                value="{{ $student->enrollment->student->m_occu }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -541,7 +544,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->g_name }}"
+                                                                value="{{ $student->enrollment->student->g_name }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -551,7 +554,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->relationship }}"
+                                                                value="{{ $student->enrollment->student->relationship }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -561,7 +564,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->g_contact_num }}"
+                                                                value="{{ $student->enrollment->student->g_contact_num }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -571,7 +574,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->g_add }}"
+                                                                value="{{ $student->enrollment->student->g_add }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -593,7 +596,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->prev_school }}"
+                                                                value="{{ $student->enrollment->student->prev_school }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -603,7 +606,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->jhs_yrs }}"
+                                                                value="{{ $student->enrollment->student->jhs_yrs }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -613,7 +616,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->year_grad }}"
+                                                                value="{{ $student->enrollment->student->year_grad }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -623,7 +626,7 @@
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
-                                                                value="{{ $students->enrollment->student->gen_ave }}"
+                                                                value="{{ $student->enrollment->student->gen_ave }}"
                                                                 disabled>
                                                         </div>
                                                     </div>
@@ -645,36 +648,36 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td class="font-weight-bolder">Primary Grade</td>
-                                                                    <td>{{ $students->enrollment->student->prim_grade }}
+                                                                    <td>{{ $student->enrollment->student->prim_grade }}
                                                                     </td>
-                                                                    <td>{{ $students->enrollment->student->prim_grade_yr }}
+                                                                    <td>{{ $student->enrollment->student->prim_grade_yr }}
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="font-weight-bolder">Intermediate Grade</td>
-                                                                    <td>{{ $students->enrollment->student->intermediate }}
+                                                                    <td>{{ $student->enrollment->student->intermediate }}
                                                                     </td>
-                                                                    <td>{{ $students->enrollment->student->intermediate_yr }}
+                                                                    <td>{{ $student->enrollment->student->intermediate_yr }}
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="font-weight-bolder">Junior High School</td>
-                                                                    <td>{{ $students->enrollment->student->junior_hs }}
+                                                                    <td>{{ $student->enrollment->student->junior_hs }}
                                                                     </td>
-                                                                    <td>{{ $students->enrollment->student->junior_hs_yr }}
+                                                                    <td>{{ $student->enrollment->student->junior_hs_yr }}
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="font-weight-bolder">Senior High School</td>
-                                                                    <td>{{ $students->enrollment->student->sr_hs }}</td>
-                                                                    <td>{{ $students->enrollment->student->sr_hs_yr }}
+                                                                    <td>{{ $student->enrollment->student->sr_hs }}</td>
+                                                                    <td>{{ $student->enrollment->student->sr_hs_yr }}
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="font-weight-bolder">College</td>
-                                                                    <td>{{ $students->enrollment->student->college }}
+                                                                    <td>{{ $student->enrollment->student->college }}
                                                                     </td>
-                                                                    <td>{{ $students->enrollment->student->college_yr }}
+                                                                    <td>{{ $student->enrollment->student->college_yr }}
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -696,25 +699,123 @@
                                                     </div>
 
                                                     <ul class="list-group pl-5">
-                                                        <li class="list-group-item mx-5"><p class="font-weight-bolder mb-0">Form 137: <span class="text-primary">Submitted</span></p></li>
-                                                        <li class="list-group-item mx-5"><p class="font-weight-bolder mb-0">NSO/PSA: <span class="text-danger">Not Submitted</span></p></li>
-                                                        <li class="list-group-item mx-5"><p class="font-weight-bolder mb-0">JHS Certificate: <span class="text-danger">Not Submitted</span></p></li>
-                                                        <li class="list-group-item mx-5"><p class="font-weight-bolder mb-0">Certificate of Good Moral: <span class="text-danger">Not Submitted</span></p></li>
-                                                        <li class="list-group-item mx-5"><p class="font-weight-bolder mb-0">Card: <span class="text-danger">Not Submitted</span></p></li>
+
+                                                        <p> <strong class="mr-3">Form 137:
+                                                                @if (!empty($student->document->Form137))
+                                                                    <span class="text-success"> Submitted</span>
+
+                                                                    @if ($student->document->Form137_Document != null)
+                                                                        <p class="mr-0 mb-0 font-italic font-weight-light">
+                                                                            Document:
+                                                                            <a href="{{ route('document.download', [$student->document->id, $student->document->Form137_Document]) }}">{{ $student->document->Form137_Document }}</a> </p>
+                                                                    @endif
+                                                                @else
+                                                                    <span class="text-danger">Not Submitted</span>
+                                                                @endif
+                                                            </strong></p>
+                                                        <p> <strong class="mr-3">JHS cert:
+                                                                @if (!empty($student->document->JHS_cert))
+                                                                    <span class="text-success"> Submitted</span>
+
+                                                                    @if ($student->document->JHS_cert_Document != null)
+                                                                        <p class="mr-0 mb-0 font-italic font-weight-light">
+                                                                            Document:
+                                                                            <a href="{{ route('document.download', [$student->document->id, $student->document->JHS_cert_Document]) }}">{{ $student->document->JHS_cert_Document }}</a> </p>
+                                                                    @endif
+                                                                @else
+                                                                    <span class="text-danger">Not Submitted</span>
+                                                                @endif
+                                                            </strong></p>
+                                                        <p> <strong class="mr-3">PSA (Xerox Copy):
+                                                                @if (!empty($student->document->PSA))
+                                                                    <span class="text-success"> Submitted</span>
+
+                                                                    @if ($student->document->PSA_Document != null)
+                                                                        <p class="mr-0 mb-0 font-italic font-weight-light">
+                                                                            Document:
+                                                                            <a href="{{ route('document.download', [$student->document->id, $student->document->PSA_Document]) }}">{{ $student->document->PSA_Document }}</a> </p>
+                                                                    @endif
+                                                                @else
+                                                                    <span class="text-danger">Not Submitted</span>
+                                                                @endif
+
+                                                            </strong></p>
+                                                        <p> <strong class="mr-3">Good Moral (Original Copy):
+                                                                @if (!empty($student->document->GoodMoral))
+                                                                    <span class="text-success"> Submitted</span>
+
+                                                                    @if ($student->document->GoodMoral_Document != null)
+                                                                        <p class="mr-0 mb-0 font-italic font-weight-light">
+                                                                            Document:
+                                                                            <a href="{{ route('document.download', [$student->document->id, $student->document->GoodMoral_Document]) }}">{{ $student->document->GoodMoral_Document }}</a> </p>
+                                                                    @endif
+                                                                @else
+                                                                    <span class="text-danger">Not Submitted</span>
+                                                                @endif
+                                                            </strong></p>
+                                                        <p> <strong class="mr-3">Card:
+                                                                @if (!empty($student->document->Card))
+                                                                    <span class="text-success"> Submitted</span>
+
+                                                                    @if ($student->document->Card_Document != null)
+                                                                        <p class="mr-0 mb-0 font-italic font-weight-light">
+                                                                            Document:
+                                                                            <a href="{{ route('document.download', [$student->document->id, $student->document->Card_Document]) }}">{{ $student->document->Card_Document }}</a> </p>
+                                                                    @endif
+                                                                @else
+                                                                    <span class="text-danger">Not Submitted</span>
+                                                                @endif
+                                                            </strong></p>
+
+                                                        {{-- <li class="list-group-item mx-5">
+                                                            <p class="font-weight-bolder mb-0">Form 137: <span
+                                                                    class="text-primary">Submitted</span></p>
+                                                        </li>
+                                                        <li class="list-group-item mx-5">
+                                                            <p class="font-weight-bolder mb-0">NSO/PSA: <span
+                                                                    class="text-danger">Not Submitted</span></p>
+                                                        </li>
+                                                        <li class="list-group-item mx-5">
+                                                            <p class="font-weight-bolder mb-0">JHS Certificate: <span
+                                                                    class="text-danger">Not Submitted</span></p>
+                                                        </li>
+                                                        <li class="list-group-item mx-5">
+                                                            <p class="font-weight-bolder mb-0">Certificate of Good Moral:
+                                                                <span class="text-danger">Not Submitted</span>
+                                                            </p>
+                                                        </li>
+                                                        <li class="list-group-item mx-5">
+                                                            <p class="font-weight-bolder mb-0">Card: <span
+                                                                    class="text-danger">Not Submitted</span></p>
+                                                        </li> --}}
                                                     </ul>
 
 
 
                                                     <div class="d-flex justify-content-end mt-5">
-                                                            <button type="button" class="btn btn-success mr-2" data-toggle="modal"
-                                                            data-target="#submitDocument">
-                                                            <span
+                                                        @if (!empty($student->document->student_id))
+                                                            @if (empty($student->document->Form137 && $student->document->JHS_cert && $student->document->PSA && $student->document->GoodMoral && $student->document->Card))
+                                                                <button type="button" data-toggle="modal"
+                                                                    data-target="#submitDocumentUpdate"
+                                                                    class="btn btn-sm btn-outline-primary"
+                                                                    style="margin-bottom: 10px; float:right;">Submit
+                                                                    Document (Update)
+                                                                </button>
+                                                            @endif
+                                                        @else
+                                                            <button type="button" class="btn btn-success mr-2"
+                                                                data-toggle="modal" data-target="#submitDocument">
+                                                                <span
                                                                     class="menu-icon 
-                                                                    flaticon-folder">
-                                                            </span>
+                                                                flaticon-folder">
+                                                                </span>
                                                                 Submit Document</button>
+                                                        @endif
+
                                                     </div>
+
                                                 </div>
+
                                             </div>
 
                                         </div>
@@ -728,99 +829,272 @@
                     </div>
                 </div>
 
-                 <!-- Documents Modal-->
-    <div class="modal fade" id="submitDocument" data-backdrop="static" tabindex="-1" role="dialog"
-    aria-labelledby="staticBackdrop" aria-hidden="true">
-    <div class="modal-dialog modal-md" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Requirements/Documents</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i aria-hidden="true" class="ki ki-close"></i>
-                </button>
-            </div>
-            <form action="#" method="POST">
-                <div class="modal-body">
-                    @csrf
-                    <div class="form-group">
-                        <div class="checkbox-list">
-                            <div class="row my-4">
-                                <div class="col-6">
-                                    <label class="checkbox checkbox-primary">
-                                        <input type="checkbox" name="Checkboxes11">
-                                        <span></span>Form 137</label>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="file" name="form137file">
-                                    </div>
-                                </div>
+                <!-- Documents store Modal-->
+                <div class="modal fade" id="submitDocument" data-backdrop="static" tabindex="-1" role="dialog"
+                    aria-labelledby="staticBackdrop" aria-hidden="true">
+                    <div class="modal-dialog modal-md" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Requirements/Documents</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <i aria-hidden="true" class="ki ki-close"></i>
+                                </button>
                             </div>
 
-                            <div class="row my-4">
-                                <div class="col-6">
-                                    <label class="checkbox checkbox-primary">
-                                        <input type="checkbox" name="Checkboxes11">
-                                        <span></span>NSO/PSA</label>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="file" name="nsopsafile">
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="row my-4">
-                                <div class="col-6">
-                                    <label class="checkbox checkbox-primary">
-                                        <input type="checkbox" name="Checkboxes11">
-                                        <span></span>JHS Certificate</label>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="file" name="jhscertfile">
+                            <form action="{{ route('document.store', $student->enrollment->student->id) }}"
+                                method="post" enctype="multipart/form-data">
+                                @csrf
+                                @method('POST')
+                                <div class="row mb-5">
+                                    <div class="col-12 p-2 pl-4">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-check mt-2">
+                                                    <input class="form-check-input" type="checkbox" value="submitted"
+                                                        id="flexCheckDefault" name="form137">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Form 137
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="file" name="form137file">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
 
-                            <div class="row my-4">
-                                <div class="col-6">
-                                    <label class="checkbox checkbox-primary">
-                                        <input type="checkbox" name="Checkboxes11">
-                                        <span></span>Certificate of Good Moral</label>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="file" name="goodmoralfile">
+                                    <div class="col-12 p-2 pl-4">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-check mt-2">
+                                                    <input class="form-check-input" type="checkbox" value="submitted"
+                                                        id="flexCheckChecked" name="JHS_cert">
+                                                    <label class="form-check-label" for="flexCheckChecked">
+                                                        JHS Certification
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="file" name="JHS_certfile">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
 
-                            <div class="row my-4">
-                                <div class="col-6">
-                                    <label class="checkbox checkbox-primary">
-                                        <input type="checkbox" name="Checkboxes11">
-                                        <span></span>Card</label>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="file" name="cardfile">
+                                    <div class="col-12 p-2 pl-4">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-check mt-2">
+                                                    <input class="form-check-input" type="checkbox" value="submitted"
+                                                        id="flexCheckChecked" name="PSA">
+                                                    <label class="form-check-label" for="flexCheckChecked">
+                                                        PSA (Xerox Copy)
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="file" name="PSAfile">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 p-2 pl-4">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-check mt-2">
+                                                    <input class="form-check-input" type="checkbox" value="submitted"
+                                                        id="flexCheckChecked" name="goodmoral">
+                                                    <label class="form-check-label" for="flexCheckChecked">
+                                                        Good Moral (Original Copy)
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="file" name="goodmoralfile">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 p-2 pl-4">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-check mt-2">
+                                                    <input class="form-check-input" type="checkbox" value="submitted"
+                                                        id="flexCheckChecked" name="Card">
+                                                    <label class="form-check-label" for="flexCheckChecked">
+                                                        Card
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="file" name="Cardfile">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+
+                                <div class="col text-center pt-5">
+                                    <button type="button" class="btn btn-danger mt-4" data-dismiss="modal">
+                                        Cancel</button>
+                                    <button type="submit" class="btn btn-primary mt-4 mr-2">Submit</button>
+                                </div>
+                            </form>
 
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light-primary font-weight-bold"
-                        data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary font-weight-bold">Save</button>
+
+                <!-- Documents update Modal-->
+                <div class="modal fade" id="submitDocumentUpdate" data-backdrop="static" tabindex="-1" role="dialog"
+                    aria-labelledby="staticBackdrop" aria-hidden="true">
+                    <div class="modal-dialog modal-md" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Requirements/Documents</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <i aria-hidden="true" class="ki ki-close"></i>
+                                </button>
+                            </div>
+
+
+                            <form action="{{ route('document.update', $student->id) }}" method="post"
+                                enctype="multipart/form-data">
+                                @csrf
+                                @method('POST')
+                                <div class="row mb-5">
+                                    @if (!empty($student->document->Form137))
+                                    @else
+                                        <div class="col-12 p-2 pl-4">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-check mt-2">
+                                                        <input class="form-check-input" type="checkbox" value="submitted"
+                                                            id="flexCheckDefault" name="form137">
+                                                        <label class="form-check-label" for="flexCheckDefault">
+                                                            Form 137
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="file"
+                                                            name="form137file">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    @if (!empty($student->document->JHS_cert))
+                                    @else
+                                        <div class="col-12 p-2 pl-4">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-check mt-2">
+                                                        <input class="form-check-input" type="checkbox" value="submitted"
+                                                            id="flexCheckChecked" name="JHS_cert">
+                                                        <label class="form-check-label" for="flexCheckChecked">
+                                                           JHS Certification
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="file"
+                                                            name="JHS_certfile">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    @if (!empty($student->document->PSA))
+                                    @else
+                                        <div class="col-12 p-2 pl-4">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-check mt-2">
+                                                        <input class="form-check-input" type="checkbox" value="submitted"
+                                                            id="flexCheckChecked" name="PSA">
+                                                        <label class="form-check-label" for="flexCheckChecked">
+                                                            PSA (Xerox Copy)
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="file" name="PSAfile">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    @if (!empty($student->document->GoodMoral))
+                                    @else
+                                        <div class="col-12 p-2 pl-4">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-check mt-2">
+                                                        <input class="form-check-input" type="checkbox" value="submitted"
+                                                            id="flexCheckChecked" name="goodmoral">
+                                                        <label class="form-check-label" for="flexCheckChecked">
+                                                            Good Moral (Original Copy)
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="file"
+                                                            name="goodmoralfile">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    @if (!empty($student->document->Card))
+                                    @else
+                                        <div class="col-12 p-2 pl-4">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-check mt-2">
+                                                        <input class="form-check-input" type="checkbox" value="submitted"
+                                                            id="flexCheckChecked" name="Card">
+                                                        <label class="form-check-label" for="flexCheckChecked">
+                                                            Card
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="file" name="Cardfile">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                </div>
+                                <div class="col text-center pt-5">
+                                    <button type="button" class="btn btn-danger mt-4" data-dismiss="modal">
+                                        Cancel</button>
+                                    <button type="submit" class="btn btn-primary mt-4 mr-2">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </form>
-        </div>
-    </div>
-</div>
 
             </div>
             <!--end::Content-->
