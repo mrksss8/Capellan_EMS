@@ -108,6 +108,14 @@ Route::group([ 'prefix' => 'memo', 'middleware' => 'auth'], function() {
     Route::post('/store',[App\Http\Controllers\MemoController::class, 'store'])->name('memo.store');
 });
 
+//Documents
+Route::group([ 'prefix' => 'billing', 'middleware' => 'auth'], function() {
+    Route::post('/store/{id}',[App\Http\Controllers\DocumentController::class, 'store'])->name('document.store');
+    Route::post('/update/{id}',[App\Http\Controllers\DocumentController::class, 'update'])->name('document.update');
+    Route::get('/download/{id}/{Document}',[App\Http\Controllers\DocumentController::class, 'download'])->name('document.download');
+  
+});
+
 //Printables
 Route::group([ 'prefix' => 'printables', 'middleware' => 'auth'], function() {
     Route::get('/indexSIS/{student_id}', [App\Http\Controllers\PrintableController::class, 'index_sis'])->name('sis.index');

@@ -25,8 +25,8 @@ class EnrolledStudentController extends Controller
 
     public function show($id){
 
-        $students = Student::with('enrollment.student')->where('id',$id)->first();
-        return view('pages.StudentRecord.EnrolledStudents.show',compact('students'));
+        $student = Student::with('enrollment.student' , 'document')->where('id',$id)->first();
+        return view('pages.StudentRecord.EnrolledStudents.show',compact('student'));
 
     }
 
