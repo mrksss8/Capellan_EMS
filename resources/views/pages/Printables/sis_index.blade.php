@@ -791,8 +791,8 @@
 
                         <div>
                             <div class="preview-title">
-                                Preview
-                                <button>
+                                Download
+                                <button onclick="generatepdf()" id="button">
                                     <span class="svg-icon svg-icon-primary svg-icon-2x">
                                         <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Files/Download.svg--><svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -1057,6 +1057,31 @@
 
     {{-- Includable JS --}}
     @yield('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"
+        integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        function generatepdf() {
+            var element = document.getElementById('container');
+            var opt = {
+                margin: 0,
+                filename: 'SIS - {{ $student->enrollment->student->last_name }}, {{ $student->enrollment->student->first_name }} {{ $student->enrollment->student->middle_name }} {{ $student->enrollment->student->extension }}',
+                image: {
+                    type: 'jpeg',
+                    quality: 0.98
+                },
+                html2canvas: {
+                    scale: 2
+                },
+                jsPDF: {
+                    unit: 'in',
+                    format: 'legal',
+                    orientation: 'portrait'
+                }
+            };
+            html2pdf().set(opt).from(element).save();
+        };
+    </script>
 
 </body>
 

@@ -23,4 +23,13 @@ class Student extends Model
         return $this->belongsTo(Student_Specialization_GradeLevel_SchoolYear::class,'enrollment_id','id');
 
     }
+
+    public function billings(){
+        return $this->hasMany(Billing::class, 'std_id', 'id');
+    }
+
+    public function payments(){
+        return $this->hasMany(Payment::class, 'std_id', 'id');
+    }
+
 }

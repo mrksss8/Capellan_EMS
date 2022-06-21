@@ -130,8 +130,21 @@ Route::group([ 'prefix' => 'reports', 'middleware' => 'auth'], function() {
     Route::get('/contact_info_sheet',[App\Http\Controllers\ReportController::class, 'contact_info_sheet_index'])->name('contact_info_sheet.index');
 });
 
+//Alumni
+Route::group([ 'prefix' => 'alumni', 'middleware' => 'auth'], function() {
+    Route::get('/index',[App\Http\Controllers\AlumniController::class, 'index'])->name('alumni.index');
+});
 
+//Dropouts
+Route::group([ 'prefix' => 'dropout', 'middleware' => 'auth'], function() {
+    Route::get('/index',[App\Http\Controllers\DropoutController::class, 'index'])->name('dropout.index');
+});
 
+// Enrollment Form
+ Route::get('/enrollmentForm', function () {
+     return view('pages.eform');
+ })->name('eform.index');
+ 
 // //Enrollment
 //  Route::get('/enrollment', function () {
 //      return view('pages.Enrollment.index');

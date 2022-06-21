@@ -18,10 +18,9 @@ class BillingController extends Controller
 
     public function show($id){
 
-        $billings = Billing::where('std_id', $id)->get();
-        $students=Student::findOrFail($id);
+        $students = Student::with('billings','enrollment')->findOrFail($id);
         
-        return view('pages.Accounting.Billing.show' ,compact('students', 'billings') );
+        return view('pages.Accounting.Billing.show' ,compact('students') );
     }
 
     public function store(Request $request){
