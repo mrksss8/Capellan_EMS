@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="{{ asset('media/logos/capellan_logo.png') }}" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
@@ -26,8 +27,10 @@ body {
   padding: 10px;
  
 
-  
-  background:url("/public/media/capellan/capellan-new-building-cropped.jpg");
+  /* background-image: url("../../../public/media/capellan/capellan-new-building-cropped.jpg"); */
+  background-image: url('.../public/media/capellan/capellan-new-building-cropped.jpg');
+
+  /* background:url("../../../public/media/capellan/capellan-new-building-cropped.jpg"); */
 
  
 min-height: 100%;
@@ -36,13 +39,16 @@ background-attachment: fixed;
 background-position: center;
 background-size: cover;
 
+/* background-color: royalblue; */
+
+background: linear-gradient(to top left, #4169e1 23%, #ffdf00 91%);
 
 
 }
 
 .outer-container{
 
-    max-width: 950px;
+    max-width: 1100px;
     width: 100%;
     height: 90%;
     background-color: #fff;
@@ -85,7 +91,7 @@ background-size: cover;
             <img src="{{ asset('media/logos/capellan_logo.png') }}" alt="logo" />
             <div class="title mb-3">CIT San Pablo - Student Registration Form</div>
             <div class="content">
-                <form method="POST" action="#"
+                <form method="POST" action="{{ route('enroll_new_student.store') }}"
                     enctype="multipart/form-data">
                     @csrf
 
@@ -109,339 +115,492 @@ background-size: cover;
                             </div>
                         </div>
                     </div>
+                            <div class="row mt-3">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="lrn"> <span class="text-danger">*</span> LRN</label>
+                                        <input type="number" class="form-control" id="lrn" name="lrn" placeholder="LRN" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="std_num">Student No.</label>
+                                        <input type="number" class="form-control" id="std_num" name="std_num"
+                                            placeholder="Student No.">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="section"> <span class="text-danger">*</span>
+                                        {{-- <span class="text-danger">*</span> --}}
+                                        School Year
+                                    </label>
+                                    <select class="custom-select custom-select-sm" name="school_year" required>
+                                        <option selected disabled>Choose School Year</option>
+                                        @foreach ($schoolyears as $schoolyear)
+                                            <option value="{{ $schoolyear->id }}">{{ $schoolyear->school_year }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="section"> <span class="text-danger">*</span>
+                                        {{-- <span class="text-danger">*</span> --}}
+                                        Semester
+                                    </label>
+                                    <select class="custom-select custom-select-sm" name="sem" required>
+                                        <option selected disabled>Choose Sem</option>
+                                        @foreach ($sems as $sem)
+                                            <option value="{{ $sem->id }}">Semester {{ $sem->sem }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
 
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="form-group mt-5 mx-3 mb-3">
-                                <label class="mb-2 h5 font-weight-bold" for="first_name">
-                                    <span class="text-danger">*</span>First Name
-                                </label>
-                                <input type="text" class="form-control" name="first_name" required />
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group mt-5 mx-3 mb-3">
-                                <label class="mb-2 h5 font-weight-bold" for="last_name">
-                                    <span class="text-danger">*</span>Last Name
-                                </label>
-                                <input type="text" class="form-control" name="last_name" required />
-                            </div>
-                        </div>
 
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="middle_name">
-                                    Middle Name
-                                </label>
-                                <input type="text" class="form-control" name="middle_name" />
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="suffix">
-                                    Extension Name
-                                </label>
-                                <input type="text" class="form-control" name="suffix" />
-                            </div>
-                        </div>
 
-                        <div class="col-4">
-                            <label class="mt-3 ms-3 h5 font-weight-bold" for="sex">
-                                <span class="text-danger">*</span>Sex
-                            </label>
-                            <select class="form-select ms-3" aria-label="Default select example" name="sex"
-                                required>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="b_date">
-                                    <span class="text-danger">*</span>Birthdate
-                                </label>
-                                <input type="date" class="form-control" name="b_date" required />
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="contact_num">
-                                    <span class="text-danger">*</span>Contact Number
-                                </label>
-                                <input type="text" class="form-control" name="contact_num" required />
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="email_ad">
-                                    <span class="text-danger">*</span>Email Address
-                                </label>
-                                <input type="text" class="form-control" name="email_ad" required />
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="m_tongue">
-                                    <span class="text-danger">*</span>Mother Tongue
-                                </label>
-                                <input type="text" class="form-control" name="m_tongue" required />
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="religion">
-                                    <span class="text-danger">*</span>Religion
-                                </label>
-                                <input type="text" class="form-control" name="religion" required />
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="psa_num">
-                                    PSA Number
-                                </label>
-                                <input type="text" class="form-control" name="psa_num" />
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="lrn">
-                                    <span class="text-danger">*</span>Learner's Reference Number (LRN)
-                                </label>
-                                <input type="text" class="form-control" name="lrn" maxlength="12"
-                                    minlength="12" required />
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <label class="mt-3 ms-3 h5 font-weight-bold" for="yearlevel">
-                                <span class="text-danger">*</span>Grade Level
-                            </label>
-                            <select class="form-select ms-3" aria-label="Default select example" name="yearlevel"
-                                required>
-                                <!-- <option selected>Open this select menu</option> -->
-                                <option value="1">11</option>
-                                <option value="2">12</option>
-                            </select>
-                        </div>
-                        <div class="col-8">
-                            <label class="mt-3 ms-3 h5 font-weight-bold" for="course">
-                                <span class="text-danger">*</span>Strand/Course
-                            </label>
-                            <select class="form-select ms-3" aria-label="Default select example" name="course"
-                                required>
-                                <!-- <option selected>Open this select menu</option> -->
-                                <option value="1">Industrial Arts(IA)-Automotive Servicing</option>
-                                <option value="2">Industrial Arts(IA)-Electrical Installation and Maintenance
-                                </option>
-                                <option value="3">Industrial Arts(IA)-Electronic Products Assembly and Servicing
-                                </option>
-                                <option value="4">Information and Communication Technology (ICT)-Computer System
-                                    Servicing NC II</option>
-                                <option value="5">Information and Communication Technology (ICT)-Programming
-                                </option>
-                                <option value="6">Home Economics (HE)-Housekeeping NC II/Front Office Services NC
-                                    II
-                                </option>
-                                <option value="7">Home Economics (HE)-Food and Beverage Services NC II/Bread and
-                                    Pastry
-                                    Production NC II</option>
-                            </select>
-                        </div>
+                            <div class="row">
 
-                        <div class="col-12">
-                            <div class="sub-title text-center mt-5">
+                                <div class="col-md-3">
+                                    <label for="grade"> <span class="text-danger">*</span>
+                                        {{-- <span class="text-danger">*</span> --}}
+                                        Grade
+                                    </label>
+                                    <select class="custom-select custom-select-sm" name="grade_level" required>
+                                        <option selected disabled>Choose Grade level</option>
+                                        @foreach ($gradelevels as $gradelevel)
+                                            <option value="{{ $gradelevel->id }}">{{ $gradelevel->grade_level }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="track"><span class="text-danger">*</span> Track:</label>
+                                    {{-- <select class="custom-select custom-select-sm" name="track">
+
+                                        <option selected disabled>Choose Track</option>
+                                        @foreach ($tracks as $track)
+                                            <option value={{ $track->id }}> {{ $track->track }}</option>
+                                        @endforeach
+
+                                    </select> --}}
+
+                                    <select name="track" id="track" class="form-control" required>
+                                        <option selected disabled>Select Track</option>
+                                        @foreach ($tracks as $track)
+                                            <option value="{{ $track->id }}">{{ $track->track }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    {{-- <label for="strand">
+                                        Strand
+                                    </label> --}}
+                                    {{-- <select class="custom-select custom-select-sm" name="strand">
+
+                                        <option selected disabled>Choose Strand</option>
+                                        @foreach ($strands as $strand)
+                                            <option value={{ $strand->id }}> {{ $strand->strand }}</option>
+                                        @endforeach
+
+                                    </select> --}}
+                                    <div class="form-group">
+                                        <label for="strand"> <span class="text-danger">*</span> Strand:</label>
+                                        <select name="strand" id="strand" class="form-control" required></select>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3">
+                                    {{-- <label for="specialization">
+                                        Specialization
+                                    </label> --}}
+                                    {{-- <select class="custom-select custom-select-sm" name="specialization">
+
+                                        <option selected disabled>Choose Specialization</option>
+                                        @foreach ($specializations as $specialization)
+                                            <option value={{ $specialization->id }}>
+                                                {{ $specialization->specialization }}</option>
+                                        @endforeach
+
+                                    </select> --}}
+                                    <div class="form-group">
+                                        <label for="specialization"><span class="text-danger">*</span> Specialization:</label>
+                                        <select name="specialization" id="specialization" class="form-control" required></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="text-center h2 pb-3 pt-5 my-5">
+                                Student Information
+                            </div>
+
+
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="last_name"><span class="text-danger">*</span> Last Name</label>
+                                        <input type="text" class="form-control" id="last_name" name="last_name"
+                                            placeholder="Last Name" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="first_name"> <span class="text-danger">*</span> First Name</label>
+                                        <input type="text" class="form-control" id="first_name" name="first_name"
+                                            placeholder="First Name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="middle_name">Middle Name</label>
+                                        <input type="text" class="form-control" id="middle_name" name="middle_name"
+                                            placeholder="Middle Name">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="extension">Extension Name</label>
+                                        <input type="text" class="form-control" id="extension" name="extension"
+                                            placeholder="Extension Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="civil_status"><span class="text-danger">*</span> Civil Status</label>
+                                        <input type="text" class="form-control" id="civil_status" name="civil_status"
+                                            placeholder="Civil Status" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="age"><span class="text-danger">*</span> Age</label>
+                                        <input type="number" class="form-control" id="age" name="age" placeholder="Age" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="sex">
+                                        {{-- <span class="text-danger">*</span> --}}
+                                        <span class="text-danger">*</span> Sex
+                                    </label>
+                                    <select class="custom-select custom-select-sm" name="sex" required>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="nationality"><span class="text-danger">*</span> Nationality</label>
+                                        <input type="text" class="form-control" id="nationality" name="nationality"
+                                            placeholder="Nationality" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="b_date"><span class="text-danger">*</span> Birthdate</label>
+                                        <input type="date" class="form-control" id="b_date" name="b_date"
+                                            placeholder="Birthdate" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="contact_num">Contact Number</label>
+                                        <input type="number" class="form-control" id="contact_num" name="contact_num"
+                                            placeholder="Contact Number">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center h2 pb-3 pt-5 my-5">
                                 Address
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="house_num">
-                                    <span class="text-danger">*</span>House No./Street/Purok
-                                </label>
-                                <input type="text" class="form-control" name="house_num" />
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="house_num">House No./Street</label>
+                                        <input type="text" class="form-control" id="house_num" name="house_num"
+                                            placeholder="House No./Street">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="purok">Purok</label>
+                                        <input type="text" class="form-control" id="purok" name="purok"
+                                            placeholder="Purok">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="brgy"><span class="text-danger">*</span> Barangay</label>
+                                        <input type="text" class="form-control" id="brgy" name="brgy"
+                                            placeholder="Barangay" required>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="city">
-                                    <span class="text-danger">*</span>City/Municipality
-                                </label>
-                                <input type="text" class="form-control" name="city" required />
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="brgy">
-                                    <span class="text-danger">*</span>Brgy./Barrio
-                                </label>
-                                <input type="text" class="form-control" name="brgy" required />
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="province">
-                                    <span class="text-danger">*</span>Province
-                                </label>
-                                <input type="text" class="form-control" name="province" required />
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="sub-title text-center mt-5">
-                                Parent/Guardian's Information
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="m_fullname">
-                                    Mother's Maiden Full Name
-                                </label>
-                                <input type="text" class="form-control" name="m_fullname" />
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="m_occu">
-                                    Mother's Occupation
-                                </label>
-                                <input type="text" class="form-control" name="m_occu" />
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="m_educ">
-                                    Mother's Educational Attainment
-                                </label>
-                                <input type="text" class="form-control" name="m_educ" />
-                            </div>
-                        </div>
-                        <div class="col-6">
 
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="f_fullname">
-                                    Father's Full Name
-                                </label>
-                                <input type="text" class="form-control" name="f_fullname" />
+                            <div class="row justify-content-center">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="municipality"><span class="text-danger">*</span> Municipality</label>
+                                        <input type="text" class="form-control" id="municipality" name="municipality"
+                                            placeholder="Municipality" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="province"><span class="text-danger">*</span> Province</label>
+                                        <input type="text" class="form-control" id="province" name="province"
+                                            placeholder="Province" required>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="f_occu">
-                                    Father's Occupation
-                                </label>
-                                <input type="text" class="form-control" name="f_occu" />
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="f_educ">
-                                    Father's Educational Attainment
-                                </label>
-                                <input type="text" class="form-control" name="f_educ" />
-                            </div>
-                        </div>
-                        <div class="col-6">
 
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="g_fullname">
-                                    <span class="text-danger">*</span>Guardian's Full Name
-                                </label>
-                                <input type="text" class="form-control" name="g_fullname" required />
+                            <div class="text-center h2 pb-3 pt-5 my-5">
+                                Parent's / Guardian's Information
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="g_occu">
-                                    <span class="text-danger">*</span>Guardian's Occupation
-                                </label>
-                                <input type="text" class="form-control" name="g_occu" required />
+
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="f_name">Father's Name</label>
+                                        <input type="text" class="form-control" id="f_name" name="f_name"
+                                            placeholder="Father's Name">
+                                        <small id="labelf_name" class="form-text text-info font-italic">(Last Name, First
+                                            Name,
+                                            Middle Name)</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="f_occu">Father's Occupation</label>
+                                        <input type="text" class="form-control" id="f_occu" name="f_occu"
+                                            placeholder="Father's Occupation">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="g_educ">
-                                    <span class="text-danger">*</span>Guardian's Educational Attainment
-                                </label>
-                                <input type="text" class="form-control" name="g_educ" required />
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="m_name">Mother's Name</label>
+                                        <input type="text" class="form-control" id="m_name" name="m_name"
+                                            placeholder="Mother's Name">
+                                        <small id="labelm_name" class="form-text text-info font-italic">(Last Name, First
+                                            Name,
+                                            Middle Name)</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="m_occu">Mother's Occupation</label>
+                                        <input type="text" class="form-control" id="m_occu" name="m_occu"
+                                            placeholder="Mother's Occupation">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="pg_contact_num">
-                                    <span class="text-danger">*</span>Parent/Guardian's Contact Number
-                                </label>
-                                <input type="text" class="form-control" name="pg_contact_num" required />
+
+                            <div class="row justify-content-center">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="g_name"><span class="text-danger">*</span> Guardian's Name</label>
+                                        <input type="text" class="form-control" id="g_name" name="g_name"
+                                            placeholder="Guardian's Name" required>
+                                        <small id="labelg_name" class="form-text text-info font-italic">(Last Name, First
+                                            Name,
+                                            Middle Name)</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="relationship"><span class="text-danger">*</span> Relationship</label>
+                                        <input type="text" class="form-control" id="relationship" name="relationship"
+                                            placeholder="Relationship" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="g_contact_num"><span class="text-danger">*</span> Contact No. of Guardian</label>
+                                        <input type="number" class="form-control" id="g_contact_num" name="g_contact_num"
+                                            placeholder="Contact No. of Guardian" required>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="sub-title text-center mt-5">
+
+                            <div class="row justify-content-center">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="g_add"><span class="text-danger">*</span> Address of Guardian</label>
+                                        <input type="text" class="form-control" id="g_add" name="g_add"
+                                            placeholder="Address of Guardian" required>
+                                        <small id="labelg_address" class="form-text text-info font-italic">(House
+                                            No./Street)
+                                            (Purok) (Barangay) (Municipality) (Province)</small>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="text-center h2 pb-3 pt-5 my-5">
                                 Previous School Information
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="prev_school">
-                                    <span class="text-danger">*</span>School Name
-                                </label>
-                                <input type="text" class="form-control" name="prev_school" required />
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="prev_school_ad">
-                                    <span class="text-danger">*</span>School Address
-                                </label>
-                                <input type="text" class="form-control" name="prev_school_ad" required />
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <label class="mt-3 ms-3 h5 font-weight-bold" for="school_type">
-                                <span class="text-danger">*</span>School Type
-                            </label>
-                            <select class="form-select ms-3" aria-label="Default select example" name="school_type"
-                                required>
-                                <option value="Public">Public</option>
-                                <option value="Private">Private</option>
-                                <option value="ALS">ALS</option>
-                            </select>
-                        </div>
-                        <div class="col-6">
-                            <label class="mt-3 ms-3 h5 font-weight-bold" for="transferee">
-                                <span class="text-danger">*</span>Are you a Transferee?
-                            </label>
-                            <select class="form-select ms-3" aria-label="Default select example" name="transferee"
-                                required>
-                                <option value="No">No</option>
-                                <option value="Yes">Yes</option>
-                            </select>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group m-3">
-                                <label class="mb-2 h5 font-weight-bold" for="l_year_completion">
-                                    <span class="text-danger">*</span>Year of Completion
-                                </label>
-                                <input type="text" class="form-control" name="l_year_completion" required />
-                            </div>
-                        </div>
 
-                        <div>
-                            <div class="text-end p-3 mt-3 me-5">
-                                <button type="reset" class="btn btn-outline-danger me-2">Clear Form</button>
-                                <button type="submit" class="btn btn-outline-primary">Submit Form</button>
+                            <div class="row justify-content-center">
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <label for="prev_school"><span class="text-danger">*</span>School Last Attended</label>
+                                        <input type="text" class="form-control" id="prev_school" name="prev_school"
+                                            placeholder="School Last Attended" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="prev_school_type">
+                                        {{-- <span class="text-danger">*</span> --}}
+                                        <span class="text-danger">*</span> Previous School Type
+                                    </label>
+                                    <select class="custom-select custom-select-sm" name="prev_school_type" required>
+                                        <option value="Public">Public</option>
+                                        <option value="Private">Private</option>
+                                        <option value="ALS">ALS</option>
+                                        <option value="Transferee">Transferee</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="jhs_yrs"><span class="text-danger">*</span> No. of Years in JHS</label>
+                                        <input type="text" class="form-control" id="jhs_yrs" name="jhs_yrs"
+                                            placeholder="No. of Years in JHS" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="year_grad"><span class="text-danger">*</span> Year Graduated</label>
+                                        <input type="text" class="form-control" id="year_grad" name="year_grad"
+                                            placeholder="Year Graduated" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="gen_ave"><span class="text-danger">*</span> General Average</label>
+                                        <input type="text" class="form-control" id="gen_ave" name="gen_ave"
+                                            placeholder="General Average" required>
+                                    </div>
+                                </div>
                             </div>
 
-                        </div>
+                            <div class="text-center h2 pb-3 pt-5 my-5">
+                                Educational Background
+                            </div>
 
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="prim_grade">Primary Grade</label>
+                                        <input type="text" class="form-control" id="prim_grade" name="prim_grade"
+                                            placeholder="Primary Grade">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="prim_grade_yr">Year Graduated</label>
+                                        <input type="text" class="form-control" id="prim_grade_yr" name="prim_grade_yr"
+                                            placeholder="Year Graduated">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="intermediate">Intermediate</label>
+                                        <input type="text" class="form-control" id="intermediate" name="intermediate"
+                                            placeholder="Intermediate">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="intermediate_yr">Year Graduated</label>
+                                        <input type="text" class="form-control" id="intermediate_yr"
+                                            name="intermediate_yr" placeholder="Year Graduated">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="junior_hs">Junior High School</label>
+                                        <input type="text" class="form-control" id="junior_hs" name="junior_hs"
+                                            placeholder="Junior High School">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="junior_hs_yr">Year Graduated</label>
+                                        <input type="text" class="form-control" id="junior_hs_yr" name="junior_hs_yr"
+                                            placeholder="Year Graduated">
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="sr_hs">Senior High School</label>
+                                        <input type="text" class="form-control" id="sr_hs" name="sr_hs"
+                                            placeholder="Senior High School">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="sr_hs_yr">Year Graduated</label>
+                                        <input type="text" class="form-control" id="sr_hs_yr" name="sr_hs_yr"
+                                            placeholder="Year Graduated">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="college">College</label>
+                                        <input type="text" class="form-control" id="college" name="college"
+                                            placeholder="College">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="college_yr">Year Graduated</label>
+                                        <input type="text" class="form-control" id="college_yr" name="college_yr"
+                                            placeholder="Year Graduated">
+                                    </div>
+                                </div>
+                            </div> --}}
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-4">
 
-                    </div>
+                                    <button type="reset" class="btn btn-danger ml-3">Clear Form</button>
+                                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                                </div>
+
+                            </div>
+                        
                 </form>
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         function ok() {

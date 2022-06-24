@@ -44,7 +44,7 @@ class EnrolledStudentController extends Controller
 
 
       Student::findorfail($id)->update([
-            'status' => 3
+            'status' => 2
         ]);
 
         return redirect()->route('enrolled_student.index');

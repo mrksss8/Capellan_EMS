@@ -381,12 +381,24 @@
                             </div>
 
                             <div class="row justify-content-center">
-                                <div class="col-md-12">
+                                <div class="col-md-9">
                                     <div class="form-group">
-                                        <label for="prev_school">School Last Attended</label>
+                                        <label for="prev_school"><span class="text-danger">*</span>School Last Attended</label>
                                         <input type="text" class="form-control" id="prev_school" name="prev_school"
-                                            placeholder="School Last Attended">
+                                            placeholder="School Last Attended" required>
                                     </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="prev_school_type">
+                                        {{-- <span class="text-danger">*</span> --}}
+                                        <span class="text-danger">*</span> Previous School Type
+                                    </label>
+                                    <select class="custom-select custom-select-sm" name="prev_school_type" required>
+                                        <option value="Public">Public</option>
+                                        <option value="Private">Private</option>
+                                        <option value="ALS">ALS</option>
+                                        <option value="Transferee">Transferee</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="row justify-content-center">
@@ -465,7 +477,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row justify-content-center">
+                            {{-- <div class="row justify-content-center">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="sr_hs">Senior High School</label>
@@ -496,7 +508,7 @@
                                             placeholder="Year Graduated">
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="row justify-content-center">
 
                                 <button type="reset" class="btn btn-danger mr-2">Clear Form</button>

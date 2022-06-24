@@ -139,7 +139,7 @@
                                 <div class="form-group py-3 m-0">
                                     <input id="name"
                                         class="@error('name') is-invalid @enderror form-control h-auto border-0 px-0 placeholder-dark-75"
-                                        type="text" placeholder="Fullname" name="name" value="{{ old('name') }}"
+                                        type="text" placeholder="Name" name="name" value="{{ old('name') }}"
                                         autocomplete="off" />
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">

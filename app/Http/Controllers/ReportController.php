@@ -29,6 +29,8 @@ class ReportController extends Controller
         $students = Student::with('enrollment.student')->whereHas('enrollment', function ($query) use($active) {
             return $query->where('school_year_id', '=', $active->active_SY_id)->where('sem_id','=', $active->active_sem_id);
         })->get();
+
+       
         
         return view('pages.Reports.student_list',compact('students'));
 

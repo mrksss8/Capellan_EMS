@@ -60,6 +60,7 @@ class EnrollNewStudentController extends Controller
             'g_contact_num' => $request->g_contact_num,
             'g_add' => $request->g_add,
             'prev_school' => $request->prev_school,
+            'prev_school_type' => $request->prev_school_type,
             'jhs_yrs' => $request->jhs_yrs,
             'year_grad' => $request->year_grad,
             'gen_ave' => $request->gen_ave,
@@ -69,10 +70,10 @@ class EnrollNewStudentController extends Controller
             'intermediate_yr' => $request->intermediate_yr,
             'junior_hs' => $request->junior_hs,
             'junior_hs_yr' => $request->junior_hs_yr,
-            'sr_hs' => $request->sr_hs,
-            'sr_hs_yr' => $request->sr_hs_yr,
-            'college' => $request->college,
-            'college_yr' => $request->college_yr,
+            // 'sr_hs' => $request->sr_hs,
+            // 'sr_hs_yr' => $request->sr_hs_yr,
+            // 'college' => $request->college,
+            // 'college_yr' => $request->college_yr,
             'status' => '1',
             
         ]);
@@ -94,5 +95,13 @@ class EnrollNewStudentController extends Controller
         return redirect()->route('enroll_new_student.create');
 
         
+    }
+
+    function enrollmentForm(){
+        $tracks = DB::table('tracks')->get();
+        $schoolyears = SchoolYear::all();
+        $gradelevels = GradeLevel::all();
+        $sems = Sem::all();
+        return view('pages.eform',compact('tracks','schoolyears','gradelevels','sems'));
     }
 }

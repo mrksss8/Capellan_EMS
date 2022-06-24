@@ -46,16 +46,16 @@
                 <tbody>
                     @foreach ($students as $student)
                         <tr>
-                            <td>{{ $student->student->last_name }},
-                                {{ $student->student->first_name }}
-                                {{ $student->student->middle_name }}
-                                {{ $student->student->extension }}</td>
-                            <td>{{ $student->grade_level->grade_level }}</td>
+                            <td>{{ $student->last_name }},
+                                {{ $student->first_name }}
+                                {{ $student->middle_name }}
+                                {{ $student->extension }}</td>
+                            <td>{{ $student->enrollment->grade_level->grade_level }}</td>
                             {{-- <td>{{ $student->specialization->strand->track->track }}</td> --}}
-                            <td>{{ $student->specialization->strand->strand }}</td>
-                            <td>{{ $student->specialization->specialization }}</td>
-                            <td>{{ $student->schoolyear->school_year }}</td>
-                            <td>{{ $student->sem->sem }}</td>
+                            <td>{{ $student->enrollment->specialization->strand->strand }}</td>
+                            <td>{{ $student->enrollment->specialization->specialization }}</td>
+                            <td>{{ $student->enrollment->schoolyear->school_year }}</td>
+                            <td>{{ $student->enrollment->sem->sem }}</td>
 
                         </tr>
                     @endforeach

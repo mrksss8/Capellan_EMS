@@ -42,6 +42,7 @@ class CreateStudentsTable extends Migration
             $table->integer('g_contact_num');
             $table->string('g_add');
             $table->string('prev_school');
+            $table->string('prev_school_type');
             $table->string('jhs_yrs');
             $table->string('year_grad');
             $table->string('gen_ave');
@@ -51,10 +52,10 @@ class CreateStudentsTable extends Migration
             $table->string('intermediate_yr');
             $table->string('junior_hs');
             $table->string('junior_hs_yr');
-            $table->string('sr_hs');
-            $table->string('sr_hs_yr');
-            $table->string('college');
-            $table->string('college_yr');
+            // $table->string('sr_hs');
+            // $table->string('sr_hs_yr');
+            // $table->string('college');
+            // $table->string('college_yr');
             $table->integer('status');
             $table->timestamps();
             $table->integer('enrollment_id');

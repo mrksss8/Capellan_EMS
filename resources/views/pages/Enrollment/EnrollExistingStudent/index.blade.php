@@ -80,7 +80,7 @@
                 <div class="col-11">
                     <div class="card card-custom border border-secondary">
                        
-                            <div class="card-header font-italic font-weight-bold text-primary">
+                            <div class="card-header font-italic font-weight-bold text-primary mt-5">
                                 Please choose the track, strand, specialization, grade, school year, and semester in which the selected students will be enrolled.
                             </div>
                             <div class="card-body">

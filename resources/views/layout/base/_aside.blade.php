@@ -47,8 +47,10 @@
 
             <ul class="menu-nav {{ Metronic::printClasses('aside_menu_nav', false) }}">
                  <!--begin::Menu Nav-->
+
+                 @can('Dashboard Permission')
                 <li class="menu-item menu-item-active" aria-haspopup="true">
-                    <a href="{{ url('/home') }}" class="menu-link">
+                    <a href="{{ route('dashboard.index') }}" class="menu-link">
                         <span class="svg-icon menu-icon">
                             <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Layers.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -63,7 +65,9 @@
                         <span class="menu-text">Dashboard</span>
                     </a>
                 </li>
-
+                @endcan
+                
+                @can('Enrollment Permission')
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
                         <span class="menu-icon fas fa-users">
@@ -104,11 +108,9 @@
                         </ul>
                     </div>
                 </li>
-
-
-
+                @endcan
                 
-
+                @can('Student Records Permission')
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
                         <span class="menu-icon fas fa-address-book">
@@ -158,6 +160,8 @@
                         </ul>
                     </div>
                 </li>
+                @endcan
+
                 {{-- <li class="menu-item" aria-haspopup="true">
                     <a href="#" class="menu-link">
                         <span class="menu-icon fas fa-coins">
@@ -167,6 +171,7 @@
                     </a>
                 </li> --}}
 
+                @can('Accounting Permission')
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
                         <span class="menu-icon fas fa-money-bill" >
@@ -225,7 +230,9 @@
                         </ul>
                     </div>
                 </li>
-
+                @endcan
+             
+                @can('Reports Permission')
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
                         <span class="menu-icon fas fa-print">
@@ -282,7 +289,9 @@
                         </ul>
                     </div>
                 </li>
+                @endcan
 
+                @can('System Maintenance Permission')
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="{{ route('sys_main.index') }}" class="menu-link menu-toggle">
                         <span class="menu-icon fas fa-cog">        
@@ -291,7 +300,9 @@
 
                     </a>
                 </li>
+                @endcan
 
+                @can('Register User Permission')
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="{{ url('/register') }}" class="menu-link menu-toggle">
                         <span class="menu-icon fas fa-user-plus">        
@@ -300,6 +311,7 @@
 
                     </a>
                 </li>
+                @endcan
 
             </ul>
             <!--end::Menu Nav-->

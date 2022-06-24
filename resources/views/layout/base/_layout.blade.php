@@ -34,7 +34,8 @@
 
                                 <!--begin::Page Title-->
                                 <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">
-                                    Dashboard </h5>
+                                   Capellan Enrollment Management System
+                                </h5>
                                 <!--end::Page Title-->
 
                             </div>

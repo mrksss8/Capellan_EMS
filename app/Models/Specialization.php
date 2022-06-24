@@ -14,4 +14,8 @@ class Specialization extends Model
     public function strand(){
         return $this->belongsTo(Strand::class);
     }
+
+    public function enrollment(){
+        return $this->hasOne(Student_Specialization_GradeLevel_SchoolYear::class);
+    }
 }

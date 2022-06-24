@@ -12,9 +12,9 @@
         .background {
             background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url('{{ asset('media/capellan/capellan-logo-ver2.png') }}');
             background-size: contain;
-            background-repeat:   no-repeat;
-            background-position: center center;  
-            
+            background-repeat: no-repeat;
+            background-position: center center;
+
         }
     </style>
 @endsection
@@ -47,7 +47,7 @@
                         <a href="#" class="text-primary font-weight-bold font-size-h4 mt-2">Enrolled Students</a>
                     </div>
                     <div class="col-6 d-flex justify-content-center align-items-center">
-                        <h1 class="text-center text-primary  display-2 font-weight-bold">200</h1>
+                        <h1 class="text-center text-primary  display-2 font-weight-bold">{{ $enrolled_students_cnt }}</h1>
                     </div>
                 </div>
 
@@ -78,8 +78,8 @@
 
                         <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
                             <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Communication/Urgent-mail.svg-->
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                                height="24px" viewBox="0 0 24 24" version="1.1">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24"></rect>
                                     <path
@@ -95,7 +95,37 @@
                         <a href="#" class="text-primary font-weight-bold font-size-h6 mt-2">Active School Year</a>
                     </div>
                     <div class="col-6 d-flex justify-content-center align-items-center">
-                        <h1 class="text-center text-primary display-4 font-weight-bold">2020-2021</h1>
+                        <h1 class="text-center text-primary display-4 font-weight-bold">
+                            {{ $active_school_year->schoolyear->school_year }}</h1>
+                    </div>
+                </div>
+
+                <div class="col-11 bg-light-warning px-6 py-8 rounded-xl mt-5 mx-auto d-flex border border-primary">
+
+                    <div class="col-6">
+
+                        <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
+                            <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Communication/Mail-box.svg--><svg
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                                height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24" />
+                                    <path
+                                        d="M22,15 L22,19 C22,20.1045695 21.1045695,21 20,21 L4,21 C2.8954305,21 2,20.1045695 2,19 L2,15 L6.27924078,15 L6.82339262,16.6324555 C7.09562072,17.4491398 7.8598984,18 8.72075922,18 L15.381966,18 C16.1395101,18 16.8320364,17.5719952 17.1708204,16.8944272 L18.118034,15 L22,15 Z"
+                                        fill="#000000" />
+                                    <path
+                                        d="M2.5625,13 L5.92654389,7.01947752 C6.2807805,6.38972356 6.94714834,6 7.66969497,6 L16.330305,6 C17.0528517,6 17.7192195,6.38972356 18.0734561,7.01947752 L21.4375,13 L18.118034,13 C17.3604899,13 16.6679636,13.4280048 16.3291796,14.1055728 L15.381966,16 L8.72075922,16 L8.17660738,14.3675445 C7.90437928,13.5508602 7.1401016,13 6.27924078,13 L2.5625,13 Z"
+                                        fill="#000000" opacity="0.3" />
+                                </g>
+                            </svg>
+                            <!--end::Svg Icon-->
+                        </span>
+
+                        <a href="#" class="text-primary font-weight-bold font-size-h6 mt-2">Active Semester</a>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <h1 class="text-center text-primary display-4 font-weight-bold">Semester
+                            {{ $active_school_year->sem->sem }}</h1>
                     </div>
                 </div>
 
@@ -138,18 +168,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="text-center">
-                            <th scope="row">(IA) - Electronic Products Assembly and Servicing NC II</th>
-                            <td>12</td>
-                            <td>21</td>
-                            <td>99</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
+                        @foreach ($enrolled_students as $enrolled_student)
+                            <tr>
+                                <td>
+                                    {{ $enrolled_student->specialization->specialization }}
+                                </td>
+                                <td>
+                                    {{ $enrolled_student->specialization->enrollment->student->where('sex','Male')->count()}}
+                                </td>
+                                <td>
+                                    {{ $enrolled_student->specialization->enrollment->student->where('sex','Female')->count()}}
+                                </td>
+                                <td>
+                                    {{ $enrolled_student->count()}}
+                                </td>
+                            </tr>
+                        @endforeach
+
                     </tbody>
                 </table>
             </div>

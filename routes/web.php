@@ -28,6 +28,10 @@ Route::get('/', function () {
 //     return view('pages.SystemMaintenance.index');
 // })->name('system_maintenance.index')->middleware('auth');
 
+//Dashboard
+Route::group([ 'prefix' => 'dashboard', 'middleware' => 'auth'], function() {
+    Route::get('/',[App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard.index');
+});
 
 //System Maintenance
 Route::group([ 'prefix' => 'system-maintenance', 'middleware' => 'auth'], function() {
@@ -61,8 +65,16 @@ Route::group([ 'prefix' => 'enroll_new_student', 'middleware' => 'auth'], functi
     Route::post('/store',[App\Http\Controllers\EnrollNewStudentController::class, 'store'])->name('enroll_new_student.store');
     Route::get('/get_strand', [App\Http\Controllers\EnrollNewStudentController::class,'get_strand'])->name('get_strand');
     Route::get('/get_specialization', [App\Http\Controllers\EnrollNewStudentController::class,'get_specialization'])->name('get_specialization');
-   
+    Route::get('/enrollmentForm',[App\Http\Controllers\EnrollNewStudentController::class, 'enrollmentForm'])->name('enrollmentFrom.create');
 });
+
+
+// Enrollment Form
+// Route::get('/enrollmentForm', function () {
+//     return view('pages.eform');
+// })->name('eform.index');
+
+
 //Student
 Route::group([ 'prefix' => 'enroll_existing_student', 'middleware' => 'auth'], function() {
     Route::get('/create',[App\Http\Controllers\EnrollExistingStudentController::class, 'create'])->name('enroll_existing_student.create');
@@ -142,10 +154,7 @@ Route::group([ 'prefix' => 'dropout', 'middleware' => 'auth'], function() {
     Route::get('/index',[App\Http\Controllers\DropoutController::class, 'index'])->name('dropout.index');
 });
 
-// Enrollment Form
- Route::get('/enrollmentForm', function () {
-     return view('pages.eform');
- })->name('eform.index');
+
  
 // //Enrollment
 //  Route::get('/enrollment', function () {

@@ -27,7 +27,7 @@
 
                 <div id="kt_header_menu" class="header-menu header-menu-mobile {{ Metronic::printClasses('header_menu', false) }}" {{ Metronic::printAttrs('header_menu') }}>
                     <ul class="menu-nav {{ Metronic::printClasses('header_menu_nav', false) }}">
-                        {{-- {{ Menu::renderHorMenu(config('menu_header.items')) }} --}}
+                       {{--  {{ Menu::renderHorMenu(config('menu_header.items')) }} --}}
                          <li class="menu-item  menu-item-open menu-item-here menu-item-submenu menu-item-rel menu-item-open menu-item-here menu-item-active"
                                         data-menu-toggle="click" aria-haspopup="true"><a href="javascript:;"
                                             class="menu-link menu-toggle"><span class="menu-text px-5">Capellan Institute Of Technology (San Pablo City)</span><i

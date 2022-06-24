@@ -604,6 +604,15 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">Previous School Type</label>
+                                                        <div class="col-lg-9 col-xl-8">
+                                                            <input class="form-control form-control-sm form-control-solid"
+                                                                type="text"
+                                                                value="{{ $student->enrollment->student->prev_school_type }}"
+                                                                disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">No. of Years in
                                                             JHS</label>
                                                         <div class="col-lg-9 col-xl-8">
@@ -670,7 +679,7 @@
                                                                     <td>{{ $student->enrollment->student->junior_hs_yr }}
                                                                     </td>
                                                                 </tr>
-                                                                <tr>
+                                                                {{-- <tr>
                                                                     <td class="font-weight-bolder">Senior High School</td>
                                                                     <td>{{ $student->enrollment->student->sr_hs }}</td>
                                                                     <td>{{ $student->enrollment->student->sr_hs_yr }}
@@ -682,7 +691,7 @@
                                                                     </td>
                                                                     <td>{{ $student->enrollment->student->college_yr }}
                                                                     </td>
-                                                                </tr>
+                                                                </tr> --}}
                                                             </tbody>
 
                                                         </table>
