@@ -188,7 +188,7 @@ background: linear-gradient(to top left, #4169e1 23%, #ffdf00 91%);
 
                                     </select> --}}
 
-                                    <select name="track" id="track" class="form-control" required>
+                                    <select name="track" id="track" class="custom-select custom-select-sm" required>
                                         <option selected disabled>Select Track</option>
                                         @foreach ($tracks as $track)
                                             <option value="{{ $track->id }}">{{ $track->track }}</option>
@@ -209,7 +209,7 @@ background: linear-gradient(to top left, #4169e1 23%, #ffdf00 91%);
                                     </select> --}}
                                     <div class="form-group">
                                         <label for="strand"> <span class="text-danger">*</span> Strand:</label>
-                                        <select name="strand" id="strand" class="form-control" required></select>
+                                        <select name="strand" id="strand" class="custom-select custom-select-sm" required></select>
                                     </div>
 
                                 </div>
@@ -228,7 +228,7 @@ background: linear-gradient(to top left, #4169e1 23%, #ffdf00 91%);
                                     </select> --}}
                                     <div class="form-group">
                                         <label for="specialization"><span class="text-danger">*</span> Specialization:</label>
-                                        <select name="specialization" id="specialization" class="form-control" required></select>
+                                        <select name="specialization" id="specialization" class="custom-select custom-select-sm" required></select>
                                     </div>
                                 </div>
                             </div>
@@ -665,6 +665,60 @@ background: linear-gradient(to top left, #4169e1 23%, #ffdf00 91%);
             });
         }
     </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#track").change(function() {
+                var trackID = $(this).val();
+                if (trackID) {
+                    $.ajax({
+                        type: 'GET',
+                        url: '{{ route('get_strand') }}',
+                        data: {
+                            "track_id": trackID
+                        },
+                        success: function(res) {
+                            $("#strand").empty();
+                            $("#strand").append(
+                                '<option selected disabled>Select Strand</option>');
+                            $.each(res, function(key, value) {
+                                $("#strand").append('<option value="' + value.id +
+                                    '">' + value.strand + '</option>');
+                            });
+
+                        }
+                    });
+                }
+            });
+            $('#strand').on('change', function() {
+                var strandID = $(this).val();
+                if (strandID) {
+                    $.ajax({
+                        type: "GET",
+                        url: "{{ route('get_specialization') }}",
+                        data: {
+                            "strand_id": strandID
+                        },
+                        success: function(res) {
+                            if (res) {
+                                $("#specialization").empty();
+                                $("#specialization").append(
+                                    '<option selected disabled>Select Specialization</option>'
+                                );
+                                $.each(res, function(key, value) {
+                                    $("#specialization").append('<option value="' +
+                                        value.id + '">' + value.specialization +
+                                        '</option>');
+                                });
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+
 
 </body>
 
