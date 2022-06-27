@@ -125,7 +125,7 @@
                                                 class="navi-text">Previous School Info</span></a>
                                     </li>
 
-                                    <li role="presentation" class="navi-link py-4">
+                                    {{-- <li role="presentation" class="navi-link py-4">
                                         <span class="svg-icon svg-icon svg-icon-2x px-4"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Home/Book-open.svg-->
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -136,7 +136,7 @@
                                         </svg><!--end::Svg Icon--></span>
                                         <a href="#general" role="tab" data-toggle="tab"><span
                                                 class="navi-text">General Info</span></a>
-                                    </li>
+                                    </li> --}}
                                     {{-- <li role="presentation" class="navi-link py-4"><a href="#settings"
                                             aria-controls="settings" role="tab" data-toggle="tab">Documents</a></li> --}}
                                 </ul>
@@ -159,17 +159,19 @@
                                 <h3 class="card-label font-weight-bolder text-light my-auto"> Edit Student Information</h3>
                                 {{-- <span class="text-muted font-weight-bold font-size-sm mt-1">This is the student's
                                     information.</span> --}}
-                            </div>
+                                </div>
+                                <form class="form" action ="{{route('enrolled_student.update', $students->id)}}" role="form" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PUT')
                             <div class="card-toolbar">
-                                <a class="btn btn-success mr-2" href="#x"> <span class="menu-icon flaticon-interface-5">
+                                <button class="btn btn-success mr-2" type="Submit"> <span class="menu-icon flaticon-interface-5">
                                 </span>
-                                Save Changes</a>
+                                Save Changes</button>
                                 {{-- <button type="reset" class="btn btn-secondary">Cancel</button> --}}
                             </div>
                         </div>
                         <!--end::Header-->
                         <!--begin::Form-->
-                        <form class="form">
                             <!--begin::Body-->
                             <div class="card-body">
                                
@@ -201,7 +203,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Last Name</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="last_name"
                                                                 type="text" value="{{ $students->enrollment->student->last_name }}"
                                                                 >
                                                         </div>
@@ -210,7 +212,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">First Name</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="first_name"
                                                                 type="text" value="{{ $students->enrollment->student->first_name }}"
                                                                 >
                                                         </div>
@@ -218,7 +220,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Middle Name</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="middle_name"
                                                                 type="text" value="{{ $students->enrollment->student->middle_name }}"
                                                                 >
                                                         </div>
@@ -226,7 +228,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Extension Name</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="extension"
                                                                 type="text" value="{{ $students->enrollment->student->extension }}"
                                                                 >
                                                         </div>
@@ -234,7 +236,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">LRN</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="lrn"
                                                                 type="text" value="{{ $students->enrollment->student->lrn }}"
                                                                 >
                                                         </div>
@@ -242,7 +244,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Birthday</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="b_date"
                                                                 type="date" value="{{ $students->enrollment->student->b_date }}"
                                                                 >
                                                         </div>
@@ -250,23 +252,26 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Age</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="age"
                                                                 type="text" value="{{ $students->enrollment->student->age }}"
                                                                 >
                                                         </div>
                                                     </div>
+                                                 
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Sex</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
-                                                                type="text" value="{{ $students->enrollment->student->sex }}"
-                                                                >
-                                                        </div>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label" for="sex">
+                                                            Sex
+                                                        </label>
+                                                        <select class="form-control form-control-sm col-md-4 ml-4" name="sex" width="50px" required>
+                                                            <option value="Male"{{ $students->enrollment->student->sex== 'Male' ? 'selected' : '' }}>Male</option>
+                                                            <option value="Female"{{ $students->enrollment->student->sex== 'Female' ? 'selected' : '' }}>Female</option>
+    
+                                                        </select>
                                                     </div>
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Civil Status</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="civil_status"
                                                                 type="text" value="{{ $students->enrollment->student->civil_status }}"
                                                                 >
                                                         </div>
@@ -274,7 +279,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Nationality</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="nationality"
                                                                 type="text" value="{{ $students->enrollment->student->nationality }}"
                                                                 >
                                                         </div>
@@ -282,7 +287,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Contact Number</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="contact_num"
                                                                 type="text" value="{{ $students->enrollment->student->contact_num }}"
                                                                 >
                                                         </div>
@@ -297,7 +302,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">House Number/Street</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="house_num"
                                                                 type="text" value="{{ $students->enrollment->student->house_num }}"
                                                                 >
                                                         </div>
@@ -305,7 +310,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Purok</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="purok"
                                                                 type="text" value="{{ $students->enrollment->student->purok }}"
                                                                 >
                                                         </div>
@@ -313,7 +318,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Barangay</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="brgy"
                                                                 type="text" value="{{ $students->enrollment->student->brgy }}"
                                                                 >
                                                         </div>
@@ -321,7 +326,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Municipality</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="municipality"
                                                                 type="text" value="{{ $students->enrollment->student->municipality }}"
                                                                 >
                                                         </div>
@@ -329,7 +334,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Province</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="province"
                                                                 type="text" value="{{ $students->enrollment->student->province }}"
                                                                 >
                                                         </div>
@@ -349,7 +354,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Father's Name</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="f_name"
                                                                 type="text" value="{{ $students->enrollment->student->f_name }}"
                                                                 >
                                                         </div>
@@ -357,7 +362,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Father's Occupation</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="f_occu"
                                                                 type="text" value="{{ $students->enrollment->student->f_occu }}"
                                                                 >
                                                         </div>
@@ -365,7 +370,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Mother's Name</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="m_name"
                                                                 type="text" value="{{ $students->enrollment->student->m_name }}"
                                                                 >
                                                         </div>
@@ -373,7 +378,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Mother's Occupation</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="m_occu"
                                                                 type="text" value="{{ $students->enrollment->student->m_occu }}"
                                                                 >
                                                         </div>
@@ -381,7 +386,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Guardian's Name</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="g_name"
                                                                 type="text" value="{{ $students->enrollment->student->g_name }}"
                                                                 >
                                                         </div>
@@ -389,7 +394,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Relationship</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="relationship"
                                                                 type="text" value="{{ $students->enrollment->student->relationship }}"
                                                                 >
                                                         </div>
@@ -397,7 +402,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Guardian's Contact Number</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="g_contact_num"
                                                                 type="text" value="{{ $students->enrollment->student->g_contact_num }}"
                                                                 >
                                                         </div>
@@ -405,7 +410,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Guardian's Address</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="g_add"
                                                                 type="text" value="{{ $students->enrollment->student->g_add }}"
                                                                 >
                                                         </div>
@@ -424,15 +429,33 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">School Last Attended</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="prev_school"
                                                                 type="text" value="{{ $students->enrollment->student->prev_school }}"
                                                                 >
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
+                                                        {{-- <label class="col-xl-3 col-lg-12 col-form-label">Previous School Type</label>
+                                                        <div class="col-lg-9 col-xl-8">
+                                                            <input class="form-control form-control-sm" name="prev_school_type"
+                                                                type="text" value="{{ $students->enrollment->student->prev_school_type }}"
+                                                                >
+                                                        </div> --}}
+
+                                                        <label class="col-xl-3 col-lg-12 col-form-label" for="prev_school_type">
+                                                            Previous School Type
+                                                        </label>
+                                                        <select class="form-control form-control-sm col-md-4 ml-4" name="prev_school_type" width="50px" required>
+                                                            <option value="Public"{{ $students->enrollment->student->prev_school_type== 'Public' ? 'selected' : '' }}>Public</option>
+                                                            <option value="Private"{{ $students->enrollment->student->prev_school_type== 'Private' ? 'selected' : '' }}>Private</option>
+                                                            <option value="ALS"{{ $students->enrollment->student->prev_school_type== 'ALS' ? 'selected' : '' }}>ALS</option>
+                                                            <option value="Transferee"{{ $students->enrollment->student->prev_school_type== 'Transferee' ? 'selected' : '' }}>Transferee</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">No. of Years in JHS</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="jhs_yrs"
                                                                 type="text" value="{{ $students->enrollment->student->jhs_yrs }}"
                                                                 >
                                                         </div>
@@ -440,7 +463,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">Year Graduated</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="year_grad"
                                                                 type="text" value="{{ $students->enrollment->student->year_grad }}"
                                                                 >
                                                         </div>
@@ -448,7 +471,7 @@
                                                     <div class="form-group row mb-2">
                                                         <label class="col-xl-3 col-lg-12 col-form-label">General Average</label>
                                                         <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm"
+                                                            <input class="form-control form-control-sm" name="gen_ave"
                                                                 type="text" value="{{ $students->enrollment->student->gen_ave }}"
                                                                 >
                                                         </div>
@@ -470,29 +493,20 @@
                                         <tbody>
                                                 <tr>
                                                     <td class="font-weight-bolder">Primary Grade</td>
-                                                    <td><input class="form-control form-control-sm" type="text" value="{{ $students->enrollment->student->prim_grade }}"></td>
-                                                   <td><input class="form-control form-control-sm" type="text" value="{{ $students->enrollment->student->prim_grade_yr }}"></td>
+                                                    <td><input class="form-control form-control-sm" type="text" name="prim_grade" value="{{ $students->enrollment->student->prim_grade }}"></td>
+                                                   <td><input class="form-control form-control-sm" type="text" name="prim_grade_yr" value="{{ $students->enrollment->student->prim_grade_yr }}"></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="font-weight-bolder">Intermediate Grade</td>
-                                                    <td><input class="form-control form-control-sm" type="text" value="{{ $students->enrollment->student->intermediate }}"></td>
-                                                    <td><input class="form-control form-control-sm" type="text" value="{{ $students->enrollment->student->intermediate_yr }}"></td>
+                                                    <td><input class="form-control form-control-sm" type="text" name="intermediate" value="{{ $students->enrollment->student->intermediate }}"></td>
+                                                    <td><input class="form-control form-control-sm" type="text" name="intermediate_yr" value="{{ $students->enrollment->student->intermediate_yr }}"></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="font-weight-bolder">Junior High School</td>
-                                                    <td><input class="form-control form-control-sm" type="text" value="{{ $students->enrollment->student->junior_hs }}"></td>
-                                                    <td><input class="form-control form-control-sm" type="text" value="{{ $students->enrollment->student->junior_hs_yr }}"></td>
+                                                    <td><input class="form-control form-control-sm" type="text" name="junior_hs" value="{{ $students->enrollment->student->junior_hs }}"></td>
+                                                    <td><input class="form-control form-control-sm" type="text" name="intermediate_yr" value="{{ $students->enrollment->student->junior_hs_yr }}"></td>
                                                 </tr>
-                                                <tr>
-                                                    <td class="font-weight-bolder">Senior High School</td>
-                                                    <td><input class="form-control form-control-sm" type="text" value="{{ $students->enrollment->student->sr_hs }}"></td>
-                                                    <td><input class="form-control form-control-sm" type="text" value="{{ $students->enrollment->student->sr_hs_yr }}"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="font-weight-bolder">College</td>
-                                                    <td><input class="form-control form-control-sm" type="text" value="{{ $students->enrollment->student->college }}"></td>
-                                                    <td><input class="form-control form-control-sm" type="text" value="{{ $students->enrollment->student->college_yr }}"></td>
-                                                </tr>
+                                               
                                         </tbody>
                         
                                     </table>
@@ -503,14 +517,8 @@
                                                 </div>
 
                                                 <!-- General Information -->
-                                                <div role="tabpanel" class="tab-pane" id="general">
+                                               {{--  <div role="tabpanel" class="tab-pane" id="general">
                                                     <div class="row">
-                                                        {{-- <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="lrn">LRN</label>
-                                                                <input type="number" class="form-control" id="lrn" name="lrn" placeholder="LRN">
-                                                            </div>
-                                                        </div> --}}
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="std_num">Student No.</label>
@@ -523,7 +531,6 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <label for="section">
-                                                                {{-- <span class="text-danger">*</span> --}}
                                                                 School Year
                                                             </label>
                                                             <select class="custom-select custom-select-sm" name="school_year">
@@ -537,7 +544,6 @@
                         
                                                         <div class="col-md-6">
                                                             <label for="section">
-                                                                {{-- <span class="text-danger">*</span> --}}
                                                                 Semester
                                                             </label>
                                                             <select class="custom-select custom-select-sm" name="sem">
@@ -554,7 +560,7 @@
                         
                                                         <div class="col-md-6">
                                                             <label for="grade">
-                                                                {{-- <span class="text-danger">*</span> --}}
+                                                            
                                                                 Grade
                                                             </label>
                                                             <select class="custom-select custom-select-sm" name="grade_level">
@@ -567,14 +573,7 @@
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label for="track">Track:</label>
-                                                            {{-- <select class="custom-select custom-select-sm" name="track">
-                        
-                                                                <option selected >Choose Track</option>
-                                                                @foreach ($tracks as $track)
-                                                                    <option value={{ $track->id }}> {{ $track->track }}</option>
-                                                                @endforeach
-                        
-                                                            </select> --}}
+                                                           
                         
                                                             <select name="track" id="track" class="form-control">
                                                                 <option selected >Select Track</option>
@@ -586,17 +585,6 @@
                                                     </div>
                                                     <div class="row pt-4">
                                                         <div class="col-md-6">
-                                                            {{-- <label for="strand">
-                                                                Strand
-                                                            </label> --}}
-                                                            {{-- <select class="custom-select custom-select-sm" name="strand">
-                        
-                                                                <option selected >Choose Strand</option>
-                                                                @foreach ($strands as $strand)
-                                                                    <option value={{ $strand->id }}> {{ $strand->strand }}</option>
-                                                                @endforeach
-                        
-                                                            </select> --}}
                                                             <div class="form-group">
                                                                 <label for="strand">Strand:</label>
                                                                 <select name="strand" id="strand" class="form-control"></select>
@@ -604,26 +592,14 @@
                         
                                                         </div>
                                                         <div class="col-md-6">
-                                                            {{-- <label for="specialization">
-                                                                Specialization
-                                                            </label> --}}
-                                                            {{-- <select class="custom-select custom-select-sm" name="specialization">
-                        
-                                                                <option selected >Choose Specialization</option>
-                                                                @foreach ($specializations as $specialization)
-                                                                    <option value={{ $specialization->id }}>
-                                                                        {{ $specialization->specialization }}</option>
-                                                                @endforeach
-                        
-                                                            </select> --}}
                                                             <div class="form-group">
                                                                 <label for="specialization">Specialization:</label>
                                                                 <select name="specialization" id="specialization" class="form-control"></select>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> 
 
-                                                </div>
+                                                </div>--}}
 
 
                                                 <div role="tabpanel" class="tab-pane" id="settings">Settings</div>
