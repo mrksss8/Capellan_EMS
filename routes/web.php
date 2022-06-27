@@ -145,6 +145,12 @@ Route::group([ 'prefix' => 'reports', 'middleware' => 'auth'], function() {
     Route::get('/contact_info_sheet',[App\Http\Controllers\ReportController::class, 'contact_info_sheet_index'])->name('contact_info_sheet.index');
 });
 
+//Reports
+Route::group([ 'prefix' => 'reports', 'middleware' => 'auth'], function() {
+    Route::get('/graduate_create',[App\Http\Controllers\GraduateController::class, 'create'])->name('graduate.create');
+    Route::post('/graduate_store',[App\Http\Controllers\GraduateController::class, 'store'])->name('graduate.store');
+});
+
 //Alumni
 Route::group([ 'prefix' => 'alumni', 'middleware' => 'auth'], function() {
     Route::get('/index',[App\Http\Controllers\AlumniController::class, 'index'])->name('alumni.index');

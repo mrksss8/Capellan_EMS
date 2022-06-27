@@ -313,6 +313,15 @@
                 </li>
                 @endcan
 
+                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('graduate.create')}}" class="menu-link menu-toggle">
+                        <span class="menu-icon fas fa-user-plus">        
+                        </span>
+                        <span class="menu-text">Graduates</span>
+
+                    </a>
+                </li>
+
             </ul>
             <!--end::Menu Nav-->
         </div>
