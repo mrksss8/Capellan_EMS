@@ -24,8 +24,8 @@
                     <div class="text-muted pt-2 font-size-sm">Below is the list of enrolled student this school year</div>
                 </h3>
             </div>
-            {{-- <div class="card-toolbar">
-                <!--begin::Dropdown-->
+            <div class="card-toolbar">
+                {{-- <!--begin::Dropdown-->
                 <div class="dropdown dropdown-inline mr-2">
                     <button type="button"
                         class="btn btn-light-primary font-weight-bolder dropdown-toggle"
@@ -96,10 +96,12 @@
                     </div>
                     <!--end::Dropdown Menu-->
                 </div>
-                <!--end::Dropdown-->
+                <!--end::Dropdown--> --}}
 
                 <!--begin::Button-->
-                <a href="#" class="btn btn-primary font-weight-bolder">
+                <a href="{{ route('batch.create') }}" class="btn btn-primary font-weight-bolder">
+
+                   
                     <span class="svg-icon svg-icon-md">
                         <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg--><svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -114,32 +116,41 @@
                             </g>
                         </svg>
                         <!--end::Svg Icon-->
-                    </span> New Record
+                    </span> Add Batch Billing
                 </a>
                 <!--end::Button-->
-            </div> --}}
+            </div>
         </div>
         <div class="card-body">
             <!--begin: Datatable-->
             <table class="table table-separate table-head-custom table-checkable" id="example">
                 <thead>
                     <tr>
+                        
                         <th>Action</th>
-                        <th>ID</th>
                         <th>Full Name</th>
-                        {{-- <th>Grade</th>
+                        <th>Grade</th>
                         <th>Track</th>
                         <th>Strand</th>
-                        <th>Specialization</th> --}}
+                        <th>Specialization</th>
+                        {{-- <th>Grade</th>
+                            <th>Track</th>
+                            <th>Strand</th>
+                            <th>Specialization</th> --}}
                     </tr>
                 </thead>
 
                 <tbody>
                      @foreach ($students as $student)
                         <tr>
+                            {{-- <td class="text-center"><input class="form-check-input" type="checkbox"
+                                name="student_id[]" value="{{ $student->enrollment->student->id }}"></td> --}}
                             <td><a href="{{route('billing.show', $student->id)}}">View</a></td>
-                            <td>{{ $student->id }}</td>
-                           <td>{{ $student->last_name }}, {{ $student->first_name }} {{ $student->middle_name }}</td>
+                            <td>{{ $student->enrollment->student->last_name }}, {{ $student->enrollment->student->first_name }} {{ $student->enrollment->student->middle_name }}</td>
+                            <td>{{ $student->enrollment->grade_level->grade_level }}</td>
+                            <td>{{ $student->enrollment->specialization->strand->track->track }}</td>
+                            <td>{{ $student->enrollment->specialization->strand->strand }}</td>
+                            <td>{{ $student->enrollment->specialization->specialization }}</td>
                              {{-- <td>{{ $student->grade_level->grade_level}}</td>
                             <td>{{ $student->specialization->strand->track->track }}</td>
                             <td>{{ $student->specialization->strand->strand }}</td>

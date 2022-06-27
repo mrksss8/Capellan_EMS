@@ -101,6 +101,8 @@ Route::group([ 'prefix' => 'billing', 'middleware' => 'auth'], function() {
     Route::get('/index', [App\Http\Controllers\BillingController::class, 'index'])->name('billing.index');
     Route::get('/show/{student_id}',[App\Http\Controllers\BillingController::class, 'show'])->name('billing.show');
     Route::post('/store',[App\Http\Controllers\BillingController::class, 'store'])->name('billing.store');
+    Route::get('/batchCreate', [App\Http\Controllers\BillingController::class, 'batchCreate'])->name('batch.create');
+    Route::post('/batchStore',[App\Http\Controllers\BillingController::class, 'batchStore'])->name('batch.store');
 });
 
 //Accounting - Payment
@@ -124,7 +126,7 @@ Route::group([ 'prefix' => 'memo', 'middleware' => 'auth'], function() {
 });
 
 //Documents
-Route::group([ 'prefix' => 'billing', 'middleware' => 'auth'], function() {
+Route::group([ 'prefix' => 'document', 'middleware' => 'auth'], function() {
     Route::post('/store/{id}',[App\Http\Controllers\DocumentController::class, 'store'])->name('document.store');
     Route::post('/update/{id}',[App\Http\Controllers\DocumentController::class, 'update'])->name('document.update');
     Route::get('/download/{id}/{Document}',[App\Http\Controllers\DocumentController::class, 'download'])->name('document.download');

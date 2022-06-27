@@ -11,7 +11,7 @@ class BillingController extends Controller
 {
     public function index(){
 
-         $students = Student::all();
+         $students = Student::with('enrollment.student')->where('status', 1)->get();
         
          return view('pages.Accounting.Billing.index' ,compact('students') );
     }
@@ -34,4 +34,30 @@ class BillingController extends Controller
 
        return redirect()->route('billing.show', $request->std_id);
     }
+
+    public function batchCreate(){
+
+        $students = Student::with('enrollment.student')->where('status', 1)->get();
+       
+        return view('pages.Accounting.Billing.batchCreate' ,compact('students') );
+   }
+
+   public function batchStore(Request $request){
+
+    $std_id = $request->student_id;
+    for($i = 0; $i<count($std_id); $i++)
+    {
+         $student = Student::findorfail($std_id[$i]);
+         Billing::create([
+            'std_id' => $student->id,
+            'billing_particulars' => $request->billing_particulars,
+            'billing_amt' => $request->billing_amt,
+            'billing_date' => $request->billing_date,
+        ]);
+    }
+
+    return redirect()->route('billing.index');
+    
+}
+
 }
