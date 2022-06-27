@@ -10,7 +10,7 @@ class MemoController extends Controller
 {
     public function index(){
 
-        $students = Student::all();
+        $students = Student::with('payments','enrollment')->where('status',1)->get();
         return view('pages.Accounting.Memo.index',compact('students'));
 
     }

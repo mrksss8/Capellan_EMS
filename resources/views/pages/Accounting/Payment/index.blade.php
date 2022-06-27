@@ -31,8 +31,11 @@
                 <thead>
                     <tr>
                         <th>Action</th>
-                        <th>ID</th>
                         <th>Full Name</th>
+                        <th>Grade</th>
+                        <th>Track</th>
+                        <th>Strand</th>
+                        <th>Specialization</th>
                     </tr>
                 </thead>
 
@@ -40,8 +43,11 @@
                      @foreach ($students as $student)
                         <tr>
                             <td><a href="{{route('payment.show', $student->id)}}">View</a></td>
-                            <td>{{ $student->id }}</td>
-                           <td>{{ $student->last_name }}, {{ $student->first_name }} {{ $student->middle_name }}</td>
+                            <td>{{ $student->enrollment->student->last_name }}, {{ $student->enrollment->student->first_name }} {{ $student->enrollment->student->middle_name }}</td>
+                            <td>{{ $student->enrollment->grade_level->grade_level }}</td>
+                            <td>{{ $student->enrollment->specialization->strand->track->track }}</td>
+                            <td>{{ $student->enrollment->specialization->strand->strand }}</td>
+                            <td>{{ $student->enrollment->specialization->specialization }}</td>
                         </tr>
                     @endforeach 
                 </tbody>
