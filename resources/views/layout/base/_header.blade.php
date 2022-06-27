@@ -32,7 +32,7 @@
                                         data-menu-toggle="click" aria-haspopup="true"><a href="javascript:;"
                                             class="menu-link menu-toggle"><span class="menu-text px-5">Capellan Institute Of Technology (San Pablo City)</span><i
                                                 class="menu-arrow"></i></a>
-                                        <div class="menu-submenu menu-submenu-classic menu-submenu-left">
+                                         {{-- <div class="menu-submenu menu-submenu-classic menu-submenu-left">
                                             <ul class="menu-subnav">
                                                 <li class="menu-item  menu-item-active " aria-haspopup="true"><a
                                                         href="index.html" class="menu-link "><span
@@ -198,7 +198,7 @@
                                                         </span><span class="menu-text">Create New Project</span></a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> --}}
                                     </li>
                     </ul>
                 </div>
