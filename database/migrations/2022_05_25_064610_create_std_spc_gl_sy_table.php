@@ -13,6 +13,12 @@ class CreateStdSpcGlSyTable extends Migration
      */
     public function up()
     {
+        Schema::create('sections', function (Blueprint $table) {
+            $table->id();
+            $table->string('section');
+            $table->timestamps();
+        });
+
         Schema::create('std_spc_gl_sy', function (Blueprint $table) {
             $table->id();
             //student foreign key
@@ -34,6 +40,10 @@ class CreateStdSpcGlSyTable extends Migration
             //semforeign key
             $table->unsignedBigInteger('sem_id');
             $table->foreign('sem_id')->references('id')->on('sems');
+
+            //sectionforeign key
+            $table->unsignedBigInteger('section_id')->nullable();
+            $table->foreign('section_id')->references('id')->on('sections');
 
             $table->timestamps();
         });

@@ -151,122 +151,216 @@
         </div>
 
         <div class="row p-3">
-            {{-- GRADE 11 Table --}}
-            <div class="col-md-6 m-auto">
 
+
+            <div class="col-6">
                 <table class="table table-active rounded table-bordered  mt-5"
                     style="outline-style: solid; outline-width:2px;">
                     <thead class="thead-dark">
-                        <tr>
-                            <th class="text-center" colspan="4"> Grade 11 </th>
+                        <tr class="text-center">
+                            <th colspan="4">Grade 11</th>
                         </tr>
                         <tr>
-                            <th>Strand/Specialization</th>
+
+                            <th>Strand/Specilization</th>
                             <th>Male</th>
                             <th>Female</th>
                             <th>Total</th>
+
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($enrolled_students as $enrolled_student)
+                        @foreach ($spcs as $spc)
                             <tr>
+                                <td>{{ $spc->specialization }}</td>
+                                @php
+                                    $male_cnt = 0;
+                                    $female_cnt = 0;
+                                    $total_cnt = 0;
+                                @endphp
+                                @foreach ($enrolled_students_g11->where('specialization_id', $spc->id) as $enrolled_student)
+                                    @if ($enrolled_student->student->sex == 'Male')
+                                        @php
+                                            $male_cnt = $male_cnt + 1;
+                                        @endphp
+                                    @endif
+
+                                    @if ($enrolled_student->student->sex == 'Female')
+                                        @php
+                                            $female_cnt = $female_cnt + 1;
+                                            
+                                        @endphp
+                                    @endif
+                                    @php
+                                        $total_cnt = $female_cnt + $male_cnt;
+                                    @endphp
+                                @endforeach
+
                                 <td>
-                                    {{ $enrolled_student->specialization->specialization }}
+                                    {{ $male_cnt }}
                                 </td>
                                 <td>
-                                    {{ $enrolled_student->specialization->enrollment->student->where('sex','Male')->count()}}
+                                    {{ $female_cnt }}
                                 </td>
                                 <td>
-                                    {{ $enrolled_student->specialization->enrollment->student->where('sex','Female')->count()}}
-                                </td>
-                                <td>
-                                    {{ $enrolled_student->count()}}
+                                    {{ $total_cnt }}
+
                                 </td>
                             </tr>
                         @endforeach
 
                     </tbody>
+
                 </table>
             </div>
-            {{-- GRADE 12 Table --}}
-            <div class="col-md-6 m-auto">
-
+            <div class="col-6">
                 <table class="table table-active rounded table-bordered  mt-5"
                     style="outline-style: solid; outline-width:2px;">
                     <thead class="thead-dark">
-                        <tr>
-                            <th class="text-center" colspan="4"> Grade 12 </th>
+                        <tr class="text-center">
+                            <th colspan="4">Grade 12</th>
                         </tr>
                         <tr>
-                            <th scope="col">Strand/Specialization</th>
-                            <th scope="col">Male</th>
-                            <th scope="col">Female</th>
-                            <th scope="col">Total</th>
+
+                            <th>Strand/Specilization</th>
+                            <th>Male</th>
+                            <th>Female</th>
+                            <th>Total</th>
+
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">(IA) - Electronic Products Assembly and Servicing NC II</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
+                        @foreach ($spcs as $spc)
+                            <tr>
+                                <td>{{ $spc->specialization }}</td>
+                                @php
+                                    $male_cnt = 0;
+                                    $female_cnt = 0;
+                                    $total_cnt = 0;
+                                @endphp
+
+                                @foreach ($enrolled_students_g12->where('specialization_id', $spc->id) as $enrolled_student)
+                                    @if ($enrolled_student->student->sex == 'Male' && $enrolled_student->student->status == 1)
+                                        @php
+                                            $male_cnt = $male_cnt + 1;
+                                        @endphp
+                                    @endif
+
+                                    @if ($enrolled_student->student->sex == 'Female' && $enrolled_student->student->status == 1)
+                                        @php
+                                            $female_cnt = $female_cnt + 1;
+                                            
+                                        @endphp
+                                    @endif
+                                    @php
+                                        $total_cnt = $female_cnt + $male_cnt;
+                                    @endphp
+                                @endforeach
+
+                                <td>
+                                    {{ $male_cnt }}
+                                </td>
+                                <td>
+                                    {{ $female_cnt }}
+                                </td>
+                                <td>
+                                    {{ $total_cnt }}
+
+                                </td>
+                            </tr>
+                        @endforeach
+
                     </tbody>
+
                 </table>
             </div>
-        </div>
-    </div>
-@endsection
 
-{{-- Scripts Section --}}
-@section('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"
-        integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        const ctx = document.getElementById('myChart').getContext('2d');
-        ctx.height = 200;
-        const labels = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']
-        const myChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true
+            <div class="col-6">
+                <h3>Grade 11</h3>
+
+                @foreach ($enrolled_students_g11 as $enrolled_student)
+
+                        <h5>{{ $enrolled_student->specialization->strand->strand }}/{{ $enrolled_student->specialization->specialization }}
+                        </h5>
+
+                        <ul>
+                            <li>{{ $enrolled_student->student->last_name }}</li>
+                        </ul>
+          
+                @endforeach
+            </div>
+            {{-- <div class="col-6">
+                <h3>Grade 11</h3>
+                @foreach ($spcs as $spc)
+                        <h5>{{ $spc->strand->strand }}/{{ $spc->specialization }}
+                        </h5>
+                        @foreach ($spc->enrollment->where('gradelevel_id', 1) as $enrollment)
+                            <ul>
+                                <li>{{ $enrollment->student->last_name }}</li>
+                            </ul>
+                        @endforeach
+                
+                @endforeach
+            </div> --}}
+
+            {{-- <div class="col-6">
+                <h3>Grade 12</h3>
+                @foreach ($spcs as $spc)
+                    <h5>{{ $spc->strand->strand }}/{{ $spc->specialization }}</h5>
+                    @foreach ($spc->enrollment->where('gradelevel_id', 2) as $enrollment)
+                        <ul>
+                            <li>{{ $enrollment->student->last_name }}</li>
+                        </ul>
+                    @endforeach
+                @endforeach
+            </div> --}}
+        </div>
+    @endsection
+
+
+    {{-- Scripts Section --}}
+    @section('scripts')
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"
+            integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            const ctx = document.getElementById('myChart').getContext('2d');
+            ctx.height = 200;
+            const labels = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']
+            const myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
-        });
-    </script>
-@endsection
+            });
+        </script>
+    @endsection

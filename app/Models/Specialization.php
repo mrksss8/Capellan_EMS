@@ -16,6 +16,6 @@ class Specialization extends Model
     }
 
     public function enrollment(){
-        return $this->hasOne(Student_Specialization_GradeLevel_SchoolYear::class);
+        return $this->hasMany(Student_Specialization_GradeLevel_SchoolYear::class);
     }
 }
