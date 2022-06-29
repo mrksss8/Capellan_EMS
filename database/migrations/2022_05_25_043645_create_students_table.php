@@ -60,6 +60,7 @@ class CreateStudentsTable extends Migration
             $table->integer('status');
             $table->timestamps();
             $table->integer('enrollment_id');
+            $table->string('shs_yr_graduated')->nullable();
 
         });
     }
