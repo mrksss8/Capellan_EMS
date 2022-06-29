@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use Carbon\Carbon;
 
 class GraduateController extends Controller
 {
@@ -22,7 +23,11 @@ class GraduateController extends Controller
         {
              Student::findorfail($std_id[$i])->update([
                 'status' => 3,
+                'shs_yr_graduated' =>  $date = Carbon::now()->format('Y'),
+
+               
              ]);
+             
         }
 
         return redirect()->route('graduate.create');

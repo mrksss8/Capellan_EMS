@@ -453,12 +453,12 @@ aria-labelledby="staticBackdrop" aria-hidden="true">
                     <input type="text" class="form-control" placeholder="Input Mode of Payment" name="mode_of_payment" required/>
                 </div>
                 <div class="form-group">
-                    <label>Reference Number <span class="text-danger">*</span></label>
-                    <input type="number" class="form-control" placeholder="Input Reference Number" name="reference_number" required/>
+                    <label>Reference Number </label>
+                    <input type="number" class="form-control" placeholder="Input Reference Number" name="reference_number"/>
                 </div>
                 <div class="form-group">
-                    <label>OR Number<span class="text-danger">*</span></label>
-                    <input type="number" class="form-control" placeholder="Input OR Number" name="or_num" required/>
+                    <label>OR Number</label>
+                    <input type="number" class="form-control" placeholder="Input OR Number" name="or_num"/>
                 </div>
                 <div class="form-group">
                     <label>Transaction Date <span class="text-danger">*</span></label>

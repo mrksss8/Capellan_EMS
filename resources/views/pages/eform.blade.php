@@ -91,7 +91,7 @@ background: linear-gradient(to top left, #4169e1 23%, #ffdf00 91%);
             <img src="{{ asset('media/logos/capellan_logo.png') }}" alt="logo" />
             <div class="title mb-3">CIT San Pablo - Student Registration Form</div>
             <div class="content">
-                <form method="POST" action="{{ route('enroll_new_student.store') }}"
+                <form method="POST" action="{{ route('enrollmentForm.store') }}"
                     enctype="multipart/form-data">
                     @csrf
 
@@ -644,7 +644,7 @@ background: linear-gradient(to top left, #4169e1 23%, #ffdf00 91%);
         });
     </script>
 
-
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
     <!-- Configure a few settings and attach camera -->
