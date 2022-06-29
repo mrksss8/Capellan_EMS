@@ -28,12 +28,11 @@ class DashboardController extends Controller
         $spcs = Specialization::with('enrollment')->get();
         $grds = GradeLevel::all();
 
-
-
-        $students = Student::with('enrollment')->get();
+        $sections = Section::with('specialization.enrollment')->get();
+       $students = Student::with('enrollment')->get();
     
         
-        return view('pages.dashboard',compact('enrolled_students_cnt', 'active_school_year', 'enrolled_students_g11', 'enrolled_students_g12','spcs','grds','students'));
+        return view('pages.dashboard',compact('enrolled_students_cnt', 'active_school_year', 'enrolled_students_g11', 'enrolled_students_g12','spcs','grds','students','sections'));
 
     }
 }

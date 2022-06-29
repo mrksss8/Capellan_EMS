@@ -322,6 +322,15 @@
                     </a>
                 </li>
 
+                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{ route('section.index') }}" class="menu-link menu-toggle">
+                        <span class="menu-icon fas fa-user-plus">        
+                        </span>
+                        <span class="menu-text">Sections</span>
+
+                    </a>
+                </li>
+
             </ul>
             <!--end::Menu Nav-->
         </div>

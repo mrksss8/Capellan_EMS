@@ -278,16 +278,21 @@
             <div class="col-6">
                 <h3>Grade 11</h3>
 
-                @foreach ($enrolled_students_g11 as $enrolled_student)
+                @foreach ($sections as $section)
+                <p>
+                    {{ $section->specialization->specialization }}/ {{ $section->section }}
+                </p>
+                        
+                    @foreach ($section->specialization->enrollment->where('section_id',$section->id) as $enrollment)
 
-                        <h5>{{ $enrolled_student->specialization->strand->strand }}/{{ $enrolled_student->specialization->specialization }}
-                        </h5>
+                    <p>{{ $enrollment->student->last_name}}</p>
+                        {{-- <p>{{ $enrollment->student()->where('status',1)->first('last_name')->last_name}}</p> --}}
 
-                        <ul>
-                            <li>{{ $enrolled_student->student->last_name }}</li>
-                        </ul>
-          
-                @endforeach
+                    @endforeach
+
+                                        
+                 @endforeach
+
             </div>
             {{-- <div class="col-6">
                 <h3>Grade 11</h3>
@@ -315,6 +320,7 @@
                 @endforeach
             </div> --}}
         </div>
+    </div>
     @endsection
 
 

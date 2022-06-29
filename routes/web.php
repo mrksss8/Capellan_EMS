@@ -31,27 +31,39 @@ Route::group([ 'prefix' => 'dashboard', 'middleware' => ['auth']], function() {
 });
 
 //System Maintenance
-Route::group([ 'prefix' => 'system-maintenance', 'middleware' => ['auth','permission:Dashboard Permission']], function() {
+Route::group([ 'prefix' => 'system-maintenance', 'middleware' => ['auth','permission:System Maintenance Permission']], function() {
     Route::get('/',[App\Http\Controllers\SystemMaintenanceController::class, 'index'])->name('sys_main.index');
 });
 
 //Track
-Route::group([ 'prefix' => 'track', 'middleware' => ['auth','permission:Dashboard Permission']], function() {
+Route::group([ 'prefix' => 'track', 'middleware' => ['auth','permission:System Maintenance Permission']], function() {
     Route::post('/store',[App\Http\Controllers\TrackController::class, 'store'])->name('track.store');
 });
 
 //Strand
-Route::group([ 'prefix' => 'strand', 'middleware' => ['auth','permission:Dashboard Permission']], function() {
+Route::group([ 'prefix' => 'strand', 'middleware' => ['auth','permission:System Maintenance Permission']], function() {
     Route::post('/store',[App\Http\Controllers\StrandController::class, 'store'])->name('strand.store');
 });
 
 //Specialization
-Route::group([ 'prefix' => 'specialization', 'middleware' => ['auth','permission:Dashboard Permission']], function() {
+Route::group([ 'prefix' => 'specialization', 'middleware' => ['auth','permission:System Maintenance Permission']], function() {
     Route::post('/store',[App\Http\Controllers\SpecializationController::class, 'store'])->name('specialization.store');
 });
 
+//Section
+Route::group([ 'prefix' => 'section', 'middleware' => ['auth','permission:System Maintenance Permission']], function() {
+    Route::get('/index',[App\Http\Controllers\SectionController::class, 'index'])->name('section.index');
+    Route::post('/store',[App\Http\Controllers\SectionController::class, 'store'])->name('section.store');
+});
+
+//AddSectionToStudent
+Route::group([ 'prefix' => 'add-section-to-student', 'middleware' => 'auth'], function() {
+
+    Route::put('/store',[App\Http\Controllers\AddStudentoSectionController::class, 'store'])->name('add_student_to_section.store');
+});
+
 //SchoolYear
-Route::group([ 'prefix' => 'school-year', 'middleware' => ['auth','permission:Dashboard Permission']], function() {
+Route::group([ 'prefix' => 'school-year', 'middleware' => ['auth','permission:System Maintenance Permission']], function() {
     Route::post('/store',[App\Http\Controllers\SchoolYearController::class, 'store'])->name('school_year.store');
 });
 

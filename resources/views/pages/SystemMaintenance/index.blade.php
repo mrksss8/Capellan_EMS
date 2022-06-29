@@ -152,6 +152,60 @@
         </div>
         {{-- End Specialization Table --}}
 
+        <div class="col-md-6">
+            <div class="card card-custom mt-7">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span class="card-icon">
+                            <i class="flaticon2-chat-1 text-primary"></i>
+                        </span>
+                        <h3 class="card-label">
+                            Sections
+                            {{-- <small>sub title</small> --}}
+                        </h3>
+                    </div>
+                    <div class="card-toolbar">
+                        <!-- Button trigger modal-->
+                        <button type="button" class="btn btn-primary font-weight-bold btn-sm" data-toggle="modal"
+                            data-target="#section"><i class="flaticon2-cube"></i>
+                            Add Section
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+      
+                                <th scope="col">Section</th>
+                                <th scope="col">Specialization Name</th>
+                                <th scope="col">Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($sections as $section)
+                                <tr>
+                                    <td>{{ $section->section }}</td>
+                                    <td> 
+                                        {{ $section->specialization->specialization }}
+                                    </td>
+                                    <td> 
+                                        {{ $section->gradelevel->grade_level }}
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    {{-- <a href="#" class="btn btn-light-primary font-weight-bold">Manage</a>
+                            <a href="#" class="btn btn-outline-secondary font-weight-bold">Learn more</a> --}}
+                </div>
+            </div>
+        </div>
+        {{-- End Specialization Table --}}
+
         {{-- Bgein SchoolYear Table --}}
         <div class="col-md-6">
             <div class="card card-custom mt-7">
@@ -354,6 +408,63 @@
                             <input type="text" class="form-control" placeholder="Enter Specialization"
                                 name="specialization" />
                         </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light-primary font-weight-bold"
+                            data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary font-weight-bold">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Modal-->
+    <div class="modal fade" id="section" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdrop" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Register Section</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i aria-hidden="true" class="ki ki-close"></i>
+                    </button>
+                </div>
+                <form action="{{ route('section.store') }}" method="POST">
+                    <div class="modal-body">
+                        @csrf
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="strand">Select Specialization <span class="text-danger">*</span></label>
+                                <select class="form-control" id="specialization" name="specialization">
+
+                                    @foreach ($specializations as $specialization)
+                                        <option value={{ $specialization->id }}> 
+                                            {{ $specialization->specialization }} 
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="strand">Select Grade Level <span class="text-danger">*</span></label>
+                                <select class="form-control" id="gradelevel" name="gradelevel">
+
+                                    @foreach ($gradelevels as $gradelevel)
+                                        <option value={{ $gradelevel->id }}> 
+                                            {{ $gradelevel->grade_level }} 
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Section Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="Enter section"
+                                name="section" />
+                        </div>
+                       
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light-primary font-weight-bold"

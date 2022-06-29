@@ -10,4 +10,15 @@ class Section extends Model
     use HasFactory;
 
     protected $table = "sections";
+    protected $guarded = [];
+
+    public function specialization(){
+
+        return $this->belongsTo(Specialization::class);
+    }
+
+    public function gradelevel(){
+
+        return $this->belongsTo(GradeLevel::class);
+    }
 }

@@ -16,6 +16,12 @@ class CreateStdSpcGlSyTable extends Migration
         Schema::create('sections', function (Blueprint $table) {
             $table->id();
             $table->string('section');
+            $table->unsignedBigInteger('specialization_id');
+            $table->foreign('specialization_id')->references('id')->on('specializations'); 
+
+            $table->unsignedBigInteger('gradelevel_id');
+            $table->foreign('gradelevel_id')->references('id')->on('grade_levels'); 
+             
             $table->timestamps();
         });
 
