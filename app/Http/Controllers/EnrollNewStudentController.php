@@ -76,6 +76,9 @@ class EnrollNewStudentController extends Controller
             // 'college_yr' => $request->college_yr,
             'status' => '1',
             
+
+            
+            
         ]);
 
 
@@ -92,7 +95,7 @@ class EnrollNewStudentController extends Controller
         ]);
 
 
-        return redirect()->route('enroll_new_student.create');
+        return redirect()->route('enroll_new_student.create')->with('success', 'Data Submitted Successfully. Please refresh to continue.');
 
         
     }
@@ -104,4 +107,80 @@ class EnrollNewStudentController extends Controller
         $sems = Sem::all();
         return view('pages.eform',compact('tracks','schoolyears','gradelevels','sems'));
     }
+
+    public function enrollmentFormStore(Request $request)
+    {
+        
+        $student = new Student;
+        $student ->lrn = $request->lrn;
+        $student ->std_num = $request->std_num;
+        $student ->last_name = $request->last_name;
+        $student ->first_name = $request->first_name;
+        $student ->middle_name = $request->middle_name;
+        $student ->extension = $request->extension;
+        $student ->civil_status = $request->civil_status;
+        $student ->age = $request->age;
+        $student ->sex = $request->sex;
+        $student ->nationality = $request->nationality;
+        $student ->b_date = $request->b_date;
+        $student ->contact_num = $request->contact_num;
+       $student -> house_num = $request->house_num;
+       $student -> purok = $request->purok;
+       $student -> brgy = $request->brgy;
+       $student -> municipality = $request->municipality;
+       $student -> province = $request->province;
+       $student -> f_name = $request->f_name;
+      $student ->  f_occu = $request->f_occu;
+      $student ->  m_name = $request->m_name;
+       $student -> m_occu = $request->m_occu;
+       $student -> g_name = $request->g_name;
+       $student -> relationship = $request->relationship;
+       $student -> g_contact_num = $request->g_contact_num;
+       $student -> g_add = $request->g_add;
+       $student -> prev_school = $request->prev_school;
+       $student -> prev_school_type = $request->prev_school_type;
+       $student -> jhs_yrs = $request->jhs_yrs;
+       $student -> year_grad = $request->year_grad;
+       $student -> gen_ave = $request->gen_ave;
+       $student -> prim_grade = $request->prim_grade;
+       $student -> prim_grade_yr = $request->prim_grade_yr;
+       $student -> intermediate = $request->intermediate;
+       $student -> intermediate_yr = $request->intermediate_yr;
+       $student -> junior_hs = $request->junior_hs;
+       $student -> junior_hs_yr = $request->junior_hs_yr;
+       $student -> status = '1';
+
+      //image Request
+      $img =  $request->get('image');
+      $folderPath = storage_path("app/public/student/");
+      $image_parts = explode(";base64,", $img);
+      foreach ($image_parts as $key => $image){
+          $image_base64 = base64_decode($image);
+      }
+      $fileName = uniqid() . '.png';
+      $file = $folderPath . $fileName;
+      file_put_contents($file, $image_base64);
+
+      $student->image = $fileName;
+
+      //Grade Level
+      $enrollment_id = Student_Specialization_GradeLevel_SchoolYear::create([
+        'student_id' => $student->id,
+        'specialization_id' => $request->specialization,
+        'gradelevel_id' => $request->grade_level,
+        'school_year_id' => $request->school_year,
+        'sem_id' => $request->sem,
+    ]);
+
+    Student::where('id',$student->id)->update([
+       'enrollment_id' => $enrollment_id->id,
+   ]);
+
+
+        
+        $student ->save();
+
+        return redirect()->back()->with('success', 'Data Submitted Successfully');   
+    }
+
 }

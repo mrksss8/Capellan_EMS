@@ -49,7 +49,7 @@
                  <!--begin::Menu Nav-->
 
                  @can('Dashboard Permission')
-                <li class="menu-item menu-item-active" aria-haspopup="true">
+                <li class="menu-item" aria-haspopup="true">
                     <a href="{{ route('dashboard.index') }}" class="menu-link">
                         <span class="svg-icon menu-icon">
                             <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Layers.svg-->

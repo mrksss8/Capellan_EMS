@@ -19,8 +19,8 @@ class CreatePaymentsTable extends Migration
             $table->string('payment_particulars');
             $table->string('payment_amt');
             $table->string('mode_of_payment');
-            $table->string('reference_number');
-            $table->string('or_num');
+            $table->string('reference_number')->nullable();
+            $table->string('or_num')->nullable();
             $table->string('transaction_date');
             $table->timestamps();
         });
