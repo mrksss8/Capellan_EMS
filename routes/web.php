@@ -19,16 +19,13 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 
-Route::get('/', function () {
-    return view('pages.dashboard');
-})->middleware('auth');
 
 
-// Route::get('/system-maintenance', function () {
-//     return view('pages.SystemMaintenance.index');
-// })->name('system_maintenance.index')->middleware('auth');
 
 //Dashboard
+
+Route::get('/',[App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard.index')->middleware('auth');
+
 Route::group([ 'prefix' => 'dashboard', 'middleware' => 'auth'], function() {
     Route::get('/',[App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard.index');
 });
