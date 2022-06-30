@@ -177,6 +177,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         
         Spatie\Permission\PermissionServiceProvider::class,
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 
     ],
 
@@ -233,6 +234,7 @@ return [
         // Metronic Aliases
         'Metronic' => App\Classes\Theme\Metronic::class,
         'Menu' => App\Classes\Theme\Menu::class,
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
 
     ],
 

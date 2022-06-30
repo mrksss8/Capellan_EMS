@@ -29,6 +29,10 @@
 
         {{-- Includable CSS --}}
         @yield('styles')
+
+        <style>
+        .swal2.pop
+        </style>
     </head>
 
     <body {{ Metronic::printAttrs('body') }} {{ Metronic::printClasses('body') }}>
@@ -53,7 +57,8 @@
 
         {{-- Includable JS --}}
         @yield('scripts')
-
+        @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
+        @include('sweetalert::alert')
     </body>
 </html>
 
