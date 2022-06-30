@@ -29,10 +29,6 @@
 
         {{-- Includable CSS --}}
         @yield('styles')
-
-        <style>
-        .swal2.pop
-        </style>
     </head>
 
     <body {{ Metronic::printAttrs('body') }} {{ Metronic::printClasses('body') }}>

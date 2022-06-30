@@ -9,10 +9,12 @@ use App\Models\GradeLevel;
 use App\Models\Section;
 use App\Models\Active_SchoolYearAndSem;
 use App\Models\Student_Specialization_GradeLevel_SchoolYear;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class DashboardController extends Controller
 {
     public function index(){
+
         
         $enrolled_students_cnt = Student::where('status', 1)->count();
         $active_school_year = Active_SchoolYearAndSem::with('schoolyear','sem')->first();
@@ -32,7 +34,7 @@ class DashboardController extends Controller
        $students = Student::with('enrollment')->get();
     
         
-        return view('pages.dashboard',compact('enrolled_students_cnt', 'active_school_year', 'enrolled_students_g11', 'enrolled_students_g12','spcs','grds','students','sections'));
 
+        return view('pages.dashboard',compact('enrolled_students_cnt', 'active_school_year', 'enrolled_students_g11', 'enrolled_students_g12','spcs','grds','students','sections'));
     }
 }
