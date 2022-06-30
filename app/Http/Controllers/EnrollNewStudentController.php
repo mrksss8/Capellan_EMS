@@ -9,6 +9,7 @@ use App\Models\Sem;
 use App\Models\SchoolYear;
 use App\Models\GradeLevel;
 use App\Models\Student_Specialization_GradeLevel_SchoolYear;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class EnrollNewStudentController extends Controller
 {
@@ -18,6 +19,8 @@ class EnrollNewStudentController extends Controller
         $schoolyears = SchoolYear::all();
         $gradelevels = GradeLevel::all();
         $sems = Sem::all();
+        
+    
         return view('pages.Enrollment.EnrollNewStudent.index',compact('tracks','schoolyears','gradelevels','sems'));
     }
 
@@ -74,11 +77,7 @@ class EnrollNewStudentController extends Controller
             // 'sr_hs_yr' => $request->sr_hs_yr,
             // 'college' => $request->college,
             // 'college_yr' => $request->college_yr,
-            'status' => '1',
-            
-
-            
-            
+            'status' => '1', 
         ]);
 
 
@@ -95,11 +94,12 @@ class EnrollNewStudentController extends Controller
         ]);
 
 
-        // return redirect()->route('enroll_new_student.create')->with('success', 'Data Submitted Successfully. Please refresh to continue.');
-        return redirect()->route('enroll_new_student.create');
+        
+        return redirect()->route('enroll_new_student.create')->with('success', 'Student Created Successfully!');
         
     }
 
+    //enrollment form create 
     function enrollmentForm(){
         $tracks = DB::table('tracks')->get();
         $schoolyears = SchoolYear::all();
@@ -149,8 +149,8 @@ class EnrollNewStudentController extends Controller
        $student -> junior_hs = $request->junior_hs;
        $student -> junior_hs_yr = $request->junior_hs_yr;
        $student -> status = '1';
-
-      //image Request
+       
+       //image Request
       $img =  $request->get('image');
       $folderPath = storage_path("app/public/student/");
       $image_parts = explode(";base64,", $img);
@@ -160,10 +160,11 @@ class EnrollNewStudentController extends Controller
       $fileName = uniqid() . '.png';
       $file = $folderPath . $fileName;
       file_put_contents($file, $image_base64);
-
+      
       $student->image = $fileName;
-
-      //Grade Level
+      $student ->save();
+      
+      
       $enrollment_id = Student_Specialization_GradeLevel_SchoolYear::create([
         'student_id' => $student->id,
         'specialization_id' => $request->specialization,
@@ -177,10 +178,7 @@ class EnrollNewStudentController extends Controller
    ]);
 
 
-        
-        $student ->save();
-
-        return redirect()->back()->with('success', 'Data Submitted Successfully');   
+        return redirect()->back(); 
     }
 
 }
