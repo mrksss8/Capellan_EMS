@@ -38,12 +38,13 @@
                                 <tr>
                                     <th>Check</th>
                                     <th scope="col">Name</th>
+                                    <th scope="col">Grade</th>
                                     <th scope="col">Strand/Specialization</th>
                                     <th scope="col">Gender</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($student_without_sections as $student)
+                                @forelse ($student_without_sections->where('status',1) as $student)
                                     <tr>
 
                                         <td class="text-center"> <input class="form-check-input" type="checkbox"
@@ -52,6 +53,9 @@
                                         <td>{{ $student->last_name }}, {{ $student->first_name }}
                                             {{ $student->middle_name }}
                                         </td>
+
+                                        <td>{{ $student->enrollment->grade_level->grade_level }} </td>
+
                                         <td>{{ $student->enrollment->specialization->strand->strand }} / <strong>
                                                 {{ $student->enrollment->specialization->specialization }} </strong></td>
                                         <td> {{ $student->sex }}</td>
@@ -118,7 +122,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse($section->specialization->enrollment->where('section_id', $section->id) as $enrollment)
+                                @forelse($section->specialization->enrollment->where('section_id', $section->id)->where('school_year_id', '=', $active->active_SY_id)->where('sem_id','=', $active->active_sem_id) as $enrollment)
                                     <tr>
 
                                         <td>{{ $loop->iteration }}</td>

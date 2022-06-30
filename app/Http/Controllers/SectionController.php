@@ -5,20 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Section;
 use App\Models\Student;
+use App\Models\Active_SchoolYearAndSem;
 
 class SectionController extends Controller
 {
 
     public function index(){
 
+        $active = Active_SchoolYearAndSem::first();
         $sections = Section::with('specialization','gradelevel')->get();
 
-        $student_without_sections = Student::with('enrollment')->whereHas('enrollment', function($q){
-            $q->where('section_id',null);
-        })->get();
+        $student_without_sections = Student::with('enrollment')->whereHas('enrollment', function($q) use($active){
+            $q->where('section_id',null)->where('school_year_id', $active->active_SY_id)->where('sem_id', $active->active_sem_id);
+        })->where('status',1)->get();
 
 
-        return view('pages.Section.index',compact('sections','student_without_sections'));
+
+        return view('pages.Section.index',compact('sections','student_without_sections','active'));
     } 
 
     public function store(request $request){
