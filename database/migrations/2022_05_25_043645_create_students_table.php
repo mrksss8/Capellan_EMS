@@ -61,6 +61,8 @@ class CreateStudentsTable extends Migration
             $table->timestamps();
             $table->integer('enrollment_id');
             $table->string('shs_yr_graduated')->nullable();
+            $table->string('reason_for_dropout')->nullable();
+            $table->string('dropout_date')->nullable();
 
         });
     }

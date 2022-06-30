@@ -50,7 +50,7 @@
                             <td>{{ $student->enrollment->student->last_name }}, {{ $student->enrollment->student->first_name }} {{ $student->enrollment->student->middle_name }} {{ $student->enrollment->student->extension }}</td>
                             <td>{{ $student->enrollment->student->sex }}</td>
                             <td>{{ $student->enrollment->specialization->strand->strand }} - {{ $student->enrollment->specialization->specialization }}</td>
-                            <td>2022</td>
+                            <td>{{ $student->enrollment->student->dropout_date }}</td>
                         </tr>
                     @endforeach 
                 </tbody>

@@ -95,8 +95,8 @@ class EnrollNewStudentController extends Controller
         ]);
 
 
-        return redirect()->route('enroll_new_student.create')->with('success', 'Data Submitted Successfully. Please refresh to continue.');
-
+        // return redirect()->route('enroll_new_student.create')->with('success', 'Data Submitted Successfully. Please refresh to continue.');
+        return redirect()->route('enroll_new_student.create');
         
     }
 

@@ -120,7 +120,7 @@
                             </div>
                             <!--end::User-->
                             <!--begin::Contact-->
-                            <div class="py-9">
+                            <div class="py-9 text-center">
                                 <div class="d-flex align-items-center justify-content-between mb-2">
                                     <span
                                         class="font-weight-bold m-auto font-weight-bolder text-center">{{ $student->enrollment->student->last_name }},
@@ -263,7 +263,8 @@
                                             data-toggle="tab"><span class="navi-text">Documents Submission</span></a>
                                     </li>
                                     <li role="presentation" class="navi-link py-4 d-flex justify-content-center mt-5">
-                                        <button class = "btn btn-danger"  data-toggle="modal" data-target="#dropStudent">Drop this student</button>
+                                        <button class="btn btn-danger" data-toggle="modal" data-target="#dropStudent">Drop
+                                            this student</button>
                                     </li>
                                 </ul>
 
@@ -604,7 +605,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Previous School Type</label>
+                                                        <label class="col-xl-3 col-lg-12 col-form-label">Previous School
+                                                            Type</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm form-control-solid"
                                                                 type="text"
@@ -719,7 +721,9 @@
                                                                     @if ($student->document->Form137_Document != null)
                                                                         <p class="mr-0 mb-0 font-italic font-weight-light">
                                                                             Document:
-                                                                            <a href="{{ route('document.download', [$student->document->id, $student->document->Form137_Document]) }}">{{ $student->document->Form137_Document }}</a> </p>
+                                                                            <a
+                                                                                href="{{ route('document.download', [$student->document->id, $student->document->Form137_Document]) }}">{{ $student->document->Form137_Document }}</a>
+                                                                        </p>
                                                                     @endif
                                                                 @else
                                                                     <span class="text-danger">Not </span>
@@ -732,7 +736,9 @@
                                                                     @if ($student->document->JHS_cert_Document != null)
                                                                         <p class="mr-0 mb-0 font-italic font-weight-light">
                                                                             Document:
-                                                                            <a href="{{ route('document.download', [$student->document->id, $student->document->JHS_cert_Document]) }}">{{ $student->document->JHS_cert_Document }}</a> </p>
+                                                                            <a
+                                                                                href="{{ route('document.download', [$student->document->id, $student->document->JHS_cert_Document]) }}">{{ $student->document->JHS_cert_Document }}</a>
+                                                                        </p>
                                                                     @endif
                                                                 @else
                                                                     <span class="text-danger">Not Submitted</span>
@@ -745,7 +751,9 @@
                                                                     @if ($student->document->PSA_Document != null)
                                                                         <p class="mr-0 mb-0 font-italic font-weight-light">
                                                                             Document:
-                                                                            <a href="{{ route('document.download', [$student->document->id, $student->document->PSA_Document]) }}">{{ $student->document->PSA_Document }}</a> </p>
+                                                                            <a
+                                                                                href="{{ route('document.download', [$student->document->id, $student->document->PSA_Document]) }}">{{ $student->document->PSA_Document }}</a>
+                                                                        </p>
                                                                     @endif
                                                                 @else
                                                                     <span class="text-danger">Not Submitted</span>
@@ -759,7 +767,9 @@
                                                                     @if ($student->document->GoodMoral_Document != null)
                                                                         <p class="mr-0 mb-0 font-italic font-weight-light">
                                                                             Document:
-                                                                            <a href="{{ route('document.download', [$student->document->id, $student->document->GoodMoral_Document]) }}">{{ $student->document->GoodMoral_Document }}</a> </p>
+                                                                            <a
+                                                                                href="{{ route('document.download', [$student->document->id, $student->document->GoodMoral_Document]) }}">{{ $student->document->GoodMoral_Document }}</a>
+                                                                        </p>
                                                                     @endif
                                                                 @else
                                                                     <span class="text-danger">Not Submitted</span>
@@ -772,7 +782,9 @@
                                                                     @if ($student->document->Card_Document != null)
                                                                         <p class="mr-0 mb-0 font-italic font-weight-light">
                                                                             Document:
-                                                                            <a href="{{ route('document.download', [$student->document->id, $student->document->Card_Document]) }}">{{ $student->document->Card_Document }}</a> </p>
+                                                                            <a
+                                                                                href="{{ route('document.download', [$student->document->id, $student->document->Card_Document]) }}">{{ $student->document->Card_Document }}</a>
+                                                                        </p>
                                                                     @endif
                                                                 @else
                                                                     <span class="text-danger">Not Submitted</span>
@@ -1016,7 +1028,7 @@
                                                         <input class="form-check-input" type="checkbox" value=""
                                                             id="flexCheckChecked" name="JHS_cert">
                                                         <label class="form-check-label" for="flexCheckChecked">
-                                                           JHS Certification
+                                                            JHS Certification
                                                         </label>
                                                     </div>
                                                 </div>
@@ -1108,7 +1120,7 @@
                     </div>
                 </div>
 
-                <!-- Drop Studnet Modal-->
+                <!-- Drop Student Modal-->
                 <div class="modal fade" id="dropStudent" data-backdrop="static" tabindex="-1" role="dialog"
                     aria-labelledby="staticBackdrop" aria-hidden="true">
                     <div class="modal-dialog modal-md" role="document">
@@ -1119,11 +1131,40 @@
                                     <i aria-hidden="true" class="ki ki-close"></i>
                                 </button>
                             </div>
-                            <form action="{{ route('enrolled_student.drop', $student->enrollment->student->id) }}"  method="post">
+                            <form action="{{ route('enrolled_student.drop', $student->enrollment->student->id) }}"
+                                method="post">
                                 @csrf
                                 @method('PUT')
-                              
-                                <div class="col text-center pt-5">
+
+                                <div class="col-md-12 pt-3">
+                                    <label for="reason_fpr_dropout"> <span class="text-danger">*</span>
+                                        Reason for Dropout
+                                    </label>
+                                    <select class="custom-select custom-select-sm" name="reason_for_dropout" required>
+                                        <option selected="" disabled="">Choose Reason for Dropout</option>
+                                        <option selected value="Armed Conflict">Armed Conflict</option>
+                                        <option value="Calamities/Disasters">Calamities/Disasters</option>
+                                        <option value="Child Labor, workChild Labor, work">Child Labor, work</option>
+                                        <option value="Transferred to School Abroad">Transferred to School Abroad</option>
+                                        <option value="Transferred to International School">Transferred to International School</option>
+                                        <option value="Acceleration (No Longer attending class)">Acceleration (No Longer attending class)</option>
+                                        <option value="Physical conditions of classroom">Physical conditions of classroom</option>
+                                        <option value="Peer Influences">Peer Influences</option>
+                                        <option value="Distance between home and school">Distance between home and school</option>
+                                        <option value="Family problems/feuds">Family problems/feuds</option>
+                                        <option value="Illness">Illness</option>
+                                        <option value="Overage">Overage</option>
+                                        <option value="Death">Death</option>    
+                                        <option value="Drug Abuse">Drug Abuse</option>
+                                        <option value="Poor academic performance">Poor academic performance</option>
+                                        <option value="Lack of interest/Distractions">Lack of interest/Distractions</option>
+                                        <option value="Had totake care of siblings">Had totake care of siblings</option>
+                                        <option value="Early marriage/pregnancy">Early marriage/pregnancy</option>
+                                        <option value="Parent's attitude toward schooling">Parent's attitude toward schooling</option>
+                                    </select>
+                                </div>
+
+                                <div class="col text-center p-5">
                                     <button type="button" class="btn btn-danger mt-4" data-dismiss="modal">
                                         Cancel</button>
                                     <button type="submit" class="btn btn-primary mt-4 mr-2">Submit</button>

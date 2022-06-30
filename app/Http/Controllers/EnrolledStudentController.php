@@ -9,6 +9,7 @@ use App\Models\Active_SchoolYearAndSem;
 use App\Models\SchoolYear;
 use App\Models\Sem;
 use App\Models\gradelevel;
+use Carbon\Carbon;
 
 class EnrolledStudentController extends Controller
 {
@@ -88,11 +89,15 @@ class EnrolledStudentController extends Controller
 
     }
     
-    public function drop($id){
+    public function drop($id, Request $request){
 
+        Student::findorfail($id)->update([
+            
+            'status' => 2, 
+            'reason_for_dropout' => $request->reason_for_dropout, 
+            'dropout_date' =>  $todayDate = Carbon::now()->format('Y-m-d'), 
+         //   dd($todayDate),
 
-      Student::findorfail($id)->update([
-            'status' => 2
         ]);
 
         return redirect()->route('enrolled_student.index');
