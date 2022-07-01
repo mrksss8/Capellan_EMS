@@ -61,7 +61,7 @@ class EnrollExistingStudentController extends Controller
             ]);
         }
 
-        return redirect()->route('enroll_existing_student.create');
+        return redirect()->route('enroll_existing_student.create')->with('success', 'Students Enrolled Successfully!');
         
     }
 }

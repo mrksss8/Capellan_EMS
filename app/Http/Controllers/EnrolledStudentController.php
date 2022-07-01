@@ -10,6 +10,7 @@ use App\Models\SchoolYear;
 use App\Models\Sem;
 use App\Models\gradelevel;
 use Carbon\Carbon;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class EnrolledStudentController extends Controller
 {
@@ -100,7 +101,7 @@ class EnrolledStudentController extends Controller
 
         ]);
 
-        return redirect()->route('enrolled_student.index');
+        return redirect()->route('enrolled_student.index')->with('warning', 'Student Dropped');
 
     }
 

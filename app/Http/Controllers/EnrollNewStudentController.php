@@ -95,7 +95,7 @@ class EnrollNewStudentController extends Controller
 
 
         
-        return redirect()->route('enroll_new_student.create')->with('success', 'Student Created Successfully!');
+        return redirect()->route('enroll_new_student.create')->with('success', 'Student Enrolled Successfully!');
         
     }
 
@@ -178,7 +178,7 @@ class EnrollNewStudentController extends Controller
    ]);
 
 
-        return redirect()->back(); 
+        return redirect()->back()->with('success', 'Student Enrolled Successfully!'); 
     }
 
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use Carbon\Carbon;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class GraduateController extends Controller
 {
@@ -30,6 +31,6 @@ class GraduateController extends Controller
              
         }
 
-        return redirect()->route('graduate.create');
+        return redirect()->route('graduate.create')->with('success', 'Successfull!');
     }
 }
