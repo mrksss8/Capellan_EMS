@@ -78,6 +78,12 @@ Route::group([ 'prefix' => 'enroll_new_student', 'middleware' => ['auth','permis
     Route::post('/enrollmentFormStore',[App\Http\Controllers\EnrollNewStudentController::class, 'enrollmentFormStore'])->name('enrollmentForm.store');
 });
 
+//Student
+Route::group([ 'prefix' => 'import_student', 'middleware' => ['auth','permission:Enrollment Permission']], function() {
+    Route::get('/create',[App\Http\Controllers\ImportEnrollStudentController::class, 'create'])->name('import_student.create');
+    Route::post('/import',[App\Http\Controllers\ImportEnrollStudentController::class, 'import'])->name('import_student.store');
+});
+
 
 // Enrollment Form
 // Route::get('/enrollmentForm', function () {

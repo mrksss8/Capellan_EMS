@@ -16,7 +16,7 @@
     <div class="brand flex-column-auto {{ Metronic::printClasses('brand', false) }}" id="kt_brand">
         <div class="brand-logo">
             <a href="{{ url('/') }}">
-                <img alt="{{ config('app.name') }}" src="{{ asset('media/logos/capellan_logo.png') }}" width="50px" height="50px"/>
+                <img alt="{{ config('app.name') }}" src="{{ asset('media/logos/capellan-name-logo.png') }}" width="180px" />
             </a>
         </div>
 
@@ -34,7 +34,7 @@
         @if (config('layout.aside.self.display') === false)
             <div class="header-logo">
                 <a href="{{ url('/') }}">
-                    <img alt="{{ config('app.name') }}" src="{{ asset('media/logos/capellan_logo.png') }}" width="150px"/>
+                    <img alt="{{ config('app.name') }}" src="{{ asset('media/logos/capellan-name-logo.png') }}" width="180px"/>
                 </a>
             </div>
         @endif
@@ -103,6 +103,16 @@
                                 </a>
                                 
                             </li>
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="{{ route('import_student.create') }}" class="menu-link menu-toggle">
+                                    <i class="menu-bullet menu-bullet-line">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">Import Student</span>
+                                    
+                                </a>
+                                
+                            </li>
                             
                     
                         </ul>
@@ -160,16 +170,16 @@
                         </ul>
                     </div>
                 </li>
-                @endcan
 
-                {{-- <li class="menu-item" aria-haspopup="true">
-                    <a href="#" class="menu-link">
-                        <span class="menu-icon fas fa-coins">
-                           
+                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{ route('section.index') }}" class="menu-link menu-toggle">
+                        <span class="menu-icon fas fa-user-plus">        
                         </span>
-                        <span class="menu-text">Accounting</span>
+                        <span class="menu-text">Sections</span>
+
                     </a>
-                </li> --}}
+                </li>
+                @endcan
 
                 @can('Accounting Permission')
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
@@ -291,6 +301,15 @@
                 </li>
                 @endcan
 
+                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('graduate.create')}}" class="menu-link menu-toggle">
+                        <span class="menu-icon fas fa-user-plus">        
+                        </span>
+                        <span class="menu-text">Add Graduates Students</span>
+
+                    </a>
+                </li>
+
                 @can('System Maintenance Permission')
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="{{ route('sys_main.index') }}" class="menu-link menu-toggle">
@@ -312,24 +331,6 @@
                     </a>
                 </li>
                 @endcan
-
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                    <a href="{{route('graduate.create')}}" class="menu-link menu-toggle">
-                        <span class="menu-icon fas fa-user-plus">        
-                        </span>
-                        <span class="menu-text">Graduates</span>
-
-                    </a>
-                </li>
-
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                    <a href="{{ route('section.index') }}" class="menu-link menu-toggle">
-                        <span class="menu-icon fas fa-user-plus">        
-                        </span>
-                        <span class="menu-text">Sections</span>
-
-                    </a>
-                </li>
 
             </ul>
             <!--end::Menu Nav-->
