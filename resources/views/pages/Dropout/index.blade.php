@@ -44,9 +44,12 @@
 
                 <tbody>
                      @foreach ($students as $student)
-                        
+                     {{-- <button type="button" class="btn btn-primary font-weight-bold btn-sm" data-toggle="modal"
+                     data-target="#section"><i class="flaticon2-cube"></i>
+                     Add Section
+                 </button> --}}
                         <tr>
-                            <td><a href="#">View</a></td>
+                            <td><button type="button" class="btn btn-primary font-weight-bold btn-sm" data-toggle="modal" data-target="#view">View</button></td>
                             <td>{{ $student->enrollment->student->last_name }}, {{ $student->enrollment->student->first_name }} {{ $student->enrollment->student->middle_name }} {{ $student->enrollment->student->extension }}</td>
                             <td>{{ $student->enrollment->student->sex }}</td>
                             <td>{{ $student->enrollment->specialization->strand->strand }} - {{ $student->enrollment->specialization->specialization }}</td>
@@ -60,6 +63,45 @@
         </div>
     </div>
     <!--end::Card-->
+
+     <!-- View Modal-->
+     <div class="modal fade" id="view" data-backdrop="static" tabindex="-1" role="dialog"
+     aria-labelledby="staticBackdrop" aria-hidden="true">
+     <div class="modal-dialog modal-md" role="document">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h5 class="modal-title" id="staticBackdropLabel">Dropped Student Basic Info</h5>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <i aria-hidden="true" class="ki ki-close"></i>
+                 </button>
+             </div>
+             <div class="modal-body">
+               <div class="font-weight-bold py-2">
+                   {{ $student->enrollment->student->last_name }}, {{ $student->enrollment->student->first_name }} {{ $student->enrollment->student->middle_name }} {{ $student->enrollment->student->extension }}
+            </div>
+            <div class="px-5 py-2">
+                <span class="font-weight-bold pr-3">Student Number:</span> {{ $student->enrollment->student->std_num }}
+            </div>
+            <div class="px-5 py-2">
+                <span class="font-weight-bold pr-3">LRN:</span> {{ $student->enrollment->student->lrn }}
+            </div>
+            <div class="px-5 py-2">
+                <span class="font-weight-bold pr-3">Birthdate:</span> {{ $student->enrollment->student->b_date }}
+            </div>
+            <div class="px-5 py-2">
+                <span class="font-weight-bold pr-3">Sex:</span> {{ $student->enrollment->student->sex }}
+            </div>
+            <div class="px-5 py-2">
+                <span class="font-weight-bold pr-3">Contact Number:</span> {{ $student->enrollment->student->contact_num }}
+            </div>
+            <div class="px-5 py-2">
+                <span class="font-weight-bold pr-3">Address:</span> {{ $student->enrollment->student->house_num}} {{ $student->enrollment->student->purok}} {{ $student->enrollment->student->brgy}} {{ $student->enrollment->student->municipality}}, {{ $student->enrollment->student->province}}
+            </div>
+             </div>
+     </div>
+ </div>
+
+
 @endsection
 
 {{-- Scripts Section --}}
