@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        // $this->call(TrackStrandSpecializationSeeder::class);
 
         DB::table('grade_levels')->insert([
             'grade_level' => 'Grade 11'
@@ -25,23 +25,79 @@ class DatabaseSeeder extends Seeder
         DB::table('grade_levels')->insert([
             'grade_level' => 'Grade 12'
         ]);
-
         DB::table('sems')->insert([
             'sem' => '1',
         ]);
-
         DB::table('sems')->insert([
             'sem' => '2',
         ]);
-
         DB::table('school_years')->insert([
             'school_year' => '2022-2023',
         ]);
-
         DB::table('active__school_year_and_sems')->insert([
             'active_SY_id' => '1',
             'active_sem_id' => '1',
         ]);
+
+        //tracks
+        $TechVoc = DB::table('tracks')->insert([
+            'track' => 'Tech-Voc'
+            ]);
+
+        //strands
+        $IA = DB::table('strands')->insert(
+            ['strand' => '(IA) Industrial Arts',
+            'track_id' => '1'],
+        );
+        $HE = DB::table('strands')->insert(
+            ['strand' => '(HE) Home Economics',
+            'track_id' => '1'],
+        );
+        $ICT = DB::table('strands')->insert(
+            ['strand' => '(ICT) Information and Communication Technology',
+            'track_id' => '1']
+        );
+
+        //specializations - IA Strand
+        $IA_Automotive = DB::table('specializations')->insert(
+            ['specialization' => 'Automotive Servicing NC I',
+            'strand_id' =>'1'],
+        );
+        $IA_Electronic = DB::table('specializations')->insert(
+            ['specialization' => 'Electronic Products Assembly and Servicing NC II',
+            'strand_id' =>'1'],
+        );
+        $IA_Electrical = DB::table('specializations')->insert(
+            ['specialization' => 'Electrical Installation and Maintenance NC II',
+            'strand_id' =>'1'],
+        );
+
+        //specializations - HE Strand
+        $HE_Housekeeping = DB::table('specializations')->insert(
+            ['specialization' => 'Housekeeping NC II',
+            'strand_id' => '2'],
+        );
+        $HE_Front = DB::table('specializations')->insert(
+            ['specialization' => 'Front Office Service NC II',
+            'strand_id' => '2'],
+        );
+        $HE_Food = DB::table('specializations')->insert(
+            ['specialization' => 'Food and Beverage Service NC II',
+            'strand_id' => '2'],
+        );
+        $HE_Bread = DB::table('specializations')->insert(
+            ['specialization' => 'Bread and Pastry Production NC II',
+            'strand_id' => '2'],
+        );
+
+        //specializations - ICT Strand
+        $ICT_Computer = DB::table('specializations')->insert(
+            ['specialization' => 'Computer System Servicing NC II',
+            'strand_id' => '3'],
+        );
+
+
+
 
         //seeder roles adn permission
          // Reset cached roles and permissions
@@ -111,4 +167,5 @@ class DatabaseSeeder extends Seeder
         $magicAccounting->assignRole($roleAccounting);
 
     }
+
 }
