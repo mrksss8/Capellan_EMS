@@ -97,12 +97,11 @@
 
                                 <div
                                     class="form-group d-flex flex-wrap justify-content-between align-items-center mt-2">
-                                    <div class="my-3 mr-2">
-                                        {{-- <span class="text-muted mr-2">Don't have an account?</span> --}}
+                                    {{-- <div class="my-3 mr-2">
                                         <a href="{{ url('/register') }}" id="kt_login_signup" class="font-weight-bold">
                                             Register
                                         </a>
-                                    </div>
+                                    </div> --}}
                                     <button class="btn btn-primary font-weight-bold px-9 py-4 my-3">Sign In</button>
                                 </div>
                             </form>

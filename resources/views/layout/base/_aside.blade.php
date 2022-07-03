@@ -315,7 +315,7 @@
 
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="{{route('graduate.create')}}" class="menu-link menu-toggle">
-                        <span class="menu-icon fas fa-user-plus">        
+                        <span class="menu-icon fas fa-graduation-cap">        
                         </span>
                         <span class="menu-text">Graduates</span>
 
@@ -324,7 +324,7 @@
 
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="{{ route('section.index') }}" class="menu-link menu-toggle">
-                        <span class="menu-icon fas fa-user-plus">        
+                        <span class="menu-icon far fa-list-alt">        
                         </span>
                         <span class="menu-text">Sections</span>
 
