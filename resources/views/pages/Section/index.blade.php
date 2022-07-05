@@ -13,6 +13,20 @@
     </style>
 @endsection
 
+@section('info')
+ <!--begin::Info-->
+ <div class="d-flex align-items-center flex-wrap mr-2">
+
+    <!--begin::Page Title-->
+    <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">
+      Sections
+    </h5>
+    <!--end::Page Title-->
+
+</div>
+<!--end::Info-->
+@endsection
+
 @section('content')
     <div class="row mb-20">
 

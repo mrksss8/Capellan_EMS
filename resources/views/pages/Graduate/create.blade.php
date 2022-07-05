@@ -1,6 +1,18 @@
 {{-- Extends layout --}}
 @extends('layout.default')
+@section('info')
+ <!--begin::Info-->
+ <div class="d-flex align-items-center flex-wrap mr-2">
 
+    <!--begin::Page Title-->
+    <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">
+      Graduating Students
+    </h5>
+    <!--end::Page Title-->
+
+</div>
+<!--end::Info-->
+@endsection
 
 @section('styles')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
