@@ -66,7 +66,6 @@
                 </div>
 
 
-
                 {{-- <div class="col-12 bg-light-success px-6 py-8 rounded-xl mt-3">
                     <span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
                         <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Communication/Urgent-mail.svg-->
@@ -86,6 +85,7 @@
                     </span>
                     <a href="#" class="text-success font-weight-bold font-size-h6 mt-2">Total No. of Registered Teachers</a>
                 </div> --}}
+                
                 <div class="col-11 bg-light-warning px-6 py-8 rounded-xl mt-5 mx-auto d-flex border border-primary">
 
                     <div class="col-6">
@@ -290,7 +290,7 @@
             </div>
 
             <div class="col-6">
-                <h3>Grade 11</h3>
+                
 
                 @foreach ($sections as $section)
                 <p>
