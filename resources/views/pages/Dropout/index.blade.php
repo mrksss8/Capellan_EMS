@@ -80,8 +80,20 @@
                      Add Section
                  </button> --}}
                         <tr>
-                            <td><button type="button" class="btn btn-primary font-weight-bold btn-sm" data-toggle="modal"
-                                    data-target="#view">View</button></td>
+                            <td>
+                                <button type="button" class="btn btn-primary font-weight-bold btn-sm d-view"
+                                    data-toggle="modal" data-target="#view-drop"
+                                    
+                                    data-std_fname="{{ $student->enrollment->student->last_name }}, {{ $student->enrollment->student->first_name }} {{ $student->enrollment->student->middle_name }}{{ $student->enrollment->student->extension }}"
+                                    data-lrn="{{ $student->enrollment->student->lrn }}"
+                                    data-reason="{{ $student->enrollment->student->reason_for_dropout }}"
+                                    data-b_date="{{ \Carbon\Carbon::parse($student->enrollment->student->b_date )->format('F d, Y') }}"
+                                    data-c_num="{{ $student->enrollment->student->contact_num }}"
+                                    data-sex="{{ $student->enrollment->student->sex }}"
+                                    data-address="{{ $student->enrollment->student->house_num }} {{ $student->enrollment->student->purok }}, {{ $student->enrollment->student->brgy }}, {{ $student->enrollment->student->municipality }}, {{ $student->enrollment->student->province }}">
+                                    View
+                                </button>
+                            </td>
                             <td>{{ $student->enrollment->student->last_name }},
                                 {{ $student->enrollment->student->first_name }}
                                 {{ $student->enrollment->student->middle_name }}
@@ -100,10 +112,10 @@
     </div>
     <!--end::Card-->
 
-    {{-- <!-- View Modal-->
-    <div class="modal fade" id="view" data-backdrop="static" tabindex="-1" role="dialog"
+    <!-- View Modal-->
+    <div class="modal fade" id="view-drop" data-backdrop="static" tabindex="-1" role="dialog"
         aria-labelledby="staticBackdrop" aria-hidden="true">
-        <div class="modal-dialog modal-md" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Dropped Student Basic Info</h5>
@@ -112,126 +124,168 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="font-weight-bold py-2">
-                        {{ $student->enrollment->student->last_name }}, {{ $student->enrollment->student->first_name }}
-                        {{ $student->enrollment->student->middle_name }}
-                        {{ $student->enrollment->student->extension }}
+
+                    <div class="row mb-5">
+                        <div class="col-8">
+                            <div class="form-group">
+                                <label> Student Name</label>
+                                <input type="text" class="form-control text-primary" name="std_fname" disabled>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label>LRN </label>
+                                <input type="text" class="form-control" name="lrn" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label> Birthdate</label>
+                                <input type="text" class="form-control" name="b_date" disabled>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label> Sex </label>
+                                <input type="text" class="form-control" name="sex" disabled>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label>Contact Number</label>
+                                <input type="text" class="form-control" name="c_num" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label> Address</label>
+                                <input type="text" class="form-control" name="address" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group p-5 text-center ">
+                                <label class = "text-danger font-weight-bold" > Reason for Dropout</label>
+                                <input type="text" class="form-control text-danger" name="reason" disabled>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="px-5 py-2 text-danger">
-                        <span class="font-weight-bold pr-3">Reason for Dropout:</span>
-                        {{ $student->enrollment->student->reason_for_dropout }}
-                    </div>
-
-                    <div class="px-5 py-2">
-                        <span class="font-weight-bold pr-3">Student Number:</span>
-                        {{ $student->enrollment->student->std_num }}
-                    </div>
-                    <div class="px-5 py-2">
-                        <span class="font-weight-bold pr-3">LRN:</span> {{ $student->enrollment->student->lrn }}
-                    </div>
-                    <div class="px-5 py-2">
-                        <span class="font-weight-bold pr-3">Birthdate:</span> {{ $student->enrollment->student->b_date }}
-                    </div>
-                    <div class="px-5 py-2">
-                        <span class="font-weight-bold pr-3">Sex:</span> {{ $student->enrollment->student->sex }}
-                    </div>
-                    <div class="px-5 py-2">
-                        <span class="font-weight-bold pr-3">Contact Number:</span>
-                        {{ $student->enrollment->student->contact_num }}
-                    </div>
-                    <div class="px-5 py-2">
-                        <span class="font-weight-bold pr-3">Address:</span> {{ $student->enrollment->student->house_num }}
-                        {{ $student->enrollment->student->purok }} {{ $student->enrollment->student->brgy }}
-                        {{ $student->enrollment->student->municipality }}, {{ $student->enrollment->student->province }}
-                    </div>
                 </div>
-            </div>
+
+
         </div>
-    </div> --}}
-    @endsection
+    </div>
+    </div>
+@endsection
 
-    {{-- Scripts Section --}}
-    @section('scripts')
-        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-        <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
-        <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+{{-- Scripts Section --}}
+@section('scripts')
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
 
-        <script>
-            $(document).ready(function() {
-                // Setup - add a text input to each footer cell
-                $('#example thead tr')
-                    .clone(true)
-                    .addClass('filters')
-                    .appendTo('#example thead');
+    <script>
+        $(document).ready(function() {
+            // $('option').val($(this).data('role')).attr('selected', 'selected');
 
-                var table = $('#example').DataTable({
-                    dom: "<'row'<'col-sm-12 col-md-12 d-flex justify-content-between'Bl>>" + "tipr",
-                    buttons: [
-                        'copyHtml5',
-                        'excelHtml5',
-                        // 'csvHtml5',
-                        'pdfHtml5',
-                        'print'
-                    ],
+            $('.d-view').each(function() {
+                $(this).click(function(event) {
+                    $('input[name="reason"]').val($(this).data('reason'));
+                    $('input[name="std_fname"]').val($(this).data('std_fname'));
+                    $('input[name="lrn"]').val($(this).data('lrn'));
+                    $('input[name="b_date"]').val($(this).data('b_date'));
+                    $('input[name="sex"]').val($(this).data('sex'));
+                    $('input[name="c_num"]').val($(this).data('c_num'));
+                    $('input[name="address"]').val($(this).data('address'));
 
-                    orderCellsTop: true,
-                    fixedHeader: true,
-                    initComplete: function() {
-                        var api = this.api();
 
-                        // For each column
-                        api
-                            .columns()
-                            .eq(0)
-                            .each(function(colIdx) {
-                                // Set the header cell to contain the input element
-                                var cell = $('.filters th').eq(
-                                    $(api.column(colIdx).header()).index()
-                                );
-                                var title = $(cell).text();
-                                $(cell).html('<input type="text" placeholder="' + title + '" />');
-
-                                // On every keypress in this input
-                                $(
-                                        'input',
-                                        $('.filters th').eq($(api.column(colIdx).header()).index())
-                                    )
-                                    .off('keyup change')
-                                    .on('keyup change', function(e) {
-                                        e.stopPropagation();
-
-                                        // Get the search value
-                                        $(this).attr('title', $(this).val());
-                                        var regexr =
-                                            '({search})'; //$(this).parents('th').find('select').val();
-
-                                        var cursorPosition = this.selectionStart;
-                                        // Search the column for that value
-                                        api
-                                            .column(colIdx)
-                                            .search(
-                                                this.value != '' ?
-                                                regexr.replace('{search}', '(((' + this.value +
-                                                    ')))') :
-                                                '',
-                                                this.value != '',
-                                                this.value == ''
-                                            )
-                                            .draw();
-
-                                        $(this)
-                                            .focus()[0]
-                                            .setSelectionRange(cursorPosition, cursorPosition);
-                                    });
-                            });
-                    },
                 });
             });
-        </script>
-    @endsection
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            // Setup - add a text input to each footer cell
+            $('#example thead tr')
+                .clone(true)
+                .addClass('filters')
+                .appendTo('#example thead');
+
+            var table = $('#example').DataTable({
+                dom: "<'row'<'col-sm-12 col-md-12 d-flex justify-content-between'Bl>>" + "tipr",
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    // 'csvHtml5',
+                    'pdfHtml5',
+                    'print'
+                ],
+
+                orderCellsTop: true,
+                fixedHeader: true,
+                initComplete: function() {
+                    var api = this.api();
+
+                    // For each column
+                    api
+                        .columns()
+                        .eq(0)
+                        .each(function(colIdx) {
+                            // Set the header cell to contain the input element
+                            var cell = $('.filters th').eq(
+                                $(api.column(colIdx).header()).index()
+                            );
+                            var title = $(cell).text();
+                            $(cell).html('<input type="text" placeholder="' + title + '" />');
+
+                            // On every keypress in this input
+                            $(
+                                    'input',
+                                    $('.filters th').eq($(api.column(colIdx).header()).index())
+                                )
+                                .off('keyup change')
+                                .on('keyup change', function(e) {
+                                    e.stopPropagation();
+
+                                    // Get the search value
+                                    $(this).attr('title', $(this).val());
+                                    var regexr =
+                                        '({search})'; //$(this).parents('th').find('select').val();
+
+                                    var cursorPosition = this.selectionStart;
+                                    // Search the column for that value
+                                    api
+                                        .column(colIdx)
+                                        .search(
+                                            this.value != '' ?
+                                            regexr.replace('{search}', '(((' + this.value +
+                                                ')))') :
+                                            '',
+                                            this.value != '',
+                                            this.value == ''
+                                        )
+                                        .draw();
+
+                                    $(this)
+                                        .focus()[0]
+                                        .setSelectionRange(cursorPosition, cursorPosition);
+                                });
+                        });
+                },
+            });
+        });
+    </script>
+@endsection
