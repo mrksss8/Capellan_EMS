@@ -58,7 +58,7 @@ Route::group([ 'prefix' => 'section', 'middleware' => ['auth','permission:System
 });
 
 //AddSectionToStudent
-Route::group([ 'prefix' => 'add-section-to-student', 'middleware' => 'auth'], function() {
+Route::group([ 'prefix' => 'add-section-to-student', ['auth','permission:Section Permission']], function() {
 
     Route::put('/store',[App\Http\Controllers\AddStudentoSectionController::class, 'store'])->name('add_student_to_section.store');
 });
@@ -76,6 +76,12 @@ Route::group([ 'prefix' => 'enroll_new_student', 'middleware' => ['auth','permis
     Route::get('/get_strand', [App\Http\Controllers\EnrollNewStudentController::class,'get_strand'])->name('get_strand');
     Route::get('/get_specialization', [App\Http\Controllers\EnrollNewStudentController::class,'get_specialization'])->name('get_specialization');
     Route::post('/enrollmentFormStore',[App\Http\Controllers\EnrollNewStudentController::class, 'enrollmentFormStore'])->name('enrollmentForm.store');
+});
+
+//Student
+Route::group([ 'prefix' => 'import_student', 'middleware' => ['auth','permission:Enrollment Permission']], function() {
+    Route::get('/create',[App\Http\Controllers\ImportEnrollStudentController::class, 'create'])->name('import_student.create');
+    Route::post('/import',[App\Http\Controllers\ImportEnrollStudentController::class, 'import'])->name('import_student.store');
 });
 
 
@@ -170,7 +176,7 @@ Route::group([ 'prefix' => 'reports', 'middleware' => ['auth','permission:Report
 });    
 
 //Graduates
-Route::group([ 'prefix' => 'reports', 'middleware' => 'auth'], function() {
+Route::group([ 'prefix' => 'reports', 'middleware' => ['auth','permission:Add Graduates Permission']], function() {
     Route::get('/graduate_create',[App\Http\Controllers\GraduateController::class, 'create'])->name('graduate.create');
     Route::post('/graduate_store',[App\Http\Controllers\GraduateController::class, 'store'])->name('graduate.store');
 });    

@@ -76,11 +76,11 @@
                             <td>{{ $student->enrollment->student->last_name }}, {{ $student->enrollment->student->first_name }} {{ $student->enrollment->student->middle_name }} {{ $student->enrollment->student->extension }}</td>
                             <td>{{ $student->enrollment->grade_level->grade_level}}</td>
                             <td>{{ $student->enrollment->specialization->strand->strand }} - {{ $student->enrollment->specialization->specialization }}</td>
-                            <td>{{ $student->document->Form137 ? $student->document->Form137 : 'Not Submitted'}}</td>
-                            <td>{{ $student->document->PSA ? $student->document->PSA : 'Not Submitted'}}</td>
-                            <td>{{ $student->document->JHS_cert ? $student->document->JHS_cert : 'Not Submitted'}}</td>
-                            <td>{{ $student->document->GoodMoral ? $student->document->GoodMoral : 'Not Submitted'}}</td>
-                            <td>{{ $student->document->Card ? $student->document->Card : 'Not Submitted'}}</td>
+                            <td>{{ $student->document != null? $student->document->Form137 : 'Not Submitted'}}</td>
+                            <td>{{ $student->document != null  ? $student->document->PSA : 'Not Submitted'}}</td>
+                            <td>{{ $student->document != null ? $student->document->JHS_cert : 'Not Submitted'}}</td>
+                            <td>{{ $student->document != null  ? $student->document->GoodMoral : 'Not Submitted'}}</td>
+                            <td>{{ $student->document != null ? $student->document->Card : 'Not Submitted'}}</td>
                             
                             <td>{{ $student->enrollment->student->prev_school}}</td>
                         </tr>

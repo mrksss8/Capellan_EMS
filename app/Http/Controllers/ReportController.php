@@ -15,9 +15,12 @@ class ReportController extends Controller
     public function yearly_report_index(){
 
         $active = Active_SchoolYearAndSem::first();
-        $students = Student::with('enrollment.student')->whereHas('enrollment', function ($query) use($active) {
-            return $query->where('school_year_id', '=', $active->active_SY_id)->where('sem_id','=', $active->active_sem_id);
-        })->get();
+        $students = Student::with('enrollment.student')->where('status', 3)->get();
+
+
+        // $students = Student::with('enrollment.student')->whereHas('enrollment', function ($query) use($active) {
+        //     return $query->where('school_year_id', '=', $active->active_SY_id)->where('sem_id','=', $active->active_sem_id);
+        // })->get();
         
         return view('pages.Reports.yearly_students',compact('students'));
 

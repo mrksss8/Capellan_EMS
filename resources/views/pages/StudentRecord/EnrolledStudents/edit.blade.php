@@ -6,45 +6,69 @@
 @endsection
 
 @section('info')
- <!--begin::Info-->
- <div class="d-flex align-items-center flex-wrap mr-2">
+    <!--begin::Info-->
+    <div class="d-flex align-items-center flex-wrap mr-2">
 
-    <!--begin::Page Title-->
-    <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">
-      Student Records
+        <!--begin::Page Title-->
+        <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">
+            Student Records
 
-      <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Navigation/Angle-right.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <polygon points="0 0 24 0 24 24 0 24"/>
-            <path d="M6.70710678,15.7071068 C6.31658249,16.0976311 5.68341751,16.0976311 5.29289322,15.7071068 C4.90236893,15.3165825 4.90236893,14.6834175 5.29289322,14.2928932 L11.2928932,8.29289322 C11.6714722,7.91431428 12.2810586,7.90106866 12.6757246,8.26284586 L18.6757246,13.7628459 C19.0828436,14.1360383 19.1103465,14.7686056 18.7371541,15.1757246 C18.3639617,15.5828436 17.7313944,15.6103465 17.3242754,15.2371541 L12.0300757,10.3841378 L6.70710678,15.7071068 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000003, 11.999999) rotate(-270.000000) translate(-12.000003, -11.999999) "/>
-        </g>
-    </svg><!--end::Svg Icon--></span>
+            <span class="svg-icon svg-icon-primary svg-icon-2x">
+                <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Navigation/Angle-right.svg--><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                    viewBox="0 0 24 24" version="1.1">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <polygon points="0 0 24 0 24 24 0 24" />
+                        <path
+                            d="M6.70710678,15.7071068 C6.31658249,16.0976311 5.68341751,16.0976311 5.29289322,15.7071068 C4.90236893,15.3165825 4.90236893,14.6834175 5.29289322,14.2928932 L11.2928932,8.29289322 C11.6714722,7.91431428 12.2810586,7.90106866 12.6757246,8.26284586 L18.6757246,13.7628459 C19.0828436,14.1360383 19.1103465,14.7686056 18.7371541,15.1757246 C18.3639617,15.5828436 17.7313944,15.6103465 17.3242754,15.2371541 L12.0300757,10.3841378 L6.70710678,15.7071068 Z"
+                            fill="#000000" fill-rule="nonzero"
+                            transform="translate(12.000003, 11.999999) rotate(-270.000000) translate(-12.000003, -11.999999) " />
+                    </g>
+                </svg>
+                <!--end::Svg Icon-->
+            </span>
 
-      Enrolled Students
-      
-      <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Navigation/Angle-right.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <polygon points="0 0 24 0 24 24 0 24"/>
-            <path d="M6.70710678,15.7071068 C6.31658249,16.0976311 5.68341751,16.0976311 5.29289322,15.7071068 C4.90236893,15.3165825 4.90236893,14.6834175 5.29289322,14.2928932 L11.2928932,8.29289322 C11.6714722,7.91431428 12.2810586,7.90106866 12.6757246,8.26284586 L18.6757246,13.7628459 C19.0828436,14.1360383 19.1103465,14.7686056 18.7371541,15.1757246 C18.3639617,15.5828436 17.7313944,15.6103465 17.3242754,15.2371541 L12.0300757,10.3841378 L6.70710678,15.7071068 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000003, 11.999999) rotate(-270.000000) translate(-12.000003, -11.999999) "/>
-        </g>
-    </svg><!--end::Svg Icon--></span>
-      
-      View Student
+            Enrolled Students
 
-      <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Navigation/Angle-right.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <polygon points="0 0 24 0 24 24 0 24"/>
-            <path d="M6.70710678,15.7071068 C6.31658249,16.0976311 5.68341751,16.0976311 5.29289322,15.7071068 C4.90236893,15.3165825 4.90236893,14.6834175 5.29289322,14.2928932 L11.2928932,8.29289322 C11.6714722,7.91431428 12.2810586,7.90106866 12.6757246,8.26284586 L18.6757246,13.7628459 C19.0828436,14.1360383 19.1103465,14.7686056 18.7371541,15.1757246 C18.3639617,15.5828436 17.7313944,15.6103465 17.3242754,15.2371541 L12.0300757,10.3841378 L6.70710678,15.7071068 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000003, 11.999999) rotate(-270.000000) translate(-12.000003, -11.999999) "/>
-        </g>
-    </svg><!--end::Svg Icon--></span>
-      
+            <span class="svg-icon svg-icon-primary svg-icon-2x">
+                <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Navigation/Angle-right.svg--><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                    height="24px" viewBox="0 0 24 24" version="1.1">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <polygon points="0 0 24 0 24 24 0 24" />
+                        <path
+                            d="M6.70710678,15.7071068 C6.31658249,16.0976311 5.68341751,16.0976311 5.29289322,15.7071068 C4.90236893,15.3165825 4.90236893,14.6834175 5.29289322,14.2928932 L11.2928932,8.29289322 C11.6714722,7.91431428 12.2810586,7.90106866 12.6757246,8.26284586 L18.6757246,13.7628459 C19.0828436,14.1360383 19.1103465,14.7686056 18.7371541,15.1757246 C18.3639617,15.5828436 17.7313944,15.6103465 17.3242754,15.2371541 L12.0300757,10.3841378 L6.70710678,15.7071068 Z"
+                            fill="#000000" fill-rule="nonzero"
+                            transform="translate(12.000003, 11.999999) rotate(-270.000000) translate(-12.000003, -11.999999) " />
+                    </g>
+                </svg>
+                <!--end::Svg Icon-->
+            </span>
 
-    Edit Info
-    </h5>
-    <!--end::Page Title-->
+            View Student
 
-</div>
-<!--end::Info-->
+            <span class="svg-icon svg-icon-primary svg-icon-2x">
+                <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Navigation/Angle-right.svg--><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                    height="24px" viewBox="0 0 24 24" version="1.1">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <polygon points="0 0 24 0 24 24 0 24" />
+                        <path
+                            d="M6.70710678,15.7071068 C6.31658249,16.0976311 5.68341751,16.0976311 5.29289322,15.7071068 C4.90236893,15.3165825 4.90236893,14.6834175 5.29289322,14.2928932 L11.2928932,8.29289322 C11.6714722,7.91431428 12.2810586,7.90106866 12.6757246,8.26284586 L18.6757246,13.7628459 C19.0828436,14.1360383 19.1103465,14.7686056 18.7371541,15.1757246 C18.3639617,15.5828436 17.7313944,15.6103465 17.3242754,15.2371541 L12.0300757,10.3841378 L6.70710678,15.7071068 Z"
+                            fill="#000000" fill-rule="nonzero"
+                            transform="translate(12.000003, 11.999999) rotate(-270.000000) translate(-12.000003, -11.999999) " />
+                    </g>
+                </svg>
+                <!--end::Svg Icon-->
+            </span>
+
+
+            Edit Info
+        </h5>
+        <!--end::Page Title-->
+
+    </div>
+    <!--end::Info-->
 @endsection
 
 
@@ -60,7 +84,7 @@
                     <div class="card card-custom card-stretch">
                         <!--begin::Body-->
                         <div class="card-body pt-4">
-                            
+
                             <!--begin::User-->
                             <div class="d-flex align-items-center">
                                 {{-- <div class="symbol symbol-60 symbol-xxl-100 align-self-start align-self-xxl-center w-100 h-100">
@@ -74,7 +98,8 @@
 
 
                                 <div class="text-center justify-content-center mx-auto my-3">
-                                    <img class="rounded" src="{{ asset('media/capellan/no-profile-image.png') }}"
+                                    <img class="rounded"
+                                        src="{{ $students->image != null ? url('storage/student/' . $students->image) : asset('media/capellan/no-profile-image.png') }}"
                                         alt="Image" height="150px" width="150px">
                                 </div>
 
@@ -98,77 +123,86 @@
                             </div> --}}
                             <!--end::Contact-->
                             <!--begin::Nav-->
-                            <div class="navi navi-bold navi-hover navi-active navi-link-rounded">
-                                <ul class="nav nav-tabs navi-item mb-2" role="tablist">
+                            <form class="form" action="{{ route('enrolled_student.update', $students->id) }}"
+                                role="form" method="post" enctype="multipart/form-data">
+                                @csrf
+                                @method('PUT')
+                                <div class="navi navi-bold navi-hover navi-active navi-link-rounded">
+                                    <input type="file" name="image">
+                                    <ul class="nav nav-tabs navi-item mb-2" role="tablist">
 
-                                    
 
-                                    <li role="presentation" class="navi-link py-4 mt-4">
 
-                                        <span class="svg-icon svg-icon-2x px-4 active">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
-                                                viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
-                                                    <path
-                                                        d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z"
-                                                        fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-                                                    <path
-                                                        d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z"
-                                                        fill="#000000" fill-rule="nonzero"></path>
-                                                </g>
-                                            </svg>
-                                        </span>
-                                        <a href="#personal" aria-controls="home" role="tab" data-toggle="tab"><span
-                                                class="navi-text">Personal Info</span></a>
-                                    </li>
+                                        <li role="presentation" class="navi-link py-4 mt-4">
 
-                                    <li role="presentation" class="navi-link py-4">
-                                        <span class="svg-icon svg-icon-2x px-4">
-                                            <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Communication/Group.svg--><svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
-                                                viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <polygon points="0 0 24 0 24 24 0 24" />
-                                                    <path
-                                                        d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z"
-                                                        fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                                    <path
-                                                        d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z"
-                                                        fill="#000000" fill-rule="nonzero" />
-                                                </g>
-                                            </svg>
-                                            <!--end::Svg Icon-->
-                                        </span>
-                                        <a href="#parent" aria-controls="profile" role="tab" data-toggle="tab"><span
-                                                class="navi-text">Parent/Guardian Info</span></a>
-                                    </li>
+                                            <span class="svg-icon svg-icon-2x px-4 active">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" version="1.1">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                                        <path
+                                                            d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z"
+                                                            fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                                        <path
+                                                            d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z"
+                                                            fill="#000000" fill-rule="nonzero"></path>
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                            <a href="#personal" aria-controls="home" role="tab" data-toggle="tab"><span
+                                                    class="navi-text">Personal Info</span></a>
+                                        </li>
 
-                                    <li role="presentation" class="navi-link py-4">
-                                        <span class="svg-icon svg-icon-2x px-4">
-                                            <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Home/Library.svg--><svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
-                                                viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24" />
-                                                    <path
-                                                        d="M5,3 L6,3 C6.55228475,3 7,3.44771525 7,4 L7,20 C7,20.5522847 6.55228475,21 6,21 L5,21 C4.44771525,21 4,20.5522847 4,20 L4,4 C4,3.44771525 4.44771525,3 5,3 Z M10,3 L11,3 C11.5522847,3 12,3.44771525 12,4 L12,20 C12,20.5522847 11.5522847,21 11,21 L10,21 C9.44771525,21 9,20.5522847 9,20 L9,4 C9,3.44771525 9.44771525,3 10,3 Z"
-                                                        fill="#000000" />
-                                                    <rect fill="#000000" opacity="0.3"
-                                                        transform="translate(17.825568, 11.945519) rotate(-19.000000) translate(-17.825568, -11.945519) "
-                                                        x="16.3255682" y="2.94551858" width="3" height="18" rx="1" />
-                                                </g>
-                                            </svg>
-                                            <!--end::Svg Icon-->
-                                        </span>
-                                        <a href="#school" aria-controls="messages" role="tab" data-toggle="tab"><span
-                                                class="navi-text">Previous School Info</span></a>
-                                    </li>
+                                        <li role="presentation" class="navi-link py-4">
+                                            <span class="svg-icon svg-icon-2x px-4">
+                                                <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Communication/Group.svg--><svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                                                    height="24px" viewBox="0 0 24 24" version="1.1">
+                                                    <g stroke="none" stroke-width="1" fill="none"
+                                                        fill-rule="evenodd">
+                                                        <polygon points="0 0 24 0 24 24 0 24" />
+                                                        <path
+                                                            d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z"
+                                                            fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                                        <path
+                                                            d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z"
+                                                            fill="#000000" fill-rule="nonzero" />
+                                                    </g>
+                                                </svg>
+                                                <!--end::Svg Icon-->
+                                            </span>
+                                            <a href="#parent" aria-controls="profile" role="tab"
+                                                data-toggle="tab"><span class="navi-text">Parent/Guardian Info</span></a>
+                                        </li>
 
-                                    {{-- <li role="presentation" class="navi-link py-4">
+                                        <li role="presentation" class="navi-link py-4">
+                                            <span class="svg-icon svg-icon-2x px-4">
+                                                <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Home/Library.svg--><svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                                                    height="24px" viewBox="0 0 24 24" version="1.1">
+                                                    <g stroke="none" stroke-width="1" fill="none"
+                                                        fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24"
+                                                            height="24" />
+                                                        <path
+                                                            d="M5,3 L6,3 C6.55228475,3 7,3.44771525 7,4 L7,20 C7,20.5522847 6.55228475,21 6,21 L5,21 C4.44771525,21 4,20.5522847 4,20 L4,4 C4,3.44771525 4.44771525,3 5,3 Z M10,3 L11,3 C11.5522847,3 12,3.44771525 12,4 L12,20 C12,20.5522847 11.5522847,21 11,21 L10,21 C9.44771525,21 9,20.5522847 9,20 L9,4 C9,3.44771525 9.44771525,3 10,3 Z"
+                                                            fill="#000000" />
+                                                        <rect fill="#000000" opacity="0.3"
+                                                            transform="translate(17.825568, 11.945519) rotate(-19.000000) translate(-17.825568, -11.945519) "
+                                                            x="16.3255682" y="2.94551858" width="3" height="18"
+                                                            rx="1" />
+                                                    </g>
+                                                </svg>
+                                                <!--end::Svg Icon-->
+                                            </span>
+                                            <a href="#school" aria-controls="messages" role="tab"
+                                                data-toggle="tab"><span class="navi-text">Previous School Info</span></a>
+                                        </li>
+
+                                        {{-- <li role="presentation" class="navi-link py-4">
                                         <span class="svg-icon svg-icon svg-icon-2x px-4"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Home/Book-open.svg-->
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -180,12 +214,12 @@
                                         <a href="#general" role="tab" data-toggle="tab"><span
                                                 class="navi-text">General Info</span></a>
                                     </li> --}}
-                                    {{-- <li role="presentation" class="navi-link py-4"><a href="#settings"
+                                        {{-- <li role="presentation" class="navi-link py-4"><a href="#settings"
                                             aria-controls="settings" role="tab" data-toggle="tab">Documents</a></li> --}}
-                                </ul>
+                                    </ul>
 
-                            </div>
-                            <!--end::Nav-->
+                                </div>
+                                <!--end::Nav-->
                         </div>
                         <!--end::Body-->
                     </div>
@@ -202,365 +236,407 @@
                                 <h3 class="card-label font-weight-bolder text-light my-auto"> Edit Student Information</h3>
                                 {{-- <span class="text-muted font-weight-bold font-size-sm mt-1">This is the student's
                                     information.</span> --}}
-                                </div>
-                                <form class="form" action ="{{route('enrolled_student.update', $students->id)}}" role="form" method="post" enctype="multipart/form-data">
-                                    @csrf
-                                    @method('PUT')
+                            </div>
+
                             <div class="card-toolbar">
-                                <button class="btn btn-success mr-2" type="Submit"> <span class="menu-icon flaticon-interface-5">
-                                </span>
-                                Save Changes</button>
+                                <button class="btn btn-success mr-2" type="Submit"> <span
+                                        class="menu-icon flaticon-interface-5">
+                                    </span>
+                                    Save Changes</button>
                                 {{-- <button type="reset" class="btn btn-secondary">Cancel</button> --}}
                             </div>
                         </div>
                         <!--end::Header-->
                         <!--begin::Form-->
-                            <!--begin::Body-->
-                            <div class="card-body">
-                               
+                        <!--begin::Body-->
+                        <div class="card-body">
 
 
 
-                                <div class="portlet light bordered">
-                                    <div class="portlet-body">
-                                        <div>
 
-                                            <!-- Nav tabs -->
+                            <div class="portlet light bordered">
+                                <div class="portlet-body">
+                                    <div>
 
-
-                                            <!-- Tab panes -->
-                                            <div class="tab-content">
-
-                                                
+                                        <!-- Nav tabs -->
 
 
-                                                <!-- Personal Information -->
-                                                <div role="tabpanel" class="tab-pane active" id="personal">
-
-                                                    <div class="row">
-                                                        <label class="col-xl-3"></label>
-                                                        <div class="col-lg-9 col-xl-6">
-                                                            <h5 class="font-weight-bold mb-6">Personal Information</h5>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Last Name</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="last_name"
-                                                                type="text" value="{{ $students->enrollment->student->last_name }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">First Name</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="first_name"
-                                                                type="text" value="{{ $students->enrollment->student->first_name }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Middle Name</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="middle_name"
-                                                                type="text" value="{{ $students->enrollment->student->middle_name }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Extension Name</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="extension"
-                                                                type="text" value="{{ $students->enrollment->student->extension }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">LRN</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="lrn"
-                                                                type="text" value="{{ $students->enrollment->student->lrn }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Birthday</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="b_date"
-                                                                type="date" value="{{ $students->enrollment->student->b_date }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Age</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="age"
-                                                                type="text" value="{{ $students->enrollment->student->age }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-                                                 
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label" for="sex">
-                                                            Sex
-                                                        </label>
-                                                        <select class="form-control form-control-sm col-md-4 ml-4" name="sex" width="50px" required>
-                                                            <option value="Male"{{ $students->enrollment->student->sex== 'Male' ? 'selected' : '' }}>Male</option>
-                                                            <option value="Female"{{ $students->enrollment->student->sex== 'Female' ? 'selected' : '' }}>Female</option>
-    
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Civil Status</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="civil_status"
-                                                                type="text" value="{{ $students->enrollment->student->civil_status }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Nationality</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="nationality"
-                                                                type="text" value="{{ $students->enrollment->student->nationality }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Contact Number</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="contact_num"
-                                                                type="text" value="{{ $students->enrollment->student->contact_num }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-														<label class="col-xl-3"></label>
-														<div class="col-lg-9 col-xl-6">
-															<h5 class="font-weight-bold mt-10 mb-6">Address</h5>
-														</div>
-													</div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">House Number/Street</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="house_num"
-                                                                type="text" value="{{ $students->enrollment->student->house_num }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Purok</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="purok"
-                                                                type="text" value="{{ $students->enrollment->student->purok }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Barangay</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="brgy"
-                                                                type="text" value="{{ $students->enrollment->student->brgy }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Municipality</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="municipality"
-                                                                type="text" value="{{ $students->enrollment->student->municipality }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Province</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="province"
-                                                                type="text" value="{{ $students->enrollment->student->province }}"
-                                                                >
-                                                        </div>
-                                                    </div>
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
 
 
+
+
+                                            <!-- Personal Information -->
+                                            <div role="tabpanel" class="tab-pane active" id="personal">
+
+                                                <div class="row">
+                                                    <label class="col-xl-3"></label>
+                                                    <div class="col-lg-9 col-xl-6">
+                                                        <h5 class="font-weight-bold mb-6">Personal Information</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Last Name</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="last_name"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->last_name }}">
+                                                    </div>
                                                 </div>
 
-                                                <!-- Parents/Guardians Information -->
-                                                <div role="tabpanel" class="tab-pane" id="parent">
-                                                    <div class="row">
-                                                        <label class="col-xl-3"></label>
-                                                        <div class="col-lg-9 col-xl-6">
-                                                            <h5 class="font-weight-bold mb-6">Parents/Guardian Information</h5>
-                                                        </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">First Name</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="first_name"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->first_name }}">
                                                     </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Father's Name</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="f_name"
-                                                                type="text" value="{{ $students->enrollment->student->f_name }}"
-                                                                >
-                                                        </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Middle Name</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="middle_name"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->middle_name }}">
                                                     </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Father's Occupation</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="f_occu"
-                                                                type="text" value="{{ $students->enrollment->student->f_occu }}"
-                                                                >
-                                                        </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Extension Name</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="extension"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->extension }}">
                                                     </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Mother's Name</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="m_name"
-                                                                type="text" value="{{ $students->enrollment->student->m_name }}"
-                                                                >
-                                                        </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">LRN</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="lrn"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->lrn }}">
                                                     </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Mother's Occupation</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="m_occu"
-                                                                type="text" value="{{ $students->enrollment->student->m_occu }}"
-                                                                >
-                                                        </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Birthday</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="b_date"
+                                                            type="date"
+                                                            value="{{ $students->enrollment->student->b_date }}">
                                                     </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Guardian's Name</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="g_name"
-                                                                type="text" value="{{ $students->enrollment->student->g_name }}"
-                                                                >
-                                                        </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Age</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="age"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->age }}">
                                                     </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Relationship</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="relationship"
-                                                                type="text" value="{{ $students->enrollment->student->relationship }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Guardian's Contact Number</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="g_contact_num"
-                                                                type="text" value="{{ $students->enrollment->student->g_contact_num }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Guardian's Address</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="g_add"
-                                                                type="text" value="{{ $students->enrollment->student->g_add }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-
                                                 </div>
 
-                                                {{-- School Info --}}
-                                                <div role="tabpanel" class="tab-pane" id="school">
-                                                    <div class="row">
-                                                        <label class="col-xl-3"></label>
-                                                        <div class="col-lg-9 col-xl-6">
-                                                            <h5 class="font-weight-bold mb-6">Previous School Information</h5>
-                                                        </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label" for="sex">
+                                                        Sex
+                                                    </label>
+                                                    <select class="form-control form-control-sm col-md-4 ml-4"
+                                                        name="sex" width="50px" required>
+                                                        <option
+                                                            value="Male"{{ $students->enrollment->student->sex == 'Male' ? 'selected' : '' }}>
+                                                            Male</option>
+                                                        <option
+                                                            value="Female"{{ $students->enrollment->student->sex == 'Female' ? 'selected' : '' }}>
+                                                            Female</option>
+
+                                                    </select>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Civil Status</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="civil_status"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->civil_status }}">
                                                     </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">School Last Attended</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="prev_school"
-                                                                type="text" value="{{ $students->enrollment->student->prev_school }}"
-                                                                >
-                                                        </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Nationality</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="nationality"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->nationality }}">
                                                     </div>
-                                                    <div class="form-group row mb-2">
-                                                        {{-- <label class="col-xl-3 col-lg-12 col-form-label">Previous School Type</label>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Contact Number</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="contact_num"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->contact_num }}">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <label class="col-xl-3"></label>
+                                                    <div class="col-lg-9 col-xl-6">
+                                                        <h5 class="font-weight-bold mt-10 mb-6">Address</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">House
+                                                        Number/Street</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="house_num"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->house_num }}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Purok</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="purok"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->purok }}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Barangay</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="brgy"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->brgy }}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Municipality</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="municipality"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->municipality }}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Province</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="province"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->province }}">
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                            <!-- Parents/Guardians Information -->
+                                            <div role="tabpanel" class="tab-pane" id="parent">
+                                                <div class="row">
+                                                    <label class="col-xl-3"></label>
+                                                    <div class="col-lg-9 col-xl-6">
+                                                        <h5 class="font-weight-bold mb-6">Parents/Guardian Information</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Father's Name</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="f_name"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->f_name }}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Father's
+                                                        Occupation</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="f_occu"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->f_occu }}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Mother's Name</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="m_name"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->m_name }}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Mother's
+                                                        Occupation</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="m_occu"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->m_occu }}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Guardian's
+                                                        Name</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="g_name"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->g_name }}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Relationship</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="relationship"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->relationship }}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Guardian's Contact
+                                                        Number</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="g_contact_num"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->g_contact_num }}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Guardian's
+                                                        Address</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="g_add"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->g_add }}">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            {{-- School Info --}}
+                                            <div role="tabpanel" class="tab-pane" id="school">
+                                                <div class="row">
+                                                    <label class="col-xl-3"></label>
+                                                    <div class="col-lg-9 col-xl-6">
+                                                        <h5 class="font-weight-bold mb-6">Previous School Information</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">School Last
+                                                        Attended</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="prev_school"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->prev_school }}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    {{-- <label class="col-xl-3 col-lg-12 col-form-label">Previous School Type</label>
                                                         <div class="col-lg-9 col-xl-8">
                                                             <input class="form-control form-control-sm" name="prev_school_type"
                                                                 type="text" value="{{ $students->enrollment->student->prev_school_type }}"
                                                                 >
                                                         </div> --}}
 
-                                                        <label class="col-xl-3 col-lg-12 col-form-label" for="prev_school_type">
-                                                            Previous School Type
-                                                        </label>
-                                                        <select class="form-control form-control-sm col-md-4 ml-4" name="prev_school_type" width="50px" required>
-                                                            <option value="Public"{{ $students->enrollment->student->prev_school_type== 'Public' ? 'selected' : '' }}>Public</option>
-                                                            <option value="Private"{{ $students->enrollment->student->prev_school_type== 'Private' ? 'selected' : '' }}>Private</option>
-                                                            <option value="ALS"{{ $students->enrollment->student->prev_school_type== 'ALS' ? 'selected' : '' }}>ALS</option>
-                                                            <option value="Transferee"{{ $students->enrollment->student->prev_school_type== 'Transferee' ? 'selected' : '' }}>Transferee</option>
-                                                        </select>
+                                                    <label class="col-xl-3 col-lg-12 col-form-label"
+                                                        for="prev_school_type">
+                                                        Previous School Type
+                                                    </label>
+                                                    <select class="form-control form-control-sm col-md-4 ml-4"
+                                                        name="prev_school_type" width="50px" required>
+                                                        <option
+                                                            value="Public"{{ $students->enrollment->student->prev_school_type == 'Public' ? 'selected' : '' }}>
+                                                            Public</option>
+                                                        <option
+                                                            value="Private"{{ $students->enrollment->student->prev_school_type == 'Private' ? 'selected' : '' }}>
+                                                            Private</option>
+                                                        <option
+                                                            value="ALS"{{ $students->enrollment->student->prev_school_type == 'ALS' ? 'selected' : '' }}>
+                                                            ALS</option>
+                                                        <option
+                                                            value="Transferee"{{ $students->enrollment->student->prev_school_type == 'Transferee' ? 'selected' : '' }}>
+                                                            Transferee</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">No. of Years in
+                                                        JHS</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="jhs_yrs"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->jhs_yrs }}">
                                                     </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">No. of Years in JHS</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="jhs_yrs"
-                                                                type="text" value="{{ $students->enrollment->student->jhs_yrs }}"
-                                                                >
-                                                        </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">Year Graduated</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="year_grad"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->year_grad }}">
                                                     </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">Year Graduated</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="year_grad"
-                                                                type="text" value="{{ $students->enrollment->student->year_grad }}"
-                                                                >
-                                                        </div>
+                                                </div>
+                                                <div class="form-group row mb-2">
+                                                    <label class="col-xl-3 col-lg-12 col-form-label">General
+                                                        Average</label>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <input class="form-control form-control-sm" name="gen_ave"
+                                                            type="text"
+                                                            value="{{ $students->enrollment->student->gen_ave }}">
                                                     </div>
-                                                    <div class="form-group row mb-2">
-                                                        <label class="col-xl-3 col-lg-12 col-form-label">General Average</label>
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <input class="form-control form-control-sm" name="gen_ave"
-                                                                type="text" value="{{ $students->enrollment->student->gen_ave }}"
-                                                                >
-                                                        </div>
-                                                    </div>
-
-                                                  
-                                                        <br>
-                                                        <div class="table-responsive mt-5">
-                                      <!--begin: Datatable-->
-                                      <table class="table table-separate table-head-custom mt-4" id="example">
-                                        <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th></th>
-                                                <th>Year Graduated</th>
-                                            </tr>
-                                        </thead>
-                        
-                                        <tbody>
-                                                <tr>
-                                                    <td class="font-weight-bolder">Primary Grade</td>
-                                                    <td><input class="form-control form-control-sm" type="text" name="prim_grade" value="{{ $students->enrollment->student->prim_grade }}"></td>
-                                                   <td><input class="form-control form-control-sm" type="text" name="prim_grade_yr" value="{{ $students->enrollment->student->prim_grade_yr }}"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="font-weight-bolder">Intermediate Grade</td>
-                                                    <td><input class="form-control form-control-sm" type="text" name="intermediate" value="{{ $students->enrollment->student->intermediate }}"></td>
-                                                    <td><input class="form-control form-control-sm" type="text" name="intermediate_yr" value="{{ $students->enrollment->student->intermediate_yr }}"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="font-weight-bolder">Junior High School</td>
-                                                    <td><input class="form-control form-control-sm" type="text" name="junior_hs" value="{{ $students->enrollment->student->junior_hs }}"></td>
-                                                    <td><input class="form-control form-control-sm" type="text" name="intermediate_yr" value="{{ $students->enrollment->student->junior_hs_yr }}"></td>
-                                                </tr>
-                                               
-                                        </tbody>
-                        
-                                    </table>
-                                    <!--end: Datatable-->
-                                                    </div>
-              
-
                                                 </div>
 
-                                                <!-- General Information -->
-                                               {{--  <div role="tabpanel" class="tab-pane" id="general">
+
+                                                <br>
+                                                <div class="table-responsive mt-5">
+                                                    <!--begin: Datatable-->
+                                                    <table class="table table-separate table-head-custom mt-4"
+                                                        id="example">
+                                                        <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th></th>
+                                                                <th>Year Graduated</th>
+                                                            </tr>
+                                                        </thead>
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="font-weight-bolder">Primary Grade</td>
+                                                                <td><input class="form-control form-control-sm"
+                                                                        type="text" name="prim_grade"
+                                                                        value="{{ $students->enrollment->student->prim_grade }}">
+                                                                </td>
+                                                                <td><input class="form-control form-control-sm"
+                                                                        type="text" name="prim_grade_yr"
+                                                                        value="{{ $students->enrollment->student->prim_grade_yr }}">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="font-weight-bolder">Intermediate Grade</td>
+                                                                <td><input class="form-control form-control-sm"
+                                                                        type="text" name="intermediate"
+                                                                        value="{{ $students->enrollment->student->intermediate }}">
+                                                                </td>
+                                                                <td><input class="form-control form-control-sm"
+                                                                        type="text" name="intermediate_yr"
+                                                                        value="{{ $students->enrollment->student->intermediate_yr }}">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="font-weight-bolder">Junior High School</td>
+                                                                <td><input class="form-control form-control-sm"
+                                                                        type="text" name="junior_hs"
+                                                                        value="{{ $students->enrollment->student->junior_hs }}">
+                                                                </td>
+                                                                <td><input class="form-control form-control-sm"
+                                                                        type="text" name="intermediate_yr"
+                                                                        value="{{ $students->enrollment->student->junior_hs_yr }}">
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+
+                                                    </table>
+                                                    <!--end: Datatable-->
+                                                </div>
+
+
+                                            </div>
+
+                                            <!-- General Information -->
+                                            {{-- <div role="tabpanel" class="tab-pane" id="general">
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
@@ -642,18 +718,18 @@
                                                         </div>
                                                     </div> 
 
-                                                </div>--}}
+                                                </div> --}}
 
 
-                                                <div role="tabpanel" class="tab-pane" id="settings">Settings</div>
-                                            </div>
-
+                                            <div role="tabpanel" class="tab-pane" id="settings">Settings</div>
                                         </div>
+
                                     </div>
                                 </div>
-
                             </div>
-                            <!--end::Body-->
+
+                        </div>
+                        <!--end::Body-->
                         </form>
                         <!--end::Form-->
                     </div>

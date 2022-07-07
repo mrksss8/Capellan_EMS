@@ -118,15 +118,10 @@
                                 <label>Role <span class="text-danger">*</span></label>
                                 <div class="form-group py-3 m-0">
 
-                                    <select class="custom-select custom-select-sm" name="sem">
+                                    <select class="custom-select custom-select-sm" >
                                         <option selected disabled>Choose Role</option>
-                                            <option value="registrar">Registrar
+                                            <option value="teacher" selected>Teacher
                                             </option>
-                                            <option value="accounting">Accounting
-                                            </option>
-                                            <option value="teacher">Teacher
-                                            </option>
-                                        
                                     </select>
                               
                             @error('name')

@@ -852,7 +852,7 @@
                                                 </div>
                                                 <div class="grade-content-right">
                                                     <p>LRN: <span>{{ $student->enrollment->student->lrn }}</span></p>
-                                                    <p>Birthdate: <span>{{ $student->enrollment->student->b_date }}</span></p>
+                                                    <p>Birthdate: <span>{{\Carbon\Carbon::parse($student->enrollment->student->b_date )->format('F d, Y')}}</span></p>
                                                     <p>Civil Status: <span>{{ $student->enrollment->student->civil_status }}</span></p>
                                                 </div>
                                             </div>

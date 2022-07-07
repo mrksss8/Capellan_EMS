@@ -145,7 +145,7 @@
 
             </div>
 
-            <div class="col-md-6 mt-5">
+            {{-- <div class="col-md-6 mt-5">
                 <div class="col-12">
                     <div class="card card-custom">
                         <div class="card-header flex-wrap py-5">
@@ -161,7 +161,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <div class="row p-3">

@@ -81,7 +81,8 @@ class DocumentController extends Controller
         
         }
         $document->save();
-
+        
+        return redirect()->back();
     }
 
     public function update(Request $request, $id){
@@ -197,7 +198,7 @@ class DocumentController extends Controller
             ]);
 
         }
-       
+    return redirect()->back();
 
     }
 

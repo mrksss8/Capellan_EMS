@@ -21,6 +21,8 @@ class EnrolledStudentController extends Controller
             return $query->where('school_year_id', '=', $active->active_SY_id)->where('sem_id','=', $active->active_sem_id);
         })->where('status', 1)->get();
         
+        
+        
         return view('pages.StudentRecord.EnrolledStudents.index',compact('students'));
 
     }
@@ -43,8 +45,14 @@ class EnrolledStudentController extends Controller
     }
 
     public function update(Request $request, $id){
-
+        
+        if($request->hasFile('image')){
+            $image = $request->file('image')->getClientOriginalName();
+            $path = $request->file('image')->storeAs('student',  $image, 'public');     
+        }
         $student = Student::findOrfail($id);
+        
+        $student->image= $image;
         $student->lrn = $request->lrn;
         $student->std_num = $request->std_num;
         $student->last_name = $request->last_name;
