@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
 
     {{-- Title Section --}}
-    <title>{{ config('app.name') }} | Login</title>
+    <title>{{ config('app.name') }} | Register</title>
 
     {{-- Meta Data --}}
     <meta name="description" content="@yield('page_description', $page_description ?? '')" />
@@ -156,6 +156,19 @@
                                         </span>
                                     @enderror
                                 </div>
+
+                                <div class="form-group py-3 border-top m-0">
+                                    <input id="username"
+                                        class="@error('username') is-invalid @enderror form-control h-auto border-0 px-0 placeholder-dark-75"
+                                        type="username" placeholder="Username" name="username" value="{{ old('username') }}"
+                                        autocomplete="off" />
+                                    @error('username')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
                                 <div class="form-group py-3 border-top m-0">
                                     <input id="password"
                                         class="@error('password') is-invalid @enderror form-control h-auto border-0 px-0 placeholder-dark-75"

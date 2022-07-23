@@ -67,11 +67,11 @@
                                 @csrf
                             <!--begin::Form-->
                                 <div class="form-group py-3 m-0">
-                                    <input class="form-control h-auto border-0 px-0 placeholder-dark-75" type="Email"
-                                        placeholder="Email" name="email" value="{{ old('email') }}" autocomplete="off" />
-                                        {{-- <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> --}}
+                                    <input class="form-control h-auto border-0 px-0 placeholder-dark-75" type="text"
+                                        placeholder="Username" name="username" value="{{ old('username') }}" autocomplete="off" />
+                                        {{-- <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus> --}}
 
-                                @error('email')
+                                @error('username')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -124,7 +124,7 @@
                                 </div>
                                 <div class="form-group py-3 border-top m-0">
                                     <input class="form-control h-auto border-0 px-0 placeholder-dark-75" type="password"
-                                        placeholder="Email" name="email" autocomplete="off" />
+                                        placeholder="username" name="email" autocomplete="off" />
                                 </div>
                                 <div class="form-group py-3 border-top m-0">
                                     <input class="form-control h-auto border-0 px-0 placeholder-dark-75" type="password"

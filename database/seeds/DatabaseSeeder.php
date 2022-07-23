@@ -148,29 +148,42 @@ class DatabaseSeeder extends Seeder
          $roleDirector->givePermissionTo('Register User Permission');
 
 
-         $markDirector = \App\Models\User::create([
-            'name' => 'mark',
-            'email' => 'mark@gmail.com',
+         $Admin = \App\Models\User::create([
+            'name' => 'Admin',
+            'username' => 'Admin',
+            'email' => 'admin@admin.com',
             'password' => Hash::make('asdasd123'),
         ]);
 
-        $markDirector->assignRole($roleDirector);
+        $Admin->assignRole($roleDirector);
 
-        $kheyzelRegistrar = \App\Models\User::create([
-            'name' => 'kheyzel',
-            'email' => 'kheyzel@gmail.com',
-            'password' => Hash::make('asdasd123'),
+
+         $Director = \App\Models\User::create([
+            'name' => 'CIT Director',
+            'username' => 'Director',
+            'email' => 'capellan.spc@gmail.com',
+            'password' => Hash::make('cit_dir@spc'),
         ]);
 
-        $kheyzelRegistrar->assignRole($roleRegistrar);
+        $Director->assignRole($roleDirector);
 
-        $magicAccounting = \App\Models\User::create([
-            'name' => 'Mina Magic',
-            'email' => 'mina_magic@gmail.com',
-            'password' => Hash::make('asdasd123'),
+        $Registrar = \App\Models\User::create([
+            'name' => 'Registrar',
+            'username' => 'Registrar',
+            'email' => 'registrar@registrar.com',
+            'password' => Hash::make('cit@registrar2022'),
         ]);
 
-        $magicAccounting->assignRole($roleAccounting);
+        $Registrar->assignRole($roleRegistrar);
+
+        $Accounting = \App\Models\User::create([
+            'name' => 'Accounting',
+            'username' => 'Accounting',
+            'email' => 'accounting@accounting.com',
+            'password' => Hash::make('citsp_accounting2022'),
+        ]);
+
+        $Accounting->assignRole($roleAccounting);
 
     }
 
