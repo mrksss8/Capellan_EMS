@@ -181,13 +181,20 @@ Route::group([ 'prefix' => 'reports', 'middleware' => ['auth','permission:Add Gr
     Route::post('/graduate_store',[App\Http\Controllers\GraduateController::class, 'store'])->name('graduate.store');
 });    
 
+//Graduates
+Route::group([ 'prefix' => 'change-pass', 'middleware' => 'auth'], function() {
+    Route::get('/index',[App\Http\Controllers\ChangePassController::class, 'index'])->name('changePass.index');
+    Route::post('/update',[App\Http\Controllers\ChangePassController::class, 'update'])->name('changePass.update');
+});    
 
 
- 
+
+
 // //Enrollment
 //  Route::get('/enrollment', function () {
 //      return view('pages.Enrollment.index');
 //  })->name('enrollment.index')->middleware('auth');
 
+
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('user-logout');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -83,7 +83,7 @@
                                         value="{{ $student->enrollment->student->id }}">
                                 </td>
                                 <td>{{ $student->enrollment->student->last_name }},
-                                    {{ $student->enrollment->student->first_name }}{{ $student->enrollment->student->middle_name }}
+                                    {{ $student->enrollment->student->first_name }} {{ $student->enrollment->student->middle_name }}
                                 </td>
                                 <td>{{ $student->enrollment->grade_level->grade_level }}</td>
                                 <td>{{ $student->enrollment->specialization->strand->track->track }}</td>
