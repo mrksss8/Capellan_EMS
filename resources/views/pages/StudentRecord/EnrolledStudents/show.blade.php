@@ -754,7 +754,7 @@
 
                                                         <p> <strong class="mr-3">Form 137:
                                                                 @if (!empty($student->document->Form137))
-                                                                    <span class="text-success"> </span>
+                                                                    <span class="text-success"> Submitted</span>
 
                                                                     @if ($student->document->Form137_Document != null)
                                                                         <p class="mr-0 mb-0 font-italic font-weight-light">
@@ -762,9 +762,10 @@
                                                                             <a
                                                                                 href="{{ route('document.download', [$student->document->id, $student->document->Form137_Document]) }}">{{ $student->document->Form137_Document }}</a>
                                                                         </p>
+                                                                    
                                                                     @endif
                                                                 @else
-                                                                    <span class="text-danger">Not </span>
+                                                                    <span class="text-danger">Not Submitted</span>
                                                                 @endif
                                                             </strong></p>
                                                         <p> <strong class="mr-3">JHS cert:

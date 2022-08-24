@@ -57,12 +57,12 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Grade</th>
+                     
                         {{-- <th>Track</th> --}}
                         <th>Strand</th>
                         <th>Specialization</th>
                         <th>School Year</th>
-                        <th>Semester</th>
+                        
                     </tr>
                 </thead>
 
@@ -73,12 +73,12 @@
                                 {{ $student->first_name }}
                                 {{ $student->middle_name }}
                                 {{ $student->extension }}</td>
-                            <td>{{ $student->enrollment->grade_level->grade_level }}</td>
+                            
                             {{-- <td>{{ $student->specialization->strand->track->track }}</td> --}}
                             <td>{{ $student->enrollment->specialization->strand->strand }}</td>
                             <td>{{ $student->enrollment->specialization->specialization }}</td>
                             <td>{{ $student->enrollment->schoolyear->school_year }}</td>
-                            <td>{{ $student->enrollment->sem->sem }}</td>
+                            
 
                         </tr>
                     @endforeach

@@ -76,7 +76,7 @@ class DocumentController extends Controller
             $Card_fileName = $Card_filepath->getClientOriginalName();
             $Card_path = $request->file('Cardfile')->storeAs('document', $Card_fileName, 'public');
 
-        $document->Card_Path = $Card_filepath;
+        $document->Card_Path = $Card_path;
         $document->Card_Document = $Card_fileName;
         
         }

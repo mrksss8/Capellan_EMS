@@ -55,7 +55,7 @@ class StudentImport implements ToCollection, WithHeadingRow, SkipsOnError, WithV
             'm_occu' => $row['Occupation of Mother'],
             'g_name' => $row['Name of Guardian (Last Name/First Name/Middle Name)'],
             'relationship' => $row['Relationship to Guardian'],
-            'g_contact_num' => $row['Address of Guardian'],
+            'g_contact_num' => $row['Contact No. of Guardian'],
             'g_add' => $row['Address of Guardian'],
             'prev_school' => $row['School Last Attended '],
             'prev_school_type' => $row['Previous School Type'],

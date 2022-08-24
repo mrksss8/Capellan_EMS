@@ -28,7 +28,7 @@ class CreateStudentsTable extends Migration
             $table->string('sex');
             $table->string('nationality');
             $table->string('b_date');
-            $table->integer('contact_num')->nullable();
+            $table->string('contact_num')->nullable();
             $table->string('house_num')->nullable();
             $table->string('purok')->nullable();
             $table->string('brgy');
@@ -40,7 +40,7 @@ class CreateStudentsTable extends Migration
             $table->string('m_occu')->nullable();
             $table->string('g_name');
             $table->string('relationship');
-            $table->integer('g_contact_num');
+            $table->string('g_contact_num');
             $table->string('g_add');
             $table->string('prev_school');
             $table->string('prev_school_type');
